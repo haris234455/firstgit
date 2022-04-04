@@ -4,6 +4,9 @@
 .product-description-tabs__btn{
     color: #000000 !important;
 }
+h1.hero__title.hurom-h1 {
+    color: red !important;
+}
 
 @media screen and (min-width: 769px){
     .product-panel__anchor{
