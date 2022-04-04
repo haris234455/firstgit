@@ -7,6 +7,10 @@
 h1.hero__title.hurom-h1 {
     color: red !important;
 }
+.btn.hero__cta, .hero__link:before {
+    background-color: #0a0d06 !important;
+    color: #ffffff;
+}
 
 @media screen and (min-width: 769px){
     .product-panel__anchor{
