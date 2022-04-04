@@ -1,0 +1,39 @@
+{% assign fields = section.settings %}
+
+<section class="home-featured">
+  <div class="home-featured__container container-ml">
+    <h2 class="home-featured__head align-c">Featured Products</h2>
+    <div class="product-grid">
+      {% for i in (1..3) %}
+        {% assign temp = 'product_' | append: i %}
+        {% assign product = all_products[fields[temp]] %}
+
+        {% include 'product-item' %}
+
+        {% assign temp = false %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Home Featured",
+    "settings": [ {
+      "type": "product",
+      "id": "product_1",
+      "label": "Featured Product #1",
+      "info": "Select Featured Product #1 on Home Page."
+    }, {
+      "type": "product",
+      "id": "product_2",
+      "label": "Featured Product #2",
+      "info": "Select Featured Product #2 on Home Page."
+    }, {
+      "type": "product",
+      "id": "product_3",
+      "label": "Featured Product #3",
+      "info": "Select Featured Product #3 on Home Page."
+    } ]
+  }
+{% endschema %}

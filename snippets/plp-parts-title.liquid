@@ -1,0 +1,10 @@
+{%- assign title = title | default: nil -%}
+
+{%- if title != blank -%}
+  <p
+    v-if="!collectionProducts.length && !products.length"
+    class="plp-parts-title p1"
+  >
+    {{- title -}}
+  </p>
+{%- endif -%}

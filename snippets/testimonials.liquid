@@ -1,0 +1,29 @@
+{%- assign mod_title = mod_title | default: blank -%}
+{%- assign mod_testimonials = mod_testimonials | default: blank -%}
+
+<div class="testimonials" data-module="testimonials">
+  <div class="testimonials__container container-sp">
+    {%- if mod_title != blank -%}
+      <h2 class="testimonials__title label align-c">
+        {{- mod_title -}}
+      </h2>
+    {%- endif -%}
+
+    <div class="testimonials__carousel js-carousel">
+      {%- for testimonial in mod_testimonials -%}
+        {%- assign fields = testimonial.settings -%}
+
+        {%- include 'testimonial',
+          mod_class: 'testimonials__item',
+          mod_rating: fields['rating'],
+          mod_text: fields['text'],
+          mod_author: fields['author'] -%}
+
+        {%- assign fields = nil -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{%- assign mod_title = nil -%}
+{%- assign mod_testimonials = nil -%}

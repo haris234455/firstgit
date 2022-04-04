@@ -1,0 +1,47 @@
+<section class="block-juicers">
+  <div class="block-juicers__container container-m">
+    <div class="block-juicers__title">
+        <h2 class="__head">{{ metafields['featured_juicers_title'] }}</h2>
+
+        <div class="__lead">{{ metafields['featured_juicers_text'] }}</div>
+    </div>
+    <div class="block-juicers__group">
+      {% for juicer in page.metafields.featured_juicers %}
+        {% assign juicer_key = juicer.first %}
+        {% assign juicer_title = juicer.last %}
+        {% assign product = all_products[juicer_title] %}
+        {% assign variant_key = juicer_key | append: '_variant_title' %}
+        {% assign selected_variant_title = page.metafields.variant_titles[variant_key] | handleize %}
+        {% assign description_key = juicer_key | append: '_description' %}
+        {% assign description = page.metafields.juicer_descriptions[description_key] %}
+
+        {% for variant in product.variants %}
+          {% assign variant_title = variant.title | handleize %}
+          {% if forloop.first or variant_title == selected_variant_title %}
+            {% assign product_variant = variant %}
+          {% endif %}
+        {% endfor %}
+        {% for image in product.images %}
+          {% assign image_alt = image.alt | handleize %}
+          {% if selected_variant_title == image_alt %}
+            {% assign product_img = image.src %}
+            {% break %}
+          {% elsif forloop.first %}
+            {% assign product_img = image.src %}
+          {% endif %}
+        {% endfor %}
+
+        <a class="__juicer" href="{{product_variant.url}}" alt="Learn More on {{product.title}}" onClick="ga('send', 'event', 'Custom Landing Page', 'Clicked {{product.title}} - Learn More CTA', 'Referrer: {{ page_title }}')">
+          <div class="__featured">
+             <img class="__img" src="{{ product_img | img_url: '612x612' }}" title="{{product.title}}" alt="{{product.title}}">
+          </div>
+          <h3 class="__name">{{product.title}}</h3>
+          <span class="__price">{{product_variant.price | money_without_trailing_zeros}}</span>
+          <p class="__description">{{description}}</p>
+          <span class="__button btn btn-overlay" style="color:{{ page.metafields.accentuate.btn_color }}; background-color:{{ page.metafields.accentuate.btn_bg_color }};"><div>Learn More</div></span>
+        </a>
+      {% endfor %}
+    </div>
+    <a class="block-juicers__link btn-s" href="/pages/compare-hurom-juicers" alt="See and Compare All Our Juicers" onClick="ga('send', 'event', 'Custom Landing Page', 'Clicked Clicked Compare Juicers CTA', 'Referrer: {{ page_title }}')">See and Compare All Our Juicers</a>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+{% layout none %}
+{%- paginate blog.articles by 50 -%}
+{
+  "articles": [
+    {%- for article in blog.articles -%}
+    {
+      "id": {{ article.id }},
+      "title": "{{ article.title }}",
+      "image": {{ article.image | json }},
+      "url": "{{ article.url }}",
+      "tags": [
+        {%- for tag in article.tags -%}
+        "{{ tag }}"{%- unless forloop.last -%},{%- endunless -%}
+        {%- endfor -%}
+      ],
+      "category": "{{ article.metafields.accentuate['category'] }}"
+    }{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  ]
+}
+{%- endpaginate -%}

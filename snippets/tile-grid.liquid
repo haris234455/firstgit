@@ -1,0 +1,37 @@
+{%- assign mod_class = mod_class | default: blank -%}
+{%- assign mod_tiles = mod_tiles | default: blank -%}
+
+{%- capture mod_css %}
+  tile-grid {{ mod_class }}
+{%- endcapture %}
+
+<div class="{{- mod_css | strip -}}" data-module="tile-grid">
+  {%- for tile in mod_tiles -%}
+    {%- assign fields = tile.settings -%}
+    {%- assign mod_image_src = fields['image'] | img_url: '600x' -%}
+    {%- capture mod_tile_json -%}
+      {
+        "id": {{ tile.id }},
+        "title": "{{ fields['title'] }}",
+        "image": "{{ mod_image_src }}",
+        "url": "{{ fields['url'] }}",
+        "tags": ["{{ fields['text'] }}"]
+      }
+    {%- endcapture -%}
+
+    {%- include 'tile-card',
+      mod_class: 'tile-grid__item',
+      mod_title: fields['title'],
+      mod_text: fields['text']
+      mod_url: fields['url'],
+      mod_tile_json: mod_tile_json -%}
+
+    {%- assign mod_image_src = nil -%}
+    {%- assign fields = nil -%}
+    {%- assign mod_tile_json = nil -%}
+  {%- endfor -%}
+</div>
+
+{%- assign mod_class = nil -%}
+{%- assign mod_tiles = nil -%}
+{%- assign mod_css = nil -%}

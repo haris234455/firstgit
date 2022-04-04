@@ -1,0 +1,19 @@
+<a
+  v-if="collectionProducts.length || products.length"
+  class="plp-parts-back-link label"
+  href="{{ collection.url }}"
+  @click.prevent="handleBackLinkClick"
+  v-cloak
+>
+  <svg class="plp-parts-back-link__icon" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 9"><path d="M4 1L1 4.5 4 8" stroke="#528406" stroke-linejoin="round"/></svg>
+  <span
+    v-if="(collectionProducts.length && !products.length) || !collectionId"
+  >
+    Back to collections
+  </span>
+  <span
+    v-if="products.length && collectionProducts.length"
+  >
+    Back to models
+  </span>
+</a>

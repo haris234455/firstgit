@@ -1,0 +1,221 @@
+<!-- /sections/refurbished-four-up.liquid -->
+{%- include 'four-up' -%}
+
+{% schema %}
+    {
+        "name": "Refurbished Four Up",
+        "settings": [ {
+            "id": "block_1_icon",
+            "type": "select",
+            "label": "Block 1 Icon",
+            "options": [
+              {"value": "ico-bpa.svg", "label": "ico-bpa.svg"},
+              {"value": "ico-clean.svg", "label": "ico-clean.svg"},
+              {"value": "ico-earth.svg", "label": "ico-earth.svg"},
+              {"value": "ico-fruits.svg", "label": "ico-fruits.svg"},
+              {"value": "ico-juice.svg", "label": "ico-juice.svg"},
+              {"value": "ico-light.svg", "label": "ico-light.svg"},
+              {"value": "ico-planet.svg", "label": "ico-planet.svg"},
+              {"value": "ico-planet-radiate.svg", "label": "ico-planet-radiate.svg"},
+              {"value": "ico-pulp.svg", "label": "ico-pulp.svg"},
+              {"value": "ico-recipe-adventurous.svg", "label": "ico-recipe-adventurous.svg"},
+              {"value": "ico-recipe-detox.svg", "label": "ico-recipe-detox.svg"},
+              {"value": "ico-recipe-immunity.svg", "label": "ico-recipe-immunity.svg"},
+              {"value": "ico-recipe-low-calorie.svg", "label": "ico-recipe-low-calorie.svg"},
+              {"value": "ico-recipe-rejuvenate.svg", "label": "ico-recipe-rejuvenate.svg"},
+              {"value": "ico-rocket.svg", "label": "ico-rocket.svg"},
+              {"value": "ico-safe.svg", "label": "ico-safe.svg"},
+              {"value": "ico-star.svg", "label": "ico-star.svg"},
+              {"value": "ico-time.svg", "label": "ico-time.svg"},
+              {"value": "ico-versatile.svg", "label": "ico-versatile.svg"},
+              {"value": "ico-home.svg", "label": "ico-home.svg"},
+              {"value": "ico-label.svg", "label": "ico-label.svg"},
+              {"value": "ico-marker-user.svg", "label": "ico-marker-user.svg"},
+              {"value": "ico-marker.svg", "label": "ico-marker.svg"},
+              {"value": "ico-page-search.svg", "label": "ico-page-search.svg"},
+              {"value": "ico-shipping.svg", "label": "ico-shipping.svg"},
+              {"value": "ico-time-light.svg", "label": "ico-time-light.svg"},
+              {"value": "ico-warranty-light.svg", "label": "ico-warranty-light.svg"},
+              {"value": "ico-warranty.svg", "label": "ico-warranty.svg"},
+              {"value": "ico-money-back.png", "label": "ico-money-back.png"},
+              {"value": "ico-money-back-blk.png", "label": "ico-money-back-blk.png"},
+              {"value": "ico-warranty-heavy.png", "label": "ico-warranty-heavy.png"}
+            ],
+            "default": "ico-clean.svg"
+        }, {
+            "id": "block_1_icon_custom",
+            "type": "image_picker",
+            "label": "Block 1 Icon (Custom)",
+            "info": "This field overrides the preceding icon selection field."
+        }, {
+            "id": "block_1_sub",
+            "type": "text",
+            "label": "Block 1 Subtitle",
+            "default": "Quality"
+        }, {
+            "id": "block_1_desc",
+            "type": "textarea",
+            "label": "Block 1 Description",
+            "default": "All Certified Refurbished machines have been built and refurbished by hand."
+        }, {
+            "id": "block_2_icon",
+            "type": "select",
+            "label": "Block 2 Icon",
+            "options": [
+              {"value": "ico-bpa.svg", "label": "ico-bpa.svg"},
+              {"value": "ico-clean.svg", "label": "ico-clean.svg"},
+              {"value": "ico-earth.svg", "label": "ico-earth.svg"},
+              {"value": "ico-fruits.svg", "label": "ico-fruits.svg"},
+              {"value": "ico-juice.svg", "label": "ico-juice.svg"},
+              {"value": "ico-light.svg", "label": "ico-light.svg"},
+              {"value": "ico-planet.svg", "label": "ico-planet.svg"},
+              {"value": "ico-planet-radiate.svg", "label": "ico-planet-radiate.svg"},
+              {"value": "ico-pulp.svg", "label": "ico-pulp.svg"},
+              {"value": "ico-recipe-adventurous.svg", "label": "ico-recipe-adventurous.svg"},
+              {"value": "ico-recipe-detox.svg", "label": "ico-recipe-detox.svg"},
+              {"value": "ico-recipe-immunity.svg", "label": "ico-recipe-immunity.svg"},
+              {"value": "ico-recipe-low-calorie.svg", "label": "ico-recipe-low-calorie.svg"},
+              {"value": "ico-recipe-rejuvenate.svg", "label": "ico-recipe-rejuvenate.svg"},
+              {"value": "ico-rocket.svg", "label": "ico-rocket.svg"},
+              {"value": "ico-safe.svg", "label": "ico-safe.svg"},
+              {"value": "ico-star.svg", "label": "ico-star.svg"},
+              {"value": "ico-time.svg", "label": "ico-time.svg"},
+              {"value": "ico-versatile.svg", "label": "ico-versatile.svg"},
+              {"value": "ico-home.svg", "label": "ico-home.svg"},
+              {"value": "ico-label.svg", "label": "ico-label.svg"},
+              {"value": "ico-marker-user.svg", "label": "ico-marker-user.svg"},
+              {"value": "ico-marker.svg", "label": "ico-marker.svg"},
+              {"value": "ico-page-search.svg", "label": "ico-page-search.svg"},
+              {"value": "ico-shipping.svg", "label": "ico-shipping.svg"},
+              {"value": "ico-time-light.svg", "label": "ico-time-light.svg"},
+              {"value": "ico-warranty-light.svg", "label": "ico-warranty-light.svg"},
+              {"value": "ico-warranty.svg", "label": "ico-warranty.svg"},
+              {"value": "ico-money-back.png", "label": "ico-money-back.png"},
+              {"value": "ico-money-back-blk.png", "label": "ico-money-back-blk.png"},
+              {"value": "ico-warranty-heavy.png", "label": "ico-warranty-heavy.png"}
+            ],
+            "default": "ico-money-back-blk.png"
+        }, {
+            "id": "block_2_icon_custom",
+            "type": "image_picker",
+            "label": "Block 2 Icon (Custom)",
+            "info": "This field overrides the preceding icon selection field."
+        }, {
+            "id": "block_2_sub",
+            "type": "text",
+            "label": "Block 2 Subtitle",
+            "default": "Money Back"
+        }, {
+            "id": "block_2_desc",
+            "type": "textarea",
+            "label": "Block 2 Description",
+            "default": "15-Day Money Back Guarantee with pre-paid return labels."
+        }, {
+            "id": "block_3_icon",
+            "type": "select",
+            "label": "Block 3 Icon",
+            "options": [
+              {"value": "ico-bpa.svg", "label": "ico-bpa.svg"},
+              {"value": "ico-clean.svg", "label": "ico-clean.svg"},
+              {"value": "ico-earth.svg", "label": "ico-earth.svg"},
+              {"value": "ico-fruits.svg", "label": "ico-fruits.svg"},
+              {"value": "ico-juice.svg", "label": "ico-juice.svg"},
+              {"value": "ico-light.svg", "label": "ico-light.svg"},
+              {"value": "ico-planet.svg", "label": "ico-planet.svg"},
+              {"value": "ico-planet-radiate.svg", "label": "ico-planet-radiate.svg"},
+              {"value": "ico-pulp.svg", "label": "ico-pulp.svg"},
+              {"value": "ico-recipe-adventurous.svg", "label": "ico-recipe-adventurous.svg"},
+              {"value": "ico-recipe-detox.svg", "label": "ico-recipe-detox.svg"},
+              {"value": "ico-recipe-immunity.svg", "label": "ico-recipe-immunity.svg"},
+              {"value": "ico-recipe-low-calorie.svg", "label": "ico-recipe-low-calorie.svg"},
+              {"value": "ico-recipe-rejuvenate.svg", "label": "ico-recipe-rejuvenate.svg"},
+              {"value": "ico-rocket.svg", "label": "ico-rocket.svg"},
+              {"value": "ico-safe.svg", "label": "ico-safe.svg"},
+              {"value": "ico-star.svg", "label": "ico-star.svg"},
+              {"value": "ico-time.svg", "label": "ico-time.svg"},
+              {"value": "ico-versatile.svg", "label": "ico-versatile.svg"},
+              {"value": "ico-home.svg", "label": "ico-home.svg"},
+              {"value": "ico-label.svg", "label": "ico-label.svg"},
+              {"value": "ico-marker-user.svg", "label": "ico-marker-user.svg"},
+              {"value": "ico-marker.svg", "label": "ico-marker.svg"},
+              {"value": "ico-page-search.svg", "label": "ico-page-search.svg"},
+              {"value": "ico-shipping.svg", "label": "ico-shipping.svg"},
+              {"value": "ico-time-light.svg", "label": "ico-time-light.svg"},
+              {"value": "ico-warranty-light.svg", "label": "ico-warranty-light.svg"},
+              {"value": "ico-warranty.svg", "label": "ico-warranty.svg"},
+              {"value": "ico-money-back.png", "label": "ico-money-back.png"},
+              {"value": "ico-money-back-blk.png", "label": "ico-money-back-blk.png"},
+              {"value": "ico-warranty-heavy.png", "label": "ico-warranty-heavy.png"}
+            ],
+            "default": "ico-shipping.svg"
+        }, {
+            "id": "block_3_icon_custom",
+            "type": "image_picker",
+            "label": "Block 3 Icon (Custom)",
+            "info": "This field overrides the preceding icon selection field."
+        }, {
+            "id": "block_3_sub",
+            "type": "text",
+            "label": "Block 3 Subtitle",
+            "default": "Free Shipping"
+        }, {
+            "id": "block_3_desc",
+            "type": "textarea",
+            "label": "Block 3 Description",
+            "default": "Free shipping is available for every Certified Refurbished purchase."
+        }, {
+            "id": "block_4_icon",
+            "type": "select",
+            "label": "Block 4 Icon",
+            "options": [
+              {"value": "ico-bpa.svg", "label": "ico-bpa.svg"},
+              {"value": "ico-clean.svg", "label": "ico-clean.svg"},
+              {"value": "ico-earth.svg", "label": "ico-earth.svg"},
+              {"value": "ico-fruits.svg", "label": "ico-fruits.svg"},
+              {"value": "ico-juice.svg", "label": "ico-juice.svg"},
+              {"value": "ico-light.svg", "label": "ico-light.svg"},
+              {"value": "ico-planet.svg", "label": "ico-planet.svg"},
+              {"value": "ico-planet-radiate.svg", "label": "ico-planet-radiate.svg"},
+              {"value": "ico-pulp.svg", "label": "ico-pulp.svg"},
+              {"value": "ico-recipe-adventurous.svg", "label": "ico-recipe-adventurous.svg"},
+              {"value": "ico-recipe-detox.svg", "label": "ico-recipe-detox.svg"},
+              {"value": "ico-recipe-immunity.svg", "label": "ico-recipe-immunity.svg"},
+              {"value": "ico-recipe-low-calorie.svg", "label": "ico-recipe-low-calorie.svg"},
+              {"value": "ico-recipe-rejuvenate.svg", "label": "ico-recipe-rejuvenate.svg"},
+              {"value": "ico-rocket.svg", "label": "ico-rocket.svg"},
+              {"value": "ico-safe.svg", "label": "ico-safe.svg"},
+              {"value": "ico-star.svg", "label": "ico-star.svg"},
+              {"value": "ico-time.svg", "label": "ico-time.svg"},
+              {"value": "ico-versatile.svg", "label": "ico-versatile.svg"},
+              {"value": "ico-home.svg", "label": "ico-home.svg"},
+              {"value": "ico-label.svg", "label": "ico-label.svg"},
+              {"value": "ico-marker-user.svg", "label": "ico-marker-user.svg"},
+              {"value": "ico-marker.svg", "label": "ico-marker.svg"},
+              {"value": "ico-page-search.svg", "label": "ico-page-search.svg"},
+              {"value": "ico-shipping.svg", "label": "ico-shipping.svg"},
+              {"value": "ico-time-light.svg", "label": "ico-time-light.svg"},
+              {"value": "ico-warranty-light.svg", "label": "ico-warranty-light.svg"},
+              {"value": "ico-warranty.svg", "label": "ico-warranty.svg"},
+              {"value": "ico-money-back.png", "label": "ico-money-back.png"},
+              {"value": "ico-money-back-blk.png", "label": "ico-money-back-blk.png"},
+              {"value": "ico-warranty-heavy.png", "label": "ico-warranty-heavy.png"}
+            ],
+            "default": "ico-warranty-heavy.png"
+        }, {
+            "id": "block_4_icon_custom",
+            "type": "image_picker",
+            "label": "Block 4 Icon (Custom)",
+            "info": "This field overrides the preceding icon selection field."
+        }, {
+            "id": "block_4_sub",
+            "type": "text",
+            "label": "Block 4 Subtitle",
+            "default": "Warranty"
+        }, {
+            "id": "block_4_desc",
+            "type": "textarea",
+            "label": "Block 4 Description",
+            "default": "Learn more about the 5-year warranty and No Risk Guarantee on every Certified Refurbished Juicer."
+        } ]
+    }
+{% endschema %}

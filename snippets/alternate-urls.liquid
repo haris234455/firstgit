@@ -1,0 +1,55 @@
+<!-- Alternate URLS -->
+{%- assign currency = shop.currency -%}
+
+{%- if settings.country == 'US' -%}
+  {%- assign country = 'en-US' -%}
+  {%- assign country_alt = 'en-CA' -%}
+  {%- assign shop_url_alt = 'https://hurom.ca' -%}
+{%- elsif settings.country == 'CA' -%}
+  {%- assign country = 'en-CA' -%}
+  {%- assign country_alt = 'en-US' -%}
+  {%- assign shop_url_alt = 'https://www.hurom.com' -%}
+{%- endif -%}
+
+{%- assign shop_url_fallback = 'https://www.hurom.com' -%}
+
+{%- if template contains 'product' -%}
+  {%- assign url = shop.url | append: product.url -%}
+  {%- assign url_alt = shop_url_alt | append: product.url -%}
+  {%- assign fallback = shop_url_fallback | append: product.url -%}
+{%- elsif template contains 'collection' -%}
+  {%- assign url = shop.url | append: collection.url -%}
+  {%- assign url_alt = shop_url_alt | append: collection.url -%}
+  {%- assign fallback = shop_url_fallback | append: collection.url -%}
+{%- elsif template contains 'blog' -%}
+  {%- assign url = shop.url | append: blog.url -%}
+  {%- assign url_alt = shop_url_alt | append: blog.url -%}
+  {%- assign fallback = shop_url_fallback | append: blog.url -%}
+{%- elsif template contains 'article' -%}
+  {%- assign url = shop.url | append: article.url -%}
+  {%- assign url_alt = shop_url_alt | append: article.url -%}
+  {%- assign fallback = shop_url_fallback | append: article.url -%}
+{%- elsif template contains 'page' -%}
+  {%- assign url = shop.url | append: page.url -%}
+  {%- assign url_alt = shop_url_alt | append: page.url -%}
+  {%- assign fallback = shop_url_fallback | append: page.url -%}
+{%- elsif template contains 'index' -%}
+  {%- assign url = shop.url -%}
+  {%- assign url_alt = shop_url_alt -%}
+  {%- assign fallback = shop_url_fallback -%}
+{%- endif -%}
+
+{%- if url_alt and url_alt != blank -%}
+  <link rel="alternate" href="{{- url_alt -}}" hreflang="{{- country_alt -}}" />
+  <link rel="alternate" href="{{- url -}}" hreflang="{{- country -}}" />
+  <link rel="alternate" href="{{- fallback -}}" hreflang="en" />
+  <link rel="alternate" href="{{- fallback -}}" hreflang="x-default" />
+{%- endif -%}
+
+{%- assign currency = nil -%}
+{%- assign country = nil -%}
+{%- assign country_alt = nil -%}
+{%- assign shop_url_alt = nil -%}
+{%- assign url = nil -%}
+{%- assign url_alt = nil -%}
+{%- assign fallback = nil -%}

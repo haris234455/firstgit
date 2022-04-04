@@ -1,0 +1,60 @@
+<!-- /templates/customers/account.liquid -->
+
+<div class="account page">
+    <div class="account__container container-l">
+        <header class="page-title" data-view="fadein-down">
+            <h1 class="page-title__head">{{ 'customer.account.title' | t }}</h1>
+        </header>
+
+        <a class="account__logout-link" href="/account/logout" data-view="fadein-down">{{ 'customer.account.log_out' | t }}</a>
+
+        <section class="page-content" data-view="fadein-up">
+            {% include 'account-nav' %}
+
+            <h3 class="order-history__head">{{ 'customer.orders.title' | t }}</h3>
+
+            {% paginate customer.orders by 10 %}
+                {% if customer.orders.size != 0 %}
+                    <table class="table-history table">
+                        <thead>
+                            <tr>
+                                <th class="table-history__order-head">{{ 'customer.orders.order_number' | t }}</th>
+                                <th class="table-history__date-head">{{ 'customer.orders.date' | t }}</th>
+                                <th class="table-history__payment-head">{{ 'customer.orders.payment_status' | t }}</th>
+                                <th class="table-history__shipping-head">{{ 'customer.orders.shipping_status' | t }}</th>
+                                <th class="table-history__total-head">{{ 'customer.orders.total' | t }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in customer.orders %}
+                                <tr class="table-history__reference">
+                                    <td class="table-history__order">
+                                        <a class="table-history__order-link" href="{{ order.customer_url }}">{{ order.name  }}</a>
+                                        <ul class="table-history__order-data">
+                                            <li class="table-history__data-date table-history__data">
+                                                {{ 'customer.orders.date' | t }}: {{ order.created_at | date: format: 'month_day_year' }}
+                                            </li>
+                                            <li class="table-history__data-payment table-history__data">
+                                                {{ 'customer.orders.payment_status' | t }}: {{ order.financial_status_label }}
+                                            </li>
+                                            <li class="table-history__data-shipping table-history__data">
+                                                {{ 'customer.orders.shipping_status' | t }}: {{ order.fulfillment_status_label }}
+                                            </li>
+                                        </ul>
+                                    </td>
+                                    <td class="table-history__date">{{ order.created_at | date: format: 'month_day_year' }}</td>
+                                    <td class="table-history__payment">{{ order.financial_status_label }}</td>
+                                    <td class="table-history__shipping">{{ order.fulfillment_status_label }}</td>
+                                    <td class="table-history__total">{{ order.total_price | money }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p class="order-history__none">{{ 'customer.orders.none' | t }} <a class="order-history__shop-link" href="/collections">{{ 'customer.orders.shop' | t }}</a></p>
+                {% endif %}
+                {%include 'pagination' %}
+            {% endpaginate %}
+        </section>
+    </div>
+</div>

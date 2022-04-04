@@ -1,0 +1,24 @@
+{%- include 'brand-carousel'
+  mod_brands: section.blocks - %}
+
+{% schema %}
+  {
+    "name": "Home Brand 3-up",
+    "class": "bg-very-light-grey",
+    "max_blocks": 3,
+    "blocks": [{
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [{
+        "type": "textarea",
+        "id": "text",
+        "label": "Text"
+      }, {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo",
+        "info": "Upload PNG ~ 210x55px"
+      }]
+    }]
+  }
+{% endschema %}

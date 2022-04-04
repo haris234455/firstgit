@@ -1,0 +1,29 @@
+<!-- /templates/product.refurbished.liquid -->
+
+{% comment %} Settings {% endcomment %}
+{% assign module = product.metafields.accentuate %}
+{% assign preorder = module.product_pre_order_enable %}
+{% assign preorder_limit = module.product_pre_order_limit | plus: 0 %}
+{% assign product_notification = module.product_notification %}
+
+{% assign current_variant = product.selected_or_first_available_variant %}
+
+<div class="product page" itemscope itemtype="http://schema.org/Product">
+    {% include 'product-purchase' %}
+
+    {%- if product.metafields.accentuate.enable_four_up -%}
+        {%- section 'refurbished-four-up' -%}
+    {%- endif -%}
+
+   	{% include 'product-description-new' %}
+
+    {% unless product.metafields.accentuate.disable_reviews %}
+        {% include 'product-reviews-new' %}
+    {% endunless %}
+
+    {% if product.metafields.accentuate.featured_accessories %}
+        {% unless product.type contains 'Accessory' %}
+            {% include 'product-featured', class: 'section-bottom' %}
+        {% endunless %}
+    {% endif %}
+</div>

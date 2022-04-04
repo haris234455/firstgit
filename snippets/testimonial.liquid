@@ -1,0 +1,28 @@
+{%- assign mod_rating = mod_rating | default: blank -%}
+{%- assign mod_text = mod_text | default: blank -%}
+{%- assign mod_author = mod_author | default: blank -%}
+{%- assign mod_class = mod_class | default: blank -%}
+
+{%- capture mod_css -%}
+  testimonial {{ mod_class }}
+{%- endcapture -%}
+
+<div class="{{- mod_css | strip -}}">
+  {%- include 'star-rating',
+    mod_class: 'testimonial__rating'
+    mod_value: mod_rating -%}
+
+  <p class="testimonial__text hurom-h2">
+    {{- mod_text -}}
+  </p>
+
+  <span class="testimonial__author">
+    {{- mod_author -}}
+  </span>
+</div>
+
+{%- assign mod_rating = nil -%}
+{%- assign mod_text = nil -%}
+{%- assign mod_author = nil -%}
+{%- assign mod_class = nil -%}
+{%- assign mod_css = nil -%}

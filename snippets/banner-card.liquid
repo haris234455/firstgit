@@ -1,0 +1,36 @@
+{%- assign mod_image_src = mod_image_src | default: blank -%}
+{%- assign mod_title = mod_title | default: blank -%}
+{%- assign mod_text = mod_text | default: blank -%}
+{%- assign mod_class = mod_class | default: blank -%}
+{%- assign mod_url = mod_url | default: blank -%}
+
+{%- capture mod_css -%}
+  banner-card {{ mod_class }}
+{%- endcapture -%}
+
+{%- if mod_image_src != blank -%}
+  <a href="{{ mod_url }}" class="{{- mod_css -}}">
+    <div class="banner-card__featured ratio">
+      {%- include 'image',
+        mod_loader: false,
+        mod_class: 'banner-card__image',
+        mod_text: '',
+        mod_src: mod_image_src -%}
+    </div>
+
+    {%- if mod_title != blank -%}
+      <div class="banner-card__content">
+        <h2 class="banner-card__title hurom-h2">{{ mod_title }}</h2>
+        {%- if mod_text != blank -%}
+          <p class="banner-card__text">{{ mod_text }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </a>
+{%- endif -%}
+
+{%- assign mod_image_src = nil -%}
+{%- assign mod_title = nil -%}
+{%- assign mod_text = nil -%}
+{%- assign mod_class = nil -%}
+{%- assign mod_url = nil -%}

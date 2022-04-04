@@ -1,0 +1,96 @@
+{% layout 'theme.holidays' %}
+
+{% assign holiday = page.content | strip_html | handleize %}
+
+{% case holiday %}
+	{% when 'pumpkin-orange' %}
+		{% assign color = 'orange' %}
+		{% assign go = 'blue' %}
+		{% assign prev = '/pages/hurom-holidays-fresh-winter-white' %}
+		{% assign next = '/pages/hurom-holidays-frosted-midnight-blue' %}
+	{% when 'frosted-midnight-blue' %}
+		{% assign color = 'blue' %}
+		{% assign go = 'green' %}
+		{% assign prev = '/pages/hurom-holidays-pumpkin-orange' %}
+		{% assign next = '/pages/hurom-holidays-forest-green' %}
+	{% when 'forest-green' %}
+		{% assign color = 'green' %}
+		{% assign go = 'red' %}
+		{% assign prev = '/pages/hurom-holidays-frosted-midnight-blue' %}
+		{% assign next = '/pages/hurom-holidays-bright-berry-red' %}
+	{% when 'bright-berry-red' %}
+		{% assign color = 'red' %}
+		{% assign go = 'gold' %}
+		{% assign prev = '/pages/hurom-holidays-forest-green' %}
+		{% assign next = '/pages/hurom-holidays-glimmering-gold' %}
+	{% when 'glimmering-gold' %}
+		{% assign color = 'gold' %}
+		{% assign go = 'white' %}
+		{% assign prev = '/pages/hurom-holidays-bright-berry-red' %}
+		{% assign next = '/pages/hurom-holidays-fresh-winter-white' %}
+	{% when 'fresh-winter-white' %}
+		{% assign color = 'white' %}
+		{% assign go = 'orange' %}
+		{% assign prev = '/pages/hurom-holidays-glimmering-gold' %}
+		{% assign next = '/pages/hurom-holidays-pumpkin-orange' %}
+{% endcase %}
+
+<script type="text/javascript">
+	{% assign featured_hero = color | prepend: 'holidays-main-featured-' | append: '.jpg' %}
+	{% assign featured_recipe = color | prepend: 'holidays-recipe-featured-' | append: '.jpg' %}
+	{% assign featured_tip = color | prepend: 'holidays-tip-featured-' | append: '.jpg' %}
+	{% assign featured_juicer = color | prepend: 'holidays-juicer-featured-' | append: '.jpg' %}
+	{% assign featured_next = go | prepend: 'holidays-main-featured-' | append: '.jpg' %}
+
+    var images = [
+    	"{{ featured_hero | asset_img_url: '2200x', format: 'pjpg' }}",
+    	"{{ featured_recipe | asset_img_url: '1300x', format: 'pjpg' }}",
+    	"{{ featured_tip | asset_img_url: '800x', format: 'pjpg' }}",
+    	"{{ featured_juicer | asset_img_url: '1400x', format: 'pjpg' }}",
+    	"{{ featured_juicer | asset_img_url: '800x', format: 'pjpg' }}",
+    	"{{ featured_next | asset_img_url: 'x800', format: 'pjpg' }}"
+	];
+
+    for( var i = 0; i < images.length; i++ ) {
+        var preload = new Image();
+        preload.src = images[ i ];
+    }
+
+	{% assign featured_hero = false %}
+	{% assign featured_recipe = false %}
+	{% assign featured_tip = false %}
+	{% assign featured_juicer = false %}
+	{% assign featured_next = false %}
+</script>
+
+<div class="hol-content">
+	<a class="hol-nav is-prev" href="{{ prev }}" title="Previous">
+		<span class="hol-nav__icon is-prev">
+			{% include 'ico-holidays', icon: 'arrow-prev' %}
+		</span>
+		<span class="hidden">Previous</span>
+	</a>
+
+	{% include 'holidays-hero', color: color %}
+
+	{% include 'holidays-intro', color: color %}
+
+	{% include 'holidays-recipe', color: color %}
+
+	{% include 'holidays-tip', color: color %}
+
+	{% include 'holidays-juicer', color: color %}
+
+	{% include 'holidays-next', color: go %}
+
+	<a class="hol-nav is-next" href="{{ next }}" title="Next">
+		<span class="hol-nav__icon is-next">
+			{% include 'ico-holidays', icon: 'arrow-next' %}
+		</span>
+		<span class="hidden">Next</span>
+	</a>
+</div>
+
+{% assign holiday = false %}
+{% assign color = false %}
+{% assign go = false %}

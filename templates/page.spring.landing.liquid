@@ -1,0 +1,83 @@
+<!-- /templates/page.facebook.liquid -->
+
+<div class="index page">
+    {% include 'page-hero', hero_style: 'spring' %}
+
+    {% include 'block-difference' %}
+
+    {% include 'block-quality' %}
+
+    <section class="block-critics">
+        <div class="block-critics__container container-xl">
+            <div class="block-critics__holder">
+                <h2 class="__head">What Critics & Customers Are Saying</h2>
+                <p class="__description">"If you don’t have much experience with juicers, you might think that they’re all the same: You put in some fruit, and out comes juice. But we recently had the opportunity to sample the H-AA, Hurom’s flagship model, and if you’re in the market for a high-end juicer, this one is a game-changer.</p>
+                <a class="__critics" href="#">The Daily Meal"</a>
+            </div>
+
+            <hr data-view="expand-wide">
+
+            <div class="block-critics__holder">
+                <ul class="__review">
+                    <li class="__star"></li>
+                    <li class="__star"></li>
+                    <li class="__star"></li>
+                    <li class="__star"></li>
+                    <li class="__star"></li>
+                </ul>
+                <p class="__description">"I LOVE this juicer! It’s so easy to operate and clean that I use it EVERYDAY… sometimes 2 or 3 times a day. I’ve saved so much money (no longer buying juice from stores) and really enjoy making my own recipes. I even travel with my Hurom Juicer when visiting friends and family so I can turn them onto juicing. Crazy, but that’s how much I love it :)"</p>
+                <span class="__customer" href="#">Catherine B.</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="block-juicers">
+        <div class="block-juicers__container container-m">
+            <div class="block-juicers__title">
+                <h2 class="__head">Available in 3 Fresh Colors</h2>
+                <p class="__lead">Our stylish HP slow juicer will meet all your personal juicing needs. Whether you’re making orange juice, almond milk or sorbets, the HP slow juicer will rise to the challenge. Its compact size ensures it will fit comfortably on any kitchen counter.</p>
+            </div>
+            <div class="block-juicers__group">
+                <a class="__juicer" href="/products/hp-slow-juicer" alt="Learn More on Hurom HP Slow Juicer - Green Mint" onClick="ga('send', 'event', 'Spring Sale Page', 'Clicked: Hurom HP Slow Juicer - Mint Green', 'Referrer: {{ page_title }}')">
+                    <div class="__featured">
+                       <img class="__img" src="{{ 'spring-juicer-featured-1.jpg' | asset_url }}" title="Hurom HP Slow Juicer - Mint Green" alt="Hurom HP Slow Juicer - Mint Green">
+                    </div>
+                    <h3 class="__name">HP Mint Green</h3>
+                </a>
+                <a class="__juicer" href="/products/hp-slow-juicer?variant=23184127367" alt="Learn More on Hurom HP Slow Juicer - Classic White" onClick="ga('send', 'event', 'Spring Sale Page', 'Clicked: Hurom HP Slow Juicer - Classic White', 'Referrer: {{ page_title }}')">
+                    <div class="__featured">
+                       <img class="__img" src="{{ 'spring-juicer-featured-2.jpg' | asset_url }}" title="Hurom HP Slow Juicer - Classic White" alt="Hurom HP Slow Juicer - Classic White">
+                    </div>
+                    <h3 class="__name">HP Classic White</h3>
+                </a>
+                <a class="__juicer" href="/products/hp-slow-juicer?variant=32020105930" alt="Learn More on Hurom HP Slow Juicer - Pastel Pink" onClick="ga('send', 'event', 'Spring Sale Page', 'Clicked: Hurom HP Slow Juicer - Pastel Pink', 'Referrer: {{ page_title }}')">
+                    <div class="__featured">
+                       <img class="__img" src="{{ 'spring-juicer-featured-3.jpg' | asset_url }}" title="Hurom HP Slow Juicer - Pastel Pink" alt="Hurom HP Slow Juicer - Pastel Pink">
+                    </div>
+                    <h3 class="__name">HP Pastel Pink</h3>
+                </a>
+            </div>
+            <a class="block-juicers__link btn-s" href="/products/hp-slow-juicer" alt="Shop HP Slow Juicers" onClick="ga('send', 'event', 'Spring Sale Page', 'Clicked Shop HP Slow Juicers CTA', 'Referrer: {{ page_title }}')">Shop HP Slow Juicers</a>
+        </div>
+    </section>
+
+    <section class="block-newsletter">
+        <i class="__background is-bottom-right"></i>
+        <i class="__background is-bottom-left"></i>
+        <div class="block-newsletter__container container-s" id="spring-newsletter-om">
+            <div id="om-zreppsnakrxlv7ju-holder"></div>
+        </div>
+    </section>
+
+    <section class="block-instagram">
+        <div class="block-instagram__container container-xl">
+            <div class="block-instagram__title fx-2">
+                <h2 class="__head">Follow Us on Instagram</h2>
+                <a class="__link link-s" href="https://www.instagram.com/huromamerica/" alt="@huromamerica" target="_blank">@huromamerica</a>
+            </div>
+            <div class="block-instagram__featured fx-2">
+                <img class="__img" src="{{ 'spring-instagram.jpg' | asset_url }}" alt="Juice made by Hurom slow juicer" title="Juice by Hurom">
+            </div>
+        </div>
+    </section>
+</div>

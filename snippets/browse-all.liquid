@@ -1,0 +1,17 @@
+<!-- /snippets/modules/browse-all.liquid -->
+
+{% case browse-all %}
+    {% when 'contact' %}
+    	{% assign style = 'contact' %}
+        {% assign btn_style = 'btn-s' %}
+    {% when 'collection' %}
+    	{% assign style = 'collection' %}
+        {% assign btn_style = 'link-s' %}
+{% endcase %}
+
+<div class="browse-all browse-all--{{ style }}">
+	<div class="browse-all__container browse-all__container--{{ style }} container">
+		{% if style contains 'collection' %}<hr data-view="expand-wide">{% endif %}
+	    <a class="browse-all__link {{ btn_style }}" href="/collections/all"{% if style contains 'collection' %} data-view="fadein-up"{% endif %} onClick="ga('send', 'event', 'Miscellaneous CTAs', 'Click: Browse All Products', 'Referrer: {{ page_title }}')">{{ 'products.general.browse_all_products' | t }}</a>
+    </div>
+</div>

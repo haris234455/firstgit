@@ -1,0 +1,44 @@
+{%- assign tab_title = product.metafields.accentuate.tab_title | default: blank -%}
+{%- if tab_title != blank -%}
+<section class="product-tab" data-module="product-tab">
+  <div class="container">
+    <div class="product-tab__inner">
+      <nav class="product-tab__nav js-slider-nav">
+        {% for value in product.metafields.accentuate.tab_title %}
+          {%- assign tab_description = product.metafields.accentuate.tab_description[forloop.index0] | default: blank -%}
+          <div class="product-tab__nav-item">
+            <button class="product-tab__nav-button js-product-tab-nav">
+              <h2 class="title-text product-tab__nav-title">{{ value }}</h2>
+              {%- if tab_description != blank -%}
+                <div class="p-secondary product-tab__description">{{ tab_description }}</div>
+              {%- endif -%}
+            </button>
+          </div>
+        {% endfor %}
+      </nav>
+      <div class="product-tab__content js-tab-content">
+        {% for value in product.metafields.accentuate.tab_title %}
+          {%- assign tab_description = product.metafields.accentuate.tab_description[forloop.index0] | default: blank -%}
+          {%- assign tab_image = product.metafields.accentuate.tab_image[forloop.index0] -%}
+          <div class="product-tab__content-item js-tab-content-item">
+            <div class="product-tab__content-item-inner">
+              {%- if tab_image != blank -%}
+                <div class="product-tab__image-ratio ratio">
+                  {%- include 'image',
+                    mod_class: 'product-tab__image',
+                    mod_loader: false,
+                    mod_text: title,
+                    mod_src: tab_image -%}
+                </div>
+              {%- endif -%}
+              {%- if tab_description != blank -%}
+                <div class="p-secondary product-tab__description">{{ tab_description }}</div>
+              {%- endif -%}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{%- endif -%}

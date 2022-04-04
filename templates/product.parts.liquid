@@ -1,0 +1,34 @@
+<!-- /templates/product.parts.liquid -->
+
+{% comment %} Settings {% endcomment %}
+{% assign module = product.metafields.accentuate %}
+{% assign preorder = module.product_pre_order_enable %}
+{% assign preorder_limit = module.product_pre_order_limit | plus: 0 %}
+{% assign product_notification = module.product_notification %}
+
+{% assign current_variant = product.selected_or_first_available_variant %}
+
+{%- capture product_handles -%}
+  {%- for tag in product.tags -%}
+    {%- if tag contains 'juicer_' -%}
+      {{ tag | remove: 'juicer_' }}{%- unless forloop.last -%},{%- endunless -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+
+<div class="product page" itemscope itemtype="http://schema.org/Product">
+  {% include 'product-purchase' %}
+
+  {% include 'product-description-new',
+    classes: 'product-description--parts'
+  %}
+
+  {% render 'product-three-up', product_handles: product_handles %}
+
+  {% include 'product-media',
+    class: 'product-media--video'
+    accentuate: product.metafields.product_video,
+    title: product.metafields.product_video.title,
+    disable_lifestyle: true
+  %}
+</div>

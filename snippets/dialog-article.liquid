@@ -1,0 +1,30 @@
+<div id="article-{{ id }}" class="dialog landing-modal dialog-article">
+    <span class="dialog__overlay"></span>
+    <div class="dialog__content">
+        <div class="dialog-article__wrapper">
+            <a class="dialog-article__close-btn" data-dialog-close>
+                <span class="fallback">Close</span>
+            </a>
+            <div class="dialog-article__inner">
+                <div class="dialog-article__header">
+                    <h3 class="h1 dialog-article__headline">{{ title }}</h3>
+
+                    {% include 'recipe-get-time' %}
+                    {% unless recipe_time == '' %}
+                        <div class="dialog-article__icon">
+                            <svg width="16px" height="16px" viewBox="0 0 16 16">
+                                <use xlink:href="#ico-clock"></use>
+                            </svg>
+                        </div>
+                        <div class="dialog-article__tag">
+                            <span>{{recipe_time}}</span>
+                        </div>
+                    {% endunless %}
+                </div>
+                <div class="dialog-article__content">
+                    {{ content }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

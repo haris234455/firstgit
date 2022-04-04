@@ -1,0 +1,39 @@
+{% assign featured = color | prepend: 'holidays-tip-featured-' | append: '.jpg' %}
+
+{% case color %}
+	{% when 'orange' %}
+		{% assign title = 'Friendsgiving' %}
+		{% assign content = 'This juice is great when paired with … a Friendsgiving brunch. Whether it’s a cozy recovery with close friends or a more lavish affair, this drink will add zest, especially with a splash of something bubbly.' %}
+	{% when 'blue' %}
+		{% assign title = 'Pie Making' %}
+		{% assign content = 'This drink is great when when paired with … pie making. Ease into festive holiday mood with some good old fashioned pie making. Whether it’s apple, pumpkin, cherry or blueberry, pies are fun to make and even more fun to eat.' %}
+	{% when 'white' %}
+		{% assign title = 'Ice-Skating' %}
+		{% assign content = 'This drink is great when paired with … ice-skating. Another way to alleviate the feeling of having eaten too much is exercising. Ice-skating keeps that exercise in the holiday spirit. Find an open air rink for extra holiday points.' %}
+	{% when 'red' %}
+		{% assign title = 'A Winter Afternoon Walk' %}
+		{% assign content = 'This cleansing juice is great when paired with … a winter afternoon walk. Bundle up and head outside for some brisk, fresh air. Visit your local park, or find a new neighborhood to explore with a good friend.' %}
+	{% when 'gold' %}
+		{% assign title = 'Making homemade holiday decorations' %}
+		{% assign content = 'This juice is great when paired with … making homemade holiday decorations. Get crafty on a cold afternoon and create your own ornaments for the season: from glittering pinecones to paper-chains and handmade stars.' %}
+	{% when 'green' %}
+		{% assign title = "Going To The Farmers Market" %}
+		{% assign content = 'This juice is great when paired with … going to the farmers market. Fresh, locally-sourced fruit and vegetables make the best holiday meals (and juices). Find a farmers market near you and head with friends and family.' %}
+{% endcase %}
+
+<section class="hol-tip section is-{{ color }}">
+	<div class="container-l">
+		<div class="hol-tip__holder">
+			<div class="hol-tip__content">
+				<h2 class="h3 hfancy hf-left-5 mg-10 is-{{ color }}">This Juice Pairs Well With</h2>
+				<h3 class="h1 mg-20">{{ title }}</h3>
+				<p class="p1 center mw-480">{{ content }}</p>
+			</div>
+			<div class="hol-tip__featured js-lazy" data-src="{{ featured | asset_img_url: '800x', format: 'pjpg' }}"></div>
+		</div>
+	</div>
+</section>
+
+{% assign featured = false %}
+{% assign title = false %}
+{% assign content = false %}

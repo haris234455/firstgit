@@ -1,0 +1,48 @@
+<!-- /templates/page.seasons.liquid -->
+
+{% assign seasons_pinterest = 'share-pinterest-seasons.jpg'
+	| asset_url
+	| prepend: 'https://pinterest.com/pin/create/button/?media='
+	| append: '&description=' %}
+
+<div class="seasons page">
+	{% include 'sticky-share',
+		share_facebook: 'https://www.facebook.com/sharer/sharer.php?u=https%3A//www.hurom.com/pages/seasonal-juicing-ingredients',
+		share_twitter: 'https://twitter.com/home?status=Do%20you%20ever%20find%20yourself%20wondering%20what%20ingredients%20you%20should%20use%20to%20make%20your%20favorite%20juice?%20http%3A//bit.ly/2ewI0Ji',
+		share_pinterest: seasons_pinterest,
+		share_email: 'mailto:?&subject=Guide to Seasonal Juicing Ingredients&body=Do%20you%20ever%20find%20yourself%20wondering%20what%20ingredients%20you%20should%20use%20to%20make%20your%20favorite%20juice?%20It%20can%20be%20tricky%20knowing%20what%E2%80%99s%20in%20season%20and%20what%20will%20give%20you%20the%20most%20nutrients%20in%20your%20juice.%20Well%20thanks%20to%20our%20Seasonal%20Ingredient%20Infographics%20it%E2%80%99s%20easier%20than%20ever%20to%20know%20exactly%20what%20ingredients%20you%20should%20be%20using,%20for%20the%20right%20time%20of%20year.%0A%0Ahttps%3A//www.hurom.com/pages/seasonal-juicing-ingredients',
+		ga_category: 'All Seasons Landing Page',
+		ga_referrer: 'Guide to Seasonal Juicing Ingredients' %}
+
+	<div class="seasons__container container-ml">
+		<div class="seasons-title">
+			<h2 class="seasons-title__head h1">{{ page.title }}</h2>
+			<p class="seasons-title__lead">{{ page.content | strip_html }}</p>
+		</div>
+
+		{% include 'seasons-grid' %}
+	</div>
+</div>
+
+{% assign seasons = 'autumn,winter,spring,summer' | split: ',' %}
+
+{% for season in seasons %}
+	{% case season %}
+		{% when 'autumn' %}
+			{% assign modal_twitter = 'https://twitter.com/home?status=The%20best%20ingredients%20for%20when%20the%20weather%20starts%20getting%20cooler.%20http%3A//bit.ly/2epocJq' %}
+		{% when 'winter' %}
+			{% assign modal_twitter = 'https://twitter.com/home?status=All%20your%20favorite%20ingredients%20for%20making%20juice%20in%20a%20winter%20wonderland.%20http%3A//bit.ly/2ebOB1f' %}
+		{% when 'spring' %}
+			{% assign modal_twitter = 'https://twitter.com/home?status=Spring%20doesn%E2%80%99t%20just%20bring%20rain%20showers,%20it%20also%20has%20an%20great%20selection%20of%20juicing%20ingredients.%20http%3A//bit.ly/2dqEO5N' %}
+		{% when 'summer' %}
+			{% assign modal_twitter = 'https://twitter.com/home?status=The%20perfect%20selection%20of%20ingredients%20to%20make%20juice%20while%20the%20sands%20between%20your%20toes.%20http%3A//bit.ly/2e4I7xE' %}
+	{% endcase %}
+
+	{% assign infographic = 'infographic-ingredient-' | append: season | append: '.jpg' %}
+
+	{% include 'dialog-infographic' %}
+{% endfor %}
+
+{% assign seasons_pinterest = false %}
+{% assign modal_twitter = false %}
+{% assign season = false %}

@@ -1,0 +1,31 @@
+{%- assign mod_name = mod_name | default: false -%}
+{%- assign mod_value = mod_value | default: false -%}
+{%- assign mod_label = mod_label | default: false -%}
+{%- assign mod_checked = mod_checked | default: false -%}
+{%- assign mod_class = mod_class | default: blank -%}
+{%- assign mod_required = mod_required | default: false -%}
+{%- assign mod_change = mod_change | default: false -%}
+
+{%- capture mod_css -%}
+  checkbox {{ mod_class }}
+{%- endcapture -%}
+
+<label class="{{- mod_css | strip -}}">
+  <input
+    type="checkbox"
+    {% if mod_name %}name="{{mod_name}}"{% endif %}
+    {% if mod_value %}value="{{mod_value}}"{% endif %}
+    {% if mod_checked %}:checked="{{mod_checked}}"{% endif %}
+    {% if mod_required%}required="{{mod_required}}"{% endif %}
+    {% if mod_change %}@change="{{mod_change}}"{% endif %} />
+  <span class="pointer checkbox__label">{{mod_label}}</span>
+</label>
+
+{%- assign mod_name = nil -%}
+{%- assign mod_value = nil -%}
+{%- assign mod_label = nil -%}
+{%- assign mod_checked = nil -%}
+{%- assign mod_class = nil -%}
+{%- assign mod_css = nil -%}
+{%- assign mod_required = nil -%}
+{%- assign mod_change = nil -%}

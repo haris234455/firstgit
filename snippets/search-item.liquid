@@ -1,0 +1,16 @@
+<!-- /snippets/components/search-item.liquid -->
+
+<article class="search-item" data-module="search-item">
+    <div class="search-item__description{% unless item.featured_image %} search-item__description--blank{% endunless %}">
+        <a class="search-item__link" href="{{ item.url }}">{{ item.title }}</a>
+        {% assign search_content = item.content | strip_html %}
+        {% unless search_content == '' %}
+        	<p class="search-item__content">{{ search_content | truncate: 165 }}</p>
+        {% endunless %}
+    </div>
+    <div class="search-item__featured{% unless item.featured_image %} search-item__featured--blank{% endunless %}" data-href="{{ item.url }}">
+    	{% if item.featured_image %}
+        	<img class="search-item__img" src="{{ item.featured_image.src | img_url: 'grande' }}" alt="{{ item.title }}" title="{{ item.title }}">
+    	{% endif %}
+    </div>
+</article>

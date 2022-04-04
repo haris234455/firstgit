@@ -1,0 +1,317 @@
+<!-- Structured Data -->
+
+{%- case settings.country -%}
+  {%- when 'US' -%}
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Corporation",
+        "name": "Hurom",
+        "url": "https://www.hurom.com/",
+        "logo": "https:{{ 'checkout_logo_16.png' | file_url }}",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-800-253-2140",
+          "contactType": "customer service"
+        },
+        "sameAs": [
+          "https://www.facebook.com/huromslowjuicer",
+          "https://twitter.com/huromjuicers",
+          "https://www.instagram.com/huromamerica",
+          "https://www.youtube.com/channel/UC3OsBIsGfe_0AfpNapRdU2Q",
+          "https://www.pinterest.com/huromslowjuicer/"
+        ]
+      }
+    </script>
+  {%- when 'CA' -%}
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Corporation",
+        "name": "Hurom",
+        "url": "https://www.hurom.ca/",
+        "logo": "https:{{ 'checkout_logo_16.png' | file_url }}",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-800-253-2140",
+          "contactType": "customer service"
+        },
+        "sameAs": [
+          "https://www.facebook.com/huromslowjuicer",
+          "https://twitter.com/huromjuicers",
+          "https://www.instagram.com/huromamerica",
+          "https://www.youtube.com/channel/UC3OsBIsGfe_0AfpNapRdU2Q",
+          "https://www.pinterest.com/huromslowjuicer/"
+        ]
+      }
+    </script>
+{%- endcase -%}
+
+{%- if template contains 'recipe' -%}
+  {%- case settings.country -%}
+    {%- when 'US' -%}
+      <script type="application/ld+json">
+        {
+          "@context": "http://schema.org/",
+          "@type": "Recipe",
+          "name": "Blueberry Smoothie",
+          "image": "https://cdn.shopify.com/s/files/1/0861/9974/files/Stocksy_txpcbf96a5ejqh100_Large_131069.jpg?7055929510548842635",
+          "description": "Blueberries are known for its ability to lower active oxygen levels which in turn help lower stress and fight early signs of aging. Pears are an organic acid that help relieve fatigue. Combining the two creates delicious smoothie that provides energy while keeping your skin wrinkle free.",
+          "keywords": "how to make a Blueberry Smoothie",
+          "author": {
+            "@type": "Person",
+            "name": "Hurom"
+          },
+          "datePublished": "2019-01-01",
+          "prepTime": "PT5M",
+          "cookTime": "PT5M",
+          "totalTime": "PT10M",
+          "recipeCategory": "appetizer",
+          "recipeCuisine": "Healthy",
+          "recipeYield": "2",
+          "nutrition": {
+            "@type": "NutritionInformation",
+            "calories": ""
+          },
+          "recipeIngredient": [
+            "1 Large Pear",
+            "1/2 up of Grapes",
+            "1 cup of blueberries"
+          ],
+          "recipeInstructions": [{
+            "@type": "HowToStep",
+            "text": "Wash the pear thoroughly, and remove the stem and seeds. Slice into appropriates sizes."
+          }, {
+            "@type": "HowToStep",
+            "text": "Remove grapes from stem, and then wash grapes and blueberries thoroughly."
+          }, {
+            "@type": "HowToStep",
+            "text": "Add pear, grapes, and blueberries to juicer."
+          }, {
+            "@type": "HowToStep",
+            "text": "Enjoy! Pour over ice, if desired."
+          }],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "bestRating": "5",
+            "worstRating": "4",
+            "ratingCount": "353"
+          }
+        }
+      </script>
+
+      <script type="application/ld+json">
+        {
+          "@context": "http://schema.org/",
+          "@type": "Recipe",
+          "name": "Raspberry Mango Pineapple Smoothie",
+          "image": "https://cdn.shopify.com/s/files/1/0861/9974/files/apple_cucumber.jpg?7055929510548842635",
+          "description": "In need of a stress reliever? Try this raspberry, mango, and pineapple trio to help relieve stress and aid digestion. This energizing juice recipe contains plenty of vitamin C, vitamin B, and bromelain to improve metabolism and stabilize nerves.",
+          "keywords": "How to make Raspberry Mango Pineapple smoothie",
+          "author": {
+            "@type": "Person",
+            "name": "Hurom"
+          },
+          "datePublished": "2019-01-02",
+          "prepTime": "PT5M",
+          "cookTime": "PT5M",
+          "totalTime": "PT10M",
+          "recipeCategory": "appetizer",
+          "recipeCuisine": "Healthy",
+          "recipeYield": "2",
+          "nutrition": {
+            "@type": "NutritionInformation",
+            "servingSize": "2",
+            "calories": ""
+          },
+          "recipeIngredient": [
+            "2 cups of pineapple chunks",
+            "1/3 cup of slicked mango",
+            "1/8 cup of raspberry"
+          ],
+          "recipeInstructions": [{
+            "@type": "HowToStep",
+            "text": "Remove the peel and core of pineapple, and also remove peel and seed of mango. Slice into appropriate sizes."
+          }, {
+            "@type": "HowToStep",
+            "text": "Add half of the pineapple to juicer, then add mango, raspberries, and the remaining half of pineapple."
+          }, {
+            "@type": "HowToStep",
+            "text": "Enjoy! Pour over ice, if desired."
+          }],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "bestRating": "5",
+            "worstRating": "4",
+            "ratingCount": "353"
+          }
+        }
+      </script>
+
+      <script type="application/ld+json">
+        {
+          "@context": "http://schema.org/",
+          "@type": "Recipe",
+          "name": "Clever Nuts Smoothie",
+          "image": "https://cdn.shopify.com/s/files/1/0861/9974/files/lemon-carrot.jpg?7055929510548842635",
+          "description": "Craving something nutty? Try this banana, coconut, and almond recipe. In addition to the delicious taste, you can expect to strengthen immunity with banana, improve brain functionality with almonds, and replenish electrolytes with coconut.",
+          "keywords": "How to make an almond smoothie",
+          "author": {
+            "@type": "Person",
+            "name": "Hurom"
+          },
+          "datePublished": "2019-02-01",
+          "prepTime": "PT5M",
+          "cookTime": "PT5M",
+          "totalTime": "PT10M",
+          "recipeCategory": "appetizer",
+          "recipeCuisine": "Healthy",
+          "recipeYield": "2",
+          "nutrition": {
+            "@type": "NutritionInformation",
+            "calories": ""
+          },
+          "recipeIngredient": [
+            "1 cup of coconut water",
+            "handful of whole almonds",
+            "1/2 banana"
+          ],
+          "recipeInstructions": [{
+            "@type": "HowToStep",
+            "text": "Soak almonds in water"
+          }, {
+            "@type": "HowToStep",
+            "text": "Peel banana and slice into appropriate sizes"
+          }, {
+            "@type": "HowToStep",
+            "text": "Pour in coconut water then put in almonds one spoonful at a time"
+          }, {
+            "@type": "HowToStep",
+            "text": "Add banana to juicer"
+          }, {
+            "@type": "HowToStep",
+            "text": "Enjoy! Pour over ice, if desired."
+          }]
+        }
+      </script>
+
+      <script type="application/ld+json">
+        {
+          "@context": "http://schema.org/",
+          "@type": "Recipe",
+          "name": "Pomegranate, Orange, & Pineapple Smoothie",
+          "image": "https://cdn.shopify.com/s/files/1/0861/9974/files/5.png?7055929510548842635",
+          "description": "Pomegranate and oranges are packed with vitamin C, potassium, and folate which release energy steadily over time to keep going all day long.",
+          "keywords": "",
+          "author": {
+            "@type": "Person",
+            "name": ""
+          },
+          "prepTime": "",
+          "cookTime": "",
+          "totalTime": "",
+          "nutrition": {
+            "@type": "NutritionInformation",
+            "calories": ""
+          },
+          "recipeIngredient": [
+            "1/2 pomegranate",
+            "1 orange",
+            "1/2 cup of pineapple"
+          ],
+          "recipeInstructions": [{
+            "@type": "HowToStep",
+            "text": "Cut pomegranate into four pieces, and separate seeds into a bowl."
+          },{
+            "@type": "HowToStep",
+            "text": "Peel orange and remove peel and core of the pineapple. Slice into appropriate sizes."
+          },{
+            "@type": "HowToStep",
+            "text": "Add all of ingredients into a juicer."
+          },{
+            "@type": "HowToStep",
+            "text": "Enjoy! Pout over ice, if desired."
+          }],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.7",
+            "bestRating": "5",
+            "worstRating": "4",
+            "ratingCount": "353"
+          }
+        }
+      </script>
+  {%- endcase -%}
+{%- endif -%}
+
+{%- comment -%}
+  Structure Data for Recipe only
+{%- endcomment -%}
+{%- if article and article.url contains '/blogs/recipes' -%}
+  {%- assign fields = article.metafields.schema -%}
+  {%- assign recipe_title = fields.name | default: article.title -%}
+  {%- assign recipe_image_src = article.image.src | img_url: 'master' -%}
+  {%- assign recipe_image = fields.image | default: recipe_image_src -%}
+  {%- assign recipe_author = fields.author | default: article.author -%}
+  {%- assign recipe_description = fields.description | default: article.excerpt -%}
+  {%- if fields.recipe_ingredients.size > 0 -%}
+    {%- capture recipe_ingredients -%}
+      [
+      {%- for recipe in fields.recipe_ingredients -%}
+        {{ recipe | json }}{%- unless forloop.last -%},{%- endunless -%}
+      {%- endfor -%}
+      ]
+    {%- endcapture -%}
+  {%- endif -%}
+  {%- assign recipe_instructions = fields.recipe_instructions | default: nil -%}
+  {%- assign recipe_prep_time = fields.prep_time | default: nil -%}
+  {%- assign recipe_cook_time = fields.cook_time | default: nil -%}
+  {%- assign recipe_total_time = fields.total_time | default: nil -%}
+  {%- assign recipe_yield = fields.recipe_yield | default: nil -%}
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org/",
+      "@type": "Recipe",
+      "name": {{ recipe_title | json }},
+      "image": {{ recipe_image | json }},
+      "author": {{ recipe_author | json }}
+      {%- if recipe_description != blank -%}
+      ,"description": {{ recipe_description | json }}
+      {%- endif -%}
+      {%- if recipe_ingredients != blank -%}
+      ,"recipeIngredient": {{ recipe_ingredients }}
+      {%- endif -%}
+      {%- if recipe_instructions != blank -%}
+      ,"recipeInstructions": {{ recipe_instructions | json }}
+      {%- endif -%}
+      {%- if recipe_prep_time != blank -%}
+      ,"prepTime": {{ recipe_prep_time | json }}
+      {%- endif -%}
+      {%- if recipe_cook_time != blank -%}
+      ,"cookTime": {{ recipe_cook_time | json }}
+      {%- endif -%}
+      {%- if recipe_total_time != blank -%}
+      ,"totalTime": {{ recipe_total_time | json }}
+      {%- endif -%}
+      {%- if recipe_yield != blank -%}
+      ,"recipeYield": {{ recipe_yield | json }}
+      {%- endif -%}
+    }
+  </script>
+
+  {%- assign fields = nil -%}
+  {%- assign recipe_title = nil -%}
+  {%- assign recipe_image_src = nil -%}
+  {%- assign recipe_image = nil -%}
+  {%- assign recipe_author = nil -%}
+  {%- assign recipe_description = nil -%}
+  {%- assign recipe_ingredients = nil -%}
+  {%- assign recipe_instructions = nil -%}
+  {%- assign recipe_prep_time = nil -%}
+  {%- assign recipe_cook_time = nil -%}
+  {%- assign recipe_total_time = nil -%}
+  {%- assign recipe_yield = nil -%}
+{%- endif -%}

@@ -1,0 +1,38 @@
+<!-- /snippets/modules/seasons-grid.liquid -->
+
+<section class="seasons-grid">
+	{% include 'seasons-item', season: 'autumn', title: 'Autumn', description: 'The best ingredients for when the weather starts getting cooler.' %}
+
+	{% include 'seasons-item', season: 'winter', title: 'Winter', description: 'All your favorite ingredients for making juice in a winter wonderland.' %}
+
+	{% include 'seasons-item', season: 'spring', title: 'Spring', description: 'Spring doesn’t just bring rain showers, it also has an great selection of juicing ingredients.' %}
+
+	{% include 'seasons-item', season: 'summer', title: 'Summer', description: 'The perfect selection of ingredients to make juice while the sands between your toes.' %}
+</section>
+
+<style>
+  .seasons-item__container.is-autumn:before {
+    background-image: url({{ 'bg-season-autumn-top.jpg' | asset_url }});
+  }
+  .seasons-item__container.is-autumn:after {
+    background-image: url({{ 'bg-season-autumn-bottom.jpg' | asset_url }});
+  }
+  .seasons-item__container.is-winter:before {
+    background-image: url({{ 'bg-season-winter-top.jpg' | asset_url }});
+  }
+  .seasons-item__container.is-winter:after {
+    background-image: url({{ 'bg-season-winter-bottom.jpg' | asset_url }});
+  }
+  .seasons-item__container.is-spring:before {
+    background-image: url({{ 'bg-season-spring-top.jpg' | asset_url }});
+  }
+  .seasons-item__container.is-spring:after {
+    background-image: url({{ 'bg-season-spring-bottom.jpg' | asset_url }});
+  }
+  .seasons-item__container.is-autumn:before {
+    background-image: url({{ 'bg-season-summer-top.jpg' | asset_url }});
+  }
+  .seasons-item__container.is-autumn:after {
+    background-image: url({{ 'bg-season-summer-bottom.jpg' | asset_url }});
+  }
+</style>

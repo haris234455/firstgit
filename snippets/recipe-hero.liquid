@@ -1,0 +1,57 @@
+<!-- /templates/snippets/recipe-hero.liquid -->
+
+<section class="recipe-hero">
+    <div class="__featured" style="background-image:url({{ 'recipe-hero-featured.jpg' | asset_url }});">
+    	<div class="__container container-sl">
+    		<div class="recipe-hero__title" data-view="fadein-up">
+    			<h2 class="__head h1">Healthy & Tasty Juice Recipes</h2>
+    			<p class="__lead">We've curated and categorized 23 unique and delicious juice recipes so you can get the most out of your Hurom slow juicer. Kickstart your day with a fresh glass of juice and explore new flavors and ingredients.</p>
+    			<a class="__link link-s" alt="Explore Recipes" data-anchor="#recipe-summary" data-module="anchor" onClick="ga('send', 'event', 'Recipe Landing Page', 'Clicked Explore Recipes', 'Referrer: Juice Recipes')">Explore Recipes</a>
+    		</div>
+    	</div>
+    </div>
+    <nav id="recipe-summary" class="__nav">
+    	<div class="__container container-sl">
+			<a class="recipe-hero__link" alt="Explore Rejuvenate Recipes" data-anchor="#rejuvenate-recipe" data-module="anchor" onClick="ga('send', 'event', 'Recipe Landing Page', 'Clicked Explore Rejuvenate', 'Referrer: Juice Recipes')">
+				<i class="__ico is-rejuvenate b-lazy" data-src="{{ 'ico-recipes-sprite.svg' | asset_url }}"></i>
+				<div class="__holder">
+					<h3 class="__title h4">Rejuvenate</h3>
+					<p class="__sub">Fight fatigue and keep focused throughout the day.</p>
+					<span class="__cta link-s" href="#" alt="Explore">Explore</span>
+				</div>
+			</a>
+			<a class="recipe-hero__link" alt="Explore Detox Recipes" data-anchor="#detox-recipe" data-module="anchor" onClick="ga('send', 'event', 'Recipe Landing Page', 'Clicked Explore Detox', 'Referrer: Juice Recipes')">
+				<i class="__ico is-detox b-lazy" data-src="{{ 'ico-recipes-sprite.svg' | asset_url }}"></i>
+				<div class="__holder">
+					<h3 class="__title h4">Detox</h3>
+					<p class="__sub">Give your body a healthy cleanse.</p>
+					<span class="__cta link-s" href="#" alt="Explore">Explore</span>
+				</div>
+			</a>
+			<a class="recipe-hero__link" alt="Explore Low Calorie Recipes" data-anchor="#low-calorie-recipe" data-module="anchor" onClick="ga('send', 'event', 'Recipe Landing Page', 'Clicked Explore Low Calorie', 'Referrer: Juice Recipes')">
+				<i class="__ico is-low-calorie b-lazy" data-src="{{ 'ico-recipes-sprite.svg' | asset_url }}"></i>
+				<div class="__holder">
+					<h3 class="__title h4">Low Calorie</h3>
+					<p class="__sub">Enjoy natural recipes without excessive calories.</p>
+					<span class="__cta link-s" href="#" alt="Explore">Explore</span>
+				</div>
+			</a>
+			<a class="recipe-hero__link" alt="Explore Adventurous Recipes" data-anchor="#adventurous-recipe" data-module="anchor" onClick="ga('send', 'event', 'Recipe Landing Page', 'Clicked Explore Adventurous', 'Referrer: Juice Recipes')">
+				<i class="__ico is-adventurous b-lazy" data-src="{{ 'ico-recipes-sprite.svg' | asset_url }}"></i>
+				<div class="__holder">
+					<h3 class="__title h4">Adventurous</h3>
+					<p class="__sub">Expand your horizons with unusual ingredient combos.</p>
+					<span class="__cta link-s">Explore</span>
+				</div>
+			</a>
+			<a class="recipe-hero__link" alt="Explore Immunity Support Recipes" data-anchor="#immunity-recipe" data-module="anchor" onClick="ga('send', 'event', 'Recipe Landing Page', 'Clicked Explore Immunity', 'Referrer: Juice Recipes')">
+				<i class="__ico is-immunity b-lazy" data-src="{{ 'ico-recipes-sprite.svg' | asset_url }}"></i>
+				<div class="__holder">
+					<h3 class="__title h4">Immunity Support</h3>
+					<p class="__sub">Strengthen your body with a natural vitamin boost.</p>
+					<span class="__cta link-s">Explore</span>
+				</div>
+			</a>
+		</div>
+    </nav>
+</section>

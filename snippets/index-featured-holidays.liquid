@@ -1,0 +1,23 @@
+<!-- /snippets/modules/index-featured.liquid -->
+
+<div class="product-grid">
+	{% assign delay = 0 %}
+
+    {% for product in collections.all.products %}
+    	{% case product.handle %}
+    		{% when settings.home_featured_product_1 %}
+    			{% assign is_featured = true %}
+    		{% when settings.home_featured_product_2 %}
+    			{% assign is_featured = true %}
+    		{% when settings.home_featured_product_3 %}
+    			{% assign is_featured = true %}
+    	{% endcase %}
+
+    	{% if is_featured %}
+    		{% include 'product-item-holidays' %}
+		    {% assign delay = delay | plus: 0.25 %}
+		{% endif %}
+		
+		{% assign is_featured = false %}
+    {% endfor %}
+</div>

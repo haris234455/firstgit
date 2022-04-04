@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
+  <head>
+    {% include 'friendbuy' %}
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <meta name="referrer" content="origin">
+
+    <title>{{ page_title }}</title>
+
+    {{ content_for_header }}
+
+    {{ checkout_stylesheets }}
+    {{ checkout_scripts }}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    {{ 'checkout.scss.css' | asset_url | stylesheet_tag }}
+
+    {% include 'tracking-pinterest' %}
+    {% include 'tracking-google-gtm' %}
+
+    <!-- Route Code Edited 05/28/2020 -->
+    <script type="text/javascript" src="https://cdn.routeapp.io/route-widget-shopify/stable/route-widget-shopify-stable.min.js"></script>
+    <style>
+         .route-widget {
+         justify-content: flex-end !important;
+          }
+    </style>
+	<!-- Route Code End -->
+
+  </head>
+  <body>
+    {{ skip_to_content_link }}
+
+    <div class="banner" data-header>
+      <div class="wrap">
+        {{ content_for_logo }}
+      </div>
+    </div>
+
+    {{ order_summary_toggle }}
+
+    <div class="content" data-content>
+      <div class="wrap">
+        <div class="main" role="main">
+          <div class="main__header">
+            {{ content_for_logo }}
+            {{ breadcrumb }}
+            {{ alternative_payment_methods }}
+          </div>
+          <div class="main__content">
+            {{ content_for_layout }}
+          </div>
+          <div class="main__footer">
+            {{ content_for_footer }}
+          </div>
+        </div>
+        <div class="sidebar" role="complementary">
+          <div class="sidebar__header">
+            {{ content_for_logo }}
+          </div>
+          <div class="sidebar__content">
+            {{ content_for_order_summary }}
+            {% include 'friendbuy-checkout' %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function findClosest(el, cls) {
+        while ((el = el.parentElement) && !el.classList.contains(cls));
+        return el;
+      }
+
+      function checkPO() {
+        var errorMsgEl = document.getElementById('error-for-custom'),
+            errorMsg = '<p class="field_message field_message--error" id="error-for-custom" style="padding:10px 0;color:#e32c2b">' +
+                "We cannot ship to PO Boxes at this time. Please enter a valid shipping address." +
+                '</p>',
+            inputVal = this.value,
+            regExPO = new RegExp('[PO.]*\\s?B(ox)?.*\\d+', 'i');
+        console.log(inputVal);
+
+        if (inputVal.match(regExPO)) {
+          this.value = "";
+          if (errorMsgEl != null) {
+            errorMsgEl.outerHTML = "";
+          }
+
+          var thisField = findClosest(this, 'field');
+          thisField.classList.add("field--error");
+          thisField.insertAdjacentHTML('beforeend', errorMsg);
+        }
+      }
+
+      $(document).on('page:load page:change', function() {
+        document.getElementById('checkout_shipping_address_address1').addEventListener('focusout', checkPO, true);
+        document.getElementById('checkout_shipping_address_address2').addEventListener('focusout', checkPO, true);
+      });
+    </script>
+
+    {{ tracking_code }}
+
+    {% include 'zendesk' %}
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<!-- /snippets/modules/promo-banner.liquid -->
+
+<style>
+  .promo-banner {
+    background-color: {{ settings.promo_banner_background_color }};
+    color: {{ settings.promo_banner_text_color }};
+  }
+</style>
+
+<div class="promo-banner{% unless template contains 'page.compare-juicers' or template contains 'product' %} promo-banner--fixed{% endunless %}{% if template contains 'product' or template == 'index' %} promo-banner--fixed-mobile{% endif %} js-promo" data-module="promo-banner">
+	<div class="promo-banner__container container">
+		<p class="promo-banner__content" title="{{ settings.promo_banner_title | append: ' ' | append: settings.promo_banner_content | append: ' ' | append: settings.promo_banner_code | strip_html }}">
+			<span class="promo-banner__title">{{ settings.promo_banner_title }}</span> {{ settings.promo_banner_content }} <span class="promo-banner__code">{{ settings.promo_banner_code }}</span>
+		</p>
+	</div>
+	<span tabindex="0" role="button" aria-label="close banner" class="promo-banner__close" data-promo-close></span>
+</div>

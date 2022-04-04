@@ -1,0 +1,31 @@
+<!-- /snippets/components/seasons-item.liquid -->
+
+{% assign season = season | default: 'default' %}
+{% assign title = title | default: 'Title' %}
+{% assign description = description | default: 'Description' %}
+
+<article class="seasons-item is-{{ season }}">
+    <div class="seasons-item__container is-{{ season }}">
+    	<div class="seasons-item__wrapper">
+	        <h3 class="seasons-item__title h1">{{ title }}</h3>
+	        <p class="seasons-item__description">{{ description }}</p>
+	        <div class="seasons-item__nav">
+	            <a class="seasons-item__link link-s"
+	            	data-dialog="modal-ingredient-{{ season }}"
+	            	data-module="modal"
+	            	onclick="ga('send', 'event', 'All Seasons Landing Page', 'Clicked {{ season | capitalize }} - View Infographic', 'Referrer: {{ page_title }}')">
+	            		View Infographic
+	            </a>
+	            <a class="seasons-item__link link-s"
+	            	href="/pages/{{ title | handleize }}-juicing-ingredients"
+	            	onclick="ga('send', 'event', 'All Seasons Landing Page', 'Clicked {{ season | capitalize }} - Explore Ingredients', 'Referrer: {{ page_title }}')">
+	            		Explore Ingredients
+	            </a>
+	        </div>
+	    </div>
+    </div>
+</article>
+
+{% assign season = false %}
+{% assign title = false %}
+{% assign description = false %}

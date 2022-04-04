@@ -1,0 +1,75 @@
+<!-- /sections/product-action.liquid -->
+{% assign metafields = product.metafields.accentuate %}
+
+{%- capture title -%}
+  {%- if metafields.social_title -%}
+    {{- metafields.social_title -}}
+  {%- else -%}
+    {{- section.settings.title -}}
+  {%- endif -%}
+{%- endcapture -%}
+{%- capture showcase_id -%}
+  {%- if metafields.social_showcase_id -%}
+    {{- metafields.social_showcase_id | abs -}}
+  {%- else -%}
+    {{- section.settings.showcase_id | abs -}}
+  {%- endif -%}
+{%- endcapture -%}
+{%- capture showcase_columns -%}
+  {%- if metafields.social_showcase_columns -%}
+    {{- metafields.social_showcase_columns | abs -}}
+  {%- else -%}
+    {{- section.settings.showcase_columns | abs -}}
+  {%- endif -%}
+{%- endcapture -%}
+{%- capture showcase_rows -%}
+  {%- if metafields.social_showcase_rows -%}
+    {{- metafields.social_showcase_rows | abs -}}
+  {%- else -%}
+    {{- section.settings.showcase_rows | abs -}}
+  {%- endif -%}
+{%- endcapture -%}
+
+{% if showcase_id %}
+  <section class="product-action section-bottom">
+      <div class="product-action__container container-xl">
+          <div class="product-action__title">
+              <h2 class="product-action__head">{{ title }}</h2>
+          </div>
+          <script src="https://showcase.abovemarket.com/embed/gallery/{{ showcase_id }}" data-gallery-id="{{ showcase_id }}" data-columns="{{ showcase_columns }}" data-rows="{{ showcase_rows }}"></script>
+      </div>
+  </section>
+{% endif %}
+
+{% schema %}
+    {
+        "name": "Action Section",
+        "settings": [ {
+            "id": "title",
+            "type": "text",
+            "label": "Title",
+            "default": "See Hurom in Action"
+        }, {
+            "id": "showcase_id",
+            "type": "text",
+            "label": "Showcase ID",
+            "info": "Enter the ID of the Showcase gallery. The ID for a Showcase gallery can be found in the URL of a Showcase gallery when editing it."
+        }, {
+            "type": "range",
+            "id": "showcase_columns",
+            "min": 1,
+            "max": 6,
+            "step": 1,
+            "label": "Showcase columns",
+            "default": 5
+        }, {
+            "type": "range",
+            "id": "showcase_rows",
+            "min": 1,
+            "max": 6,
+            "step": 1,
+            "label": "Showcase rows",
+            "default": 1
+        } ]
+    }
+{% endschema %}

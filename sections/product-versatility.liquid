@@ -1,0 +1,348 @@
+<!-- /sections/product-versatility.liquid -->
+{% assign metafields = product.metafields.accentuate %}
+
+{% capture title %}
+  {% if metafields.versatility_title %}
+    {{- metafields.versatility_title -}}
+  {% else %}
+    {{- section.settings.title -}}
+  {% endif %}
+{% endcapture %}
+{% capture mobile_title %}
+  {% if metafields.versatility_mobile_title %}
+    {{- metafields.versatility_mobile_title -}}
+  {% else %}
+    {{- section.settings.mobile_title -}}
+  {% endif %}
+{% endcapture %}
+{% capture body %}
+  {% if metafields.versatility_body %}
+    {{- metafields.versatility_body -}}
+  {% else %}
+    {{- section.settings.body -}}
+  {% endif %}
+{% endcapture %}
+{% capture block_1_icon %}
+  {% if metafields.versatility_block_1_icon_cust %}
+    {{- metafields.versatility_block_1_icon_cust -}}
+  {% elsif metafields.versatility_block_1_icon %}
+    {{- metafields.versatility_block_1_icon | append: '.svg' | asset_url -}}
+  {% else %}
+    {{- section.settings.block_1_icon | append: '.svg' | asset_url -}}
+  {% endif %}
+{% endcapture %}
+{% capture block_1_label %}
+  {% if metafields.versatility_block_1_label %}
+    {{- metafields.versatility_block_1_label -}}
+  {% elsif section.settings.block_1_label != blank %}
+    {{- section.settings.block_1_label -}}
+  {% elsif metafields.versatility_block_1_icon %}
+    {{- metafields.versatility_block_1_icon -}}
+  {% else %}
+    {{- section.settings.block_1_icon -}}
+  {% endif %}
+{% endcapture %}
+{% capture block_2_icon %}
+  {% if metafields.versatility_block_2_icon_cust %}
+    {{- metafields.versatility_block_2_icon_cust -}}
+  {% elsif metafields.versatility_block_2_icon %}
+    {{- metafields.versatility_block_2_icon | append: '.svg' | asset_url -}}
+  {% else %}
+    {{- section.settings.block_2_icon | append: '.svg' | asset_url -}}
+  {% endif %}
+{% endcapture %}
+{% capture block_2_label %}
+  {% if metafields.versatility_block_2_label %}
+    {{- metafields.versatility_block_2_label -}}
+  {% elsif section.settings.block_2_label != blank %}
+    {{- section.settings.block_2_label -}}
+  {% else %}
+    {{- section.settings.block_2_icon -}}
+  {% endif %}
+{% endcapture %}
+{% capture block_3_icon %}
+  {% if metafields.versatility_block_3_icon_cust %}
+    {{- metafields.versatility_block_3_icon_cust -}}
+  {% elsif metafields.versatility_block_3_icon %}
+    {{- metafields.versatility_block_3_icon | append: '.svg' | asset_url -}}
+  {% else %}
+    {{- section.settings.block_3_icon | append: '.svg' | asset_url -}}
+  {% endif %}
+{% endcapture %}
+{% capture block_3_label %}
+  {% if metafields.versatility_block_3_label %}
+    {{- metafields.versatility_block_3_label -}}
+  {% elsif section.settings.block_3_label != blank %}
+    {{- section.settings.block_3_label -}}
+  {% else %}
+    {{- section.settings.block_3_icon -}}
+  {% endif %}
+{% endcapture %}
+{% capture block_4_icon %}
+  {% if metafields.versatility_block_4_icon_cust %}
+    {{- metafields.versatility_block_4_icon_cust -}}
+  {% elsif metafields.versatility_block_4_icon %}
+    {{- metafields.versatility_block_4_icon | append: '.svg' | asset_url -}}
+  {% else %}
+    {{- section.settings.block_4_icon | append: '.svg' | asset_url -}}
+  {% endif %}
+{% endcapture %}
+{% capture block_4_label %}
+  {% if metafields.versatility_block_4_label %}
+    {{- metafields.versatility_block_4_label -}}
+  {% elsif section.settings.block_4_label != blank %}
+    {{- section.settings.block_4_label -}}
+  {% else %}
+    {{- section.settings.block_4_icon -}}
+  {% endif %}
+{% endcapture %}
+
+<section class="product-versatility">
+    <div class="product-versatility__container container">
+        <div class="product-versatility__title">
+            <h2 class="product-versatility__head">{{ title }}</h2>
+            <h2 class="product-versatility__head--mobile">{{ mobile_title }}</h2>
+            <p class="product-versatility__lead">{{ body }}</p>
+        </div>
+        <div class="product-versatility__holder">
+            <div class="product-versatility__block fx-4">
+                <i class="product-versatility__food" style="background-image: url({{ block_1_icon }});"></i>
+                <p class="product-versatility__sub">{{ block_1_label }}</p>
+            </div>
+            <div class="product-versatility__block fx-4">
+                <i class="product-versatility__food" style="background-image: url({{ block_2_icon }});"></i>
+                <p class="product-versatility__sub">{{ block_2_label }}</p>
+            </div>
+            <div class="product-versatility__block fx-4">
+                <i class="product-versatility__food" style="background-image: url({{ block_3_icon }});"></i>
+                <p class="product-versatility__sub">{{ block_3_label }}</p>
+            </div>
+            <div class="product-versatility__block fx-4">
+                <i class="product-versatility__food" style="background-image: url({{ block_4_icon }});"></i>
+                <p class="product-versatility__sub">{{ block_4_label }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+    {
+        "name": "Versatility Section",
+        "settings": [ {
+            "id": "title",
+            "type": "text",
+            "label": "Title",
+            "default": "Versatility"
+        }, {
+            "id": "mobile_title",
+            "type": "text",
+            "label": "Mobile Title",
+            "default": "Juice with Confidence"
+        }, {
+            "id": "body",
+            "type": "textarea",
+            "label": "Body",
+            "default": "What do you love in your juice? Do you like sweet and savory fruits like apples and oranges? Or crisp leafy greens like kale and spinach? How about refreshing almond milk? With a Hurom juicer, you can confidently pick and choose from a wide range of ingredients."
+        }, {
+            "id": "block_1_icon",
+            "type": "select",
+            "label": "Block 1 Icon",
+            "options": [
+              { "value": "Almonds", "label": "Almonds"},
+              { "value": "Apple", "label": "Apple"},
+              { "value": "Banana", "label": "Banana"},
+              { "value": "Basil", "label": "Basil"},
+              { "value": "Beet", "label": "Beet"},
+              { "value": "Bell Pepper", "label": "Bell Pepper"},
+              { "value": "Blueberry", "label": "Blueberry"},
+              { "value": "Bok Choy", "label": "Bok Choy"},
+              { "value": "Broccoli", "label": "Broccoli"},
+              { "value": "Cabbage", "label": "Cabbage"},
+              { "value": "Carrots", "label": "Carrots"},
+              { "value": "Celery", "label": "Celery"},
+              { "value": "Cherry Tomato", "label": "Cherry Tomato"},
+              { "value": "Chia Seeds", "label": "Chia Seeds"},
+              { "value": "Coconut Water", "label": "Coconut Water"},
+              { "value": "Cranberry", "label": "Cranberry"},
+              { "value": "Cucumber", "label": "Cucumber"},
+              { "value": "Dragon Fruit", "label": "Dragon Fruit"},
+              { "value": "Grapefruit", "label": "Grapefruit"},
+              { "value": "Honey", "label": "Honey"},
+              { "value": "Kiwi", "label": "Kiwi"},
+              { "value": "Lemon", "label": "Lemon"},
+              { "value": "Mango", "label": "Mango"},
+              { "value": "Melon", "label": "Melon"},
+              { "value": "Milk", "label": "Milk"},
+              { "value": "Orange", "label": "Orange"},
+              { "value": "Pear", "label": "Pear"},
+              { "value": "Persimmon", "label": "Persimmon"},
+              { "value": "Pineapple", "label": "Pineapple"},
+              { "value": "Pomegranate", "label": "Pomegranate"},
+              { "value": "Raspberry", "label": "Raspberry"},
+              { "value": "Red Grapes", "label": "Red Grapes"},
+              { "value": "Spinach", "label": "Spinach"},
+              { "value": "Squash", "label": "Squash"},
+              { "value": "Strawberry", "label": "Strawberry"},
+              { "value": "Sweet Potato", "label": "Sweet Potato"},
+              { "value": "Wheatgrass", "label": "Wheatgrass"},
+              { "value": "White Bean", "label": "White Bean"},
+              { "value": "White Grapes", "label": "White Grapes"}
+            ],
+            "default": "Apple"
+        }, {
+            "id": "block_1_label",
+            "type": "text",
+            "label": "Block 1 Label"
+        }, {
+            "id": "block_2_icon",
+            "type": "select",
+            "label": "Block 2 Icon",
+            "options": [
+              { "value": "Almonds", "label": "Almonds"},
+              { "value": "Apple", "label": "Apple"},
+              { "value": "Banana", "label": "Banana"},
+              { "value": "Basil", "label": "Basil"},
+              { "value": "Beet", "label": "Beet"},
+              { "value": "Bell Pepper", "label": "Bell Pepper"},
+              { "value": "Blueberry", "label": "Blueberry"},
+              { "value": "Bok Choy", "label": "Bok Choy"},
+              { "value": "Broccoli", "label": "Broccoli"},
+              { "value": "Cabbage", "label": "Cabbage"},
+              { "value": "Carrots", "label": "Carrots"},
+              { "value": "Celery", "label": "Celery"},
+              { "value": "Cherry Tomato", "label": "Cherry Tomato"},
+              { "value": "Chia Seeds", "label": "Chia Seeds"},
+              { "value": "Coconut Water", "label": "Coconut Water"},
+              { "value": "Cranberry", "label": "Cranberry"},
+              { "value": "Cucumber", "label": "Cucumber"},
+              { "value": "Dragon Fruit", "label": "Dragon Fruit"},
+              { "value": "Grapefruit", "label": "Grapefruit"},
+              { "value": "Honey", "label": "Honey"},
+              { "value": "Kiwi", "label": "Kiwi"},
+              { "value": "Lemon", "label": "Lemon"},
+              { "value": "Mango", "label": "Mango"},
+              { "value": "Melon", "label": "Melon"},
+              { "value": "Milk", "label": "Milk"},
+              { "value": "Orange", "label": "Orange"},
+              { "value": "Pear", "label": "Pear"},
+              { "value": "Persimmon", "label": "Persimmon"},
+              { "value": "Pineapple", "label": "Pineapple"},
+              { "value": "Pomegranate", "label": "Pomegranate"},
+              { "value": "Raspberry", "label": "Raspberry"},
+              { "value": "Red Grapes", "label": "Red Grapes"},
+              { "value": "Spinach", "label": "Spinach"},
+              { "value": "Squash", "label": "Squash"},
+              { "value": "Strawberry", "label": "Strawberry"},
+              { "value": "Sweet Potato", "label": "Sweet Potato"},
+              { "value": "Wheatgrass", "label": "Wheatgrass"},
+              { "value": "White Bean", "label": "White Bean"},
+              { "value": "White Grapes", "label": "White Grapes"}
+            ],
+            "default": "Spinach"
+        }, {
+            "id": "block_2_label",
+            "type": "text",
+            "label": "Block 2 Label"
+        }, {
+            "id": "block_3_icon",
+            "type": "select",
+            "label": "Block 3 Icon",
+            "options": [
+              { "value": "Almonds", "label": "Almonds"},
+              { "value": "Apple", "label": "Apple"},
+              { "value": "Banana", "label": "Banana"},
+              { "value": "Basil", "label": "Basil"},
+              { "value": "Beet", "label": "Beet"},
+              { "value": "Bell Pepper", "label": "Bell Pepper"},
+              { "value": "Blueberry", "label": "Blueberry"},
+              { "value": "Bok Choy", "label": "Bok Choy"},
+              { "value": "Broccoli", "label": "Broccoli"},
+              { "value": "Cabbage", "label": "Cabbage"},
+              { "value": "Carrots", "label": "Carrots"},
+              { "value": "Celery", "label": "Celery"},
+              { "value": "Cherry Tomato", "label": "Cherry Tomato"},
+              { "value": "Chia Seeds", "label": "Chia Seeds"},
+              { "value": "Coconut Water", "label": "Coconut Water"},
+              { "value": "Cranberry", "label": "Cranberry"},
+              { "value": "Cucumber", "label": "Cucumber"},
+              { "value": "Dragon Fruit", "label": "Dragon Fruit"},
+              { "value": "Grapefruit", "label": "Grapefruit"},
+              { "value": "Honey", "label": "Honey"},
+              { "value": "Kiwi", "label": "Kiwi"},
+              { "value": "Lemon", "label": "Lemon"},
+              { "value": "Mango", "label": "Mango"},
+              { "value": "Melon", "label": "Melon"},
+              { "value": "Milk", "label": "Milk"},
+              { "value": "Orange", "label": "Orange"},
+              { "value": "Pear", "label": "Pear"},
+              { "value": "Persimmon", "label": "Persimmon"},
+              { "value": "Pineapple", "label": "Pineapple"},
+              { "value": "Pomegranate", "label": "Pomegranate"},
+              { "value": "Raspberry", "label": "Raspberry"},
+              { "value": "Red Grapes", "label": "Red Grapes"},
+              { "value": "Spinach", "label": "Spinach"},
+              { "value": "Squash", "label": "Squash"},
+              { "value": "Strawberry", "label": "Strawberry"},
+              { "value": "Sweet Potato", "label": "Sweet Potato"},
+              { "value": "Wheatgrass", "label": "Wheatgrass"},
+              { "value": "White Bean", "label": "White Bean"},
+              { "value": "White Grapes", "label": "White Grapes"}
+            ],
+            "default": "Almonds"
+        }, {
+            "id": "block_3_label",
+            "type": "text",
+            "label": "Block 3 Label"
+        }, {
+            "id": "block_4_icon",
+            "type": "select",
+            "label": "Block 4 Icon",
+            "options": [
+              { "value": "Almonds", "label": "Almonds"},
+              { "value": "Apple", "label": "Apple"},
+              { "value": "Banana", "label": "Banana"},
+              { "value": "Basil", "label": "Basil"},
+              { "value": "Beet", "label": "Beet"},
+              { "value": "Bell Pepper", "label": "Bell Pepper"},
+              { "value": "Blueberry", "label": "Blueberry"},
+              { "value": "Bok Choy", "label": "Bok Choy"},
+              { "value": "Broccoli", "label": "Broccoli"},
+              { "value": "Cabbage", "label": "Cabbage"},
+              { "value": "Carrots", "label": "Carrots"},
+              { "value": "Celery", "label": "Celery"},
+              { "value": "Cherry Tomato", "label": "Cherry Tomato"},
+              { "value": "Chia Seeds", "label": "Chia Seeds"},
+              { "value": "Coconut Water", "label": "Coconut Water"},
+              { "value": "Cranberry", "label": "Cranberry"},
+              { "value": "Cucumber", "label": "Cucumber"},
+              { "value": "Dragon Fruit", "label": "Dragon Fruit"},
+              { "value": "Grapefruit", "label": "Grapefruit"},
+              { "value": "Honey", "label": "Honey"},
+              { "value": "Kiwi", "label": "Kiwi"},
+              { "value": "Lemon", "label": "Lemon"},
+              { "value": "Mango", "label": "Mango"},
+              { "value": "Melon", "label": "Melon"},
+              { "value": "Milk", "label": "Milk"},
+              { "value": "Orange", "label": "Orange"},
+              { "value": "Pear", "label": "Pear"},
+              { "value": "Persimmon", "label": "Persimmon"},
+              { "value": "Pineapple", "label": "Pineapple"},
+              { "value": "Pomegranate", "label": "Pomegranate"},
+              { "value": "Raspberry", "label": "Raspberry"},
+              { "value": "Red Grapes", "label": "Red Grapes"},
+              { "value": "Spinach", "label": "Spinach"},
+              { "value": "Squash", "label": "Squash"},
+              { "value": "Strawberry", "label": "Strawberry"},
+              { "value": "Sweet Potato", "label": "Sweet Potato"},
+              { "value": "Wheatgrass", "label": "Wheatgrass"},
+              { "value": "White Bean", "label": "White Bean"},
+              { "value": "White Grapes", "label": "White Grapes"}
+            ],
+            "default": "Banana"
+        }, {
+            "id": "block_4_label",
+            "type": "text",
+            "label": "Block 4 Label"
+        } ]
+    }
+{% endschema %}

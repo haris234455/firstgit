@@ -1,0 +1,18 @@
+<!-- /snippets/components/pagination.liquid -->
+
+{% if paginate.pages > 1 %}
+    <div class="pagination">
+        <a class="pagination-nav__link pagination-nav__link--prev {% unless paginate.previous %}pagination-nav__link--inactive{% endunless %}" {% if paginate.previous %}href="{{ paginate.previous.url }}"{% endif %}>
+        </a>
+        <ul class="pagination__list">
+            {% for part in paginate.parts %}
+                <li class="pagination__item">
+                    <a class="pagination__link {% unless part.is_link %}pagination__link--active{% endunless %}" {% if part.is_link %}href="{{ part.url }}"{% endif %}>
+                        {{ part.title }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+        <a class="pagination-nav__link pagination-nav__link--next {% unless paginate.next %}pagination-nav__link--inactive{% endunless %}" {% if paginate.next %}href="{{ paginate.next.url }}"{% endif %}></a>
+    </div>
+{% endif %}

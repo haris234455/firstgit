@@ -1,0 +1,24 @@
+{%- assign icon = icon | default: nil -%}
+{%- assign title = title | default: nil -%}
+{%- assign description = description | default: nil -%}
+{%- assign class = class | default: nil -%}
+{%- assign attributes = attributes | default: nil -%}
+
+<div
+  class="plp-parts-callout {{ class }}"
+  {%- if attributes != blank -%}{{- attributes -}}{%- endif -%}
+>
+  <div class="plp-parts-callout__inner">
+    <img
+      class="plp-parts-callout__icon"
+      src="{{- icon | img_url: '100x' -}}"
+      alt="{{- icon.alt -}}"
+    />
+    <h4 class="plp-parts-callout__title label">
+      {{- title -}}
+    </h4>
+    <div class="plp-parts-callout__description p2">
+      {{- description -}}
+    </div>
+  </div>
+</div>

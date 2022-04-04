@@ -1,0 +1,36 @@
+{%- assign mod_title = mod_title | default: blank -%}
+{%- assign mod_featured_tile_image_src = mod_featured_tile_image_src | default: blank -%}
+{%- assign mod_featured_tile_text = mod_featured_tile_text | default: blank -%}
+{%- assign mod_featured_tile_title = mod_featured_tile_title | default: blank -%}
+{%- assign mod_featured_tile_url = mod_featured_tile_url | default: blank -%}
+{%- assign mod_tiles = mod_tiles | default: blank -%}
+
+<div class="tile-wall">
+  <div class="tile-wall__container container-sp">
+    {%- if mod_title != blank -%}
+      <h2 class="tile-wall__title hurom-h2">
+        {{- mod_title -}}
+      </h2>
+    {%- endif -%}
+
+    <div class="tile-wall__content">
+      {%- include 'featured-tile',
+        mod_class: 'tile-wall__content-left',
+        mod_title: mod_featured_tile_title,
+        mod_text: mod_featured_tile_text,
+        mod_url: mod_featured_tile_url,
+        mod_image_src: mod_featured_tile_image_src -%}
+
+      {%- include 'tile-grid',
+        mod_class: 'tile-wall__content-right',
+        mod_tiles: mod_tiles -%}
+    </div>
+  </div>
+</div>
+
+{%- assign mod_title = nil -%}
+{%- assign mod_featured_tile_image_src = nil -%}
+{%- assign mod_featured_tile_text = nil -%}
+{%- assign mod_featured_tile_title = nil -%}
+{%- assign mod_featured_tile_url = nil -%}
+{%- assign mod_tiles = nil -%}

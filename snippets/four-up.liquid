@@ -1,0 +1,149 @@
+<!-- /snippets/base/modules/four-up.liquid -->
+{%- if template contains 'collection' -%}
+  {%- assign metafields = collection.metafields.accentuate -%}
+{%- elsif template contains 'product' -%}
+  {%- assign metafields = product.metafields.accentuate -%}
+{%- endif -%}
+{%- assign fields = section.settings -%}
+
+{%- capture block_1_icon -%}
+  {%- if metafields.four_up_block_1_icon_custom -%}
+    {{- metafields.four_up_block_1_icon_custom -}}
+  {%- elsif metafields.four_up_block_1_icon -%}
+    {{- metafields.four_up_block_1_icon | asset_url -}}
+  {%- elsif fields['block_1_icon_custom'] -%}
+    {{- fields['block_1_icon_custom'] | img_url: '100x100' -}}
+  {% else %}
+    {{- fields['block_1_icon'] | asset_url -}}
+  {%- endif -%}
+{%- endcapture -%}
+{%- capture block_1_sub -%}
+  {%- if metafields.four_up_block_1_sub -%}
+    {{- metafields.four_up_block_1_sub -}}
+  {%- else -%}
+    {{- fields['block_1_sub'] -}}
+  {% endif %}
+{%- endcapture -%}
+{%- capture block_1_desc -%}
+  {%- if metafields.four_up_block_1_desc -%}
+    {{- metafields.four_up_block_1_desc -}}
+  {%- else -%}
+    {{- fields['block_1_desc'] -}}
+  {% endif %}
+{%- endcapture -%}
+{%- capture block_2_icon -%}
+  {%- if metafields.four_up_block_2_icon_custom -%}
+    {{- metafields.four_up_block_2_icon_custom -}}
+  {%- elsif metafields.four_up_block_2_icon -%}
+    {{- metafields.four_up_block_2_icon | asset_url -}}
+  {%- elsif fields['block_2_icon_custom'] -%}
+    {{- fields['block_2_icon_custom'] | img_url: '100x100' -}}
+  {% else %}
+    {{- fields['block_2_icon'] | asset_url -}}
+  {%- endif -%}
+{%- endcapture -%}
+{%- capture block_2_sub -%}
+  {%- if metafields.four_up_block_2_sub -%}
+    {{- metafields.four_up_block_2_sub -}}
+  {%- else -%}
+    {{- fields['block_2_sub'] -}}
+  {% endif %}
+{%- endcapture -%}
+{%- capture block_2_desc -%}
+  {%- if metafields.four_up_block_2_desc -%}
+    {{- metafields.four_up_block_2_desc -}}
+  {%- else -%}
+    {{- fields['block_2_desc'] -}}
+  {% endif %}
+{%- endcapture -%}
+{%- capture block_3_icon -%}
+  {%- if metafields.four_up_block_3_icon_custom -%}
+    {{- metafields.four_up_block_3_icon_custom -}}
+  {%- elsif metafields.four_up_block_3_icon -%}
+    {{- metafields.four_up_block_3_icon | asset_url -}}
+  {%- elsif fields['block_3_icon_custom'] -%}
+    {{- fields['block_3_icon_custom'] | img_url: '100x100' -}}
+  {% else %}
+    {{- fields['block_3_icon'] | asset_url -}}
+  {%- endif -%}
+{%- endcapture -%}
+{%- capture block_3_sub -%}
+  {%- if metafields.four_up_block_3_sub -%}
+    {{- metafields.four_up_block_3_sub -}}
+  {%- else -%}
+    {{- fields['block_3_sub'] -}}
+  {% endif %}
+{%- endcapture -%}
+{%- capture block_3_desc -%}
+  {%- if metafields.four_up_block_3_desc -%}
+    {{- metafields.four_up_block_3_desc -}}
+  {%- else -%}
+    {{- fields['block_3_desc'] -}}
+  {% endif %}
+{%- endcapture -%}
+{%- capture block_4_icon -%}
+  {%- if metafields.four_up_block_4_icon_custom -%}
+    {{- metafields.four_up_block_4_icon_custom -}}
+  {%- elsif metafields.four_up_block_4_icon -%}
+    {{- metafields.four_up_block_4_icon | asset_url -}}
+  {%- elsif fields['block_4_icon_custom'] -%}
+    {{- fields['block_4_icon_custom'] | img_url: '100x100' -}}
+  {% else %}
+    {{- fields['block_4_icon'] | asset_url -}}
+  {%- endif -%}
+{%- endcapture -%}
+{%- capture block_4_sub -%}
+  {%- if metafields.four_up_block_4_sub -%}
+    {{- metafields.four_up_block_4_sub -}}
+  {%- else -%}
+    {{- fields['block_4_sub'] -}}
+  {% endif %}
+{%- endcapture -%}
+{%- capture block_4_desc -%}
+  {%- if metafields.four_up_block_4_desc -%}
+    {{- metafields.four_up_block_4_desc -}}
+  {%- else -%}
+    {{- fields['block_4_desc'] -}}
+  {% endif %}
+{%- endcapture -%}
+
+<section class="four-up">
+  <div class="four-up__container container-xl">
+    <div class="four-up__carousel js-carousel-4-up" data-module="carousel">
+      <div class="four-up__block js-slide">
+        <i class="four-up__icon" style="background: url({{ block_1_icon }}) no-repeat scroll center / contain transparent;"></i>
+        <p class="four-up__sub">{{ block_1_sub }}</p>
+        <p class="four-up__desc">{{ block_1_desc }}</p>
+      </div>
+      <div class="four-up__block js-slide">
+        <i class="four-up__icon" style="background: url({{ block_2_icon }}) no-repeat scroll center / contain transparent;"></i>
+        <p class="four-up__sub">{{ block_2_sub }}</p>
+        <p class="four-up__desc">{{ block_2_desc }}</p>
+      </div>
+      <div class="four-up__block js-slide">
+        <i class="four-up__icon" style="background: url({{ block_3_icon }}) no-repeat scroll center / contain transparent;"></i>
+        <p class="four-up__sub">{{ block_3_sub }}</p>
+        <p class="four-up__desc">{{ block_3_desc }}</p>
+      </div>
+      <div class="four-up__block js-slide">
+        <i class="four-up__icon" style="background: url({{ block_4_icon }}) no-repeat scroll center / contain transparent;"></i>
+        <p class="four-up__sub">{{ block_4_sub }}</p>
+        <p class="four-up__desc">{{ block_4_desc }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- assign metafields = false -%}
+{%- assign block_1_icon = false -%}
+{%- assign block_1_sub = false -%}
+{%- assign block_1_desc = false -%}
+{%- assign block_2_icon = false -%}
+{%- assign block_2_sub = false -%}
+{%- assign block_2_desc = false -%}
+{%- assign block_3_icon = false -%}
+{%- assign block_3_sub = false -%}
+{%- assign block_3_desc = false -%}
+{%- assign block_4_icon = false -%}
+{%- assign block_4_sub = false -%}
+{%- assign block_4_desc = false -%}

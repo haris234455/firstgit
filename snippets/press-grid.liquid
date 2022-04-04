@@ -1,0 +1,14 @@
+<!-- /snippets/modules/press-grid.liquid -->
+
+{% paginate blog.articles by 12 %}
+	<div class="press-grid">
+		<div class="press-grid__container container-l" data-module="press-grid">
+			{% for article in blog.articles %}
+				{% include 'press-item' %}
+			{% endfor %}
+			<div class="press-grid__pagination">
+				{% include 'pagination' %}
+			</div>
+		</div>
+	</div>
+{% endpaginate %}

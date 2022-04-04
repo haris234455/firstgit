@@ -1,0 +1,32 @@
+{%- assign mod_value = mod_value | default: 0 -%}
+{%- assign mod_class = mod_class | default: blank -%}
+
+{%- capture mod_css -%}
+  star-rating {{ mod_class }}
+{%- endcapture -%}
+
+<div class="{{- mod_css | strip -}}">
+  <ul class="star-rating__list">
+    {%- for i in (1..5) -%}
+      {%- assign j = i | minus: 1 -%}
+
+      <li class="star-rating__item">
+        <i class="star-rating__icon">
+          {%- if i <= mod_value -%}
+            {%- include 'icon' with 'icon-star-full' -%}
+          {%- elsif i > mod_value and mod_value > j -%}
+            {%- include 'icon' with 'icon-star-half' -%}
+          {%- else -%}
+            {%- include 'icon' with 'icon-star-empty' -%}
+          {%- endif -%}
+        </i>
+      </li>
+
+      {%- assign j = nil -%}
+    {%- endfor -%}
+  </ul>
+</div>
+
+{%- assign mod_value = nil -%}
+{%- assign mod_class = nil -%}
+{%- assign mod_css = nil -%}
