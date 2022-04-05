@@ -512,6 +512,7 @@
           "enable_overlay": false,
           "text_color": "light",
           "background": "image",
+          "image_desktop": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg",
           "video_url": "https:\/\/player.vimeo.com\/external\/276908465.hd.mp4?s=8a8e3cbe14e01d7d57376ff5150a5c094bda7501&profile_id=175"
         }
       },
