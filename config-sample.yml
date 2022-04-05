@@ -1,0 +1,24 @@
+development:
+  theme_id: THEME_ID
+  api_key: API_KEY
+  password: API_PASS
+  store: SHOPIFY_URL
+  ignore_files:
+    - settings_data.json
+    - locales/en.default.json
+staging:
+  theme_id: THEME_ID
+  api_key: API_KEY
+  password: API_PASS
+  store: SHOPIFY_URL
+  ignore_files:
+    - settings_data.json
+    - locales/en.default.json
+production:
+  theme_id: THEME_ID
+  api_key: API_KEY
+  password: API_PASS
+  store: SHOPIFY_URL
+  ignore_files:
+    - settings_data.json
+    - locales/en.default.json

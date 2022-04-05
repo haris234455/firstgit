@@ -141,10 +141,3 @@
 @import "../../modules/product-three-up/product-three-up.css";
 @import "../../modules/product-tab/product-tab.css";
 @import "../../modules/product-description-tabs/product-description-tabs.css";
-
-
-/****My-css****/
- .btn.hero__cta, .hero__link:before {
-    background-color: #000000 !important;
-    color: #ffffff;
-}
