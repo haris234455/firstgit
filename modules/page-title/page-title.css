@@ -1,0 +1,12 @@
+.page-title {
+  margin: 0 auto;
+  max-width: var(--page-title-max);
+  width: 100%;
+  text-align: center;
+}
+.page-title__head {
+  margin-bottom: 0;
+}
+.page-title__lead {
+  margin-top: 15px;
+}

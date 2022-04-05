@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic page needs ================================================== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>{{ page_title }} | {{ shop.name }}</title>
+    <meta property="description" content="{{ page_description }}">
+    {% include 'favicons' %}
+    {% include 'meta-social' %}
+    {% include 'meta-helpers' %}
+
+    <!-- Header hook for plugins ================================================== -->
+    {{ content_for_header }}
+    <script src="https://use.typekit.net/htz1omf.js"></script>
+    <script>try{Typekit.load({ async: false });}catch(e){}</script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <script>
+      var SHOPIFY_CDN = "{{ 'test.jpg' | asset_url }}".replace(/test.jpg\?\d*/,'');
+    </script>
+    {%- if settings.is_dev_mode -%}
+      {{ '/dev/main.js' | script_tag }}
+    {%- else -%}
+      {{ 'holidays.min.css' | asset_url | stylesheet_tag }}
+    {%- endif -%}
+
+    <!-- Tracking ================================================== -->
+    {% include 'tracking-head' %}
+
+    <!-- Google Shopping ================================================== -->
+    <meta name="google-site-verification" content="cTeP1UfFmDVqdxOFTVqCq9DzxgpCfHmdmAIQwphZsJs" />
+</head>
+
+<body class="no-touch">
+    <main class="main" data-module="b-lazy">
+        {% include 'holidays-header' %}
+
+        {{ content_for_layout }}
+    </main>
+
+    {%- unless settings.is_dev_mode-%}
+      {{ 'main.js' | asset_url | script_tag }}
+    {%- endunless -%}
+</body>
+</html>

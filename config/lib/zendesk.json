@@ -1,0 +1,11 @@
+{
+  "name": "Zendesk",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "widget_embed_code",
+      "label": "Widget Embed code",
+      "default": "<script id=\"ze-snippet\" src=\"https://static.zdassets.com/ekr/snippet.js?key=ff82c46f-0e39-4f63-9fac-6e4541147fef\"> </script>"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{%- assign title = title | default: nil -%}
+{%- assign description = description | default: nil -%}
+
+<div
+  class="plp-parts-header"
+  :key="generateKey('header')"
+  is="plp-parts-header"
+  inline-template
+>
+  <div>
+    <h1 class="plp-parts-header__title h2">
+      <template v-if="title">
+        ${title}
+      </template>
+      <template v-else>
+        {{- title -}}
+      </template>
+    </h1>
+    <div
+      v-if="!products.length"
+      class="plp-parts-header__description p1"
+    >
+      {{- description -}}
+    </slot>
+    </div>
+  </div>
+</div>

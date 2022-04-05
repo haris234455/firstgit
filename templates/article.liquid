@@ -1,0 +1,18 @@
+<!-- /templates/article.liquid -->
+
+{% assign back_press = article.url | remove: "world"%}
+<div class="article page">
+    <div class="article__container container-s">
+        <header class="page-title" data-view="fadein-down">
+            <h1 class="page-title__head">{{ article.title }}</h1>
+            <p class="page-title__lead">{{ article.published_at | date: format: 'month_day_year' }}</p>
+        </header>
+        <section class="page-content" data-view="fadein-up" data-module="press-article">
+            {{ article.content }}
+        </section>
+
+        {%- if article.metafields.accentuate.enable_back_link -%}
+            {% include 'press-return' %}
+        {%- endif -%}
+    </div>
+</div>

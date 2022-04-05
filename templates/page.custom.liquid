@@ -1,0 +1,82 @@
+{% assign metafields = page.metafields.accentuate -%}
+
+<style>
+  /*Secondary Button Override*/
+  .btn-s:hover {
+    {% if metafields['btn_bg_color'] != blank %}
+      background-color: {{- metafields['btn_bg_color'] -}} !important;
+      border-color: {{- metafields['btn_bg_color'] -}} !important;
+    {% endif %}
+    {% if metafields['btn_color'] != blank %}
+      color: {{- metafields['btn_color'] -}} !important;
+    {% endif %}
+  }
+  /*OptinMonster Button Override*/
+  html div#page-hero-om .fb-hero-field-submit,
+  html div.custom-newsletter-om .fb-hero-field-submit {
+    position: relative;
+    {% if metafields['btn_color'] != blank %}
+      color: {{ metafields['btn_color'] }} !important;
+    {% endif %}
+    {% if metafields['btn_bg_color'] != blank %}
+      background-color: {{ metafields['btn_bg_color'] }} !important;
+    {% endif %}
+    transition: box-shadow 0.2s ease-in-out;
+    box-shadow: 0 0 300px rgba(0,0,0,0) inset;
+  }
+  html div#page-hero-om .fb-hero-field-submit:hover,
+  html div.custom-newsletter-om .fb-hero-field-submit:hover {
+    box-shadow: 0 0 300px rgba(0,0,0,.15) inset;
+  }
+  html div#page-hero-om .fb-hero-field-email:focus,
+  html div.custom-newsletter-om .fb-hero-field-email:focus {
+    border-color: #9B9B9B;
+  }
+  /*OptinMonster Header Disable (TEMP)*/
+  #fb-hero-header, #fb-hero-content {
+    display: none !important;
+  }
+  #fb-hero-body:before {
+    display: none !important;
+  }
+</style>
+
+<div class="index page" id="custom-template">
+  {%- include 'page-hero', hero_style: 'custom' -%}
+
+  {%- include 'custom-newsletter-bar',
+    disable: metafields['disable_newsletter_bar']
+    text: metafields['newsletter_bar_text'],
+    optinmonster_id: metafields['newsletter_bar_om_id'] -%}
+
+  {% unless metafields['disable_difference'] %}
+    {% include 'block-difference' %}
+  {% endunless %}
+
+  {% unless metafields['disable_quality'] %}
+    {% include 'block-quality' %}
+  {% endunless %}
+
+  {% unless metafields['disable_critics'] %}
+    {% include 'block-critics' %}
+  {% endunless %}
+
+  {% unless metafields['disable_juicers'] %}
+    <hr data-view="expand-wide">
+
+    {% include 'block-custom-juicers' %}
+  {% endunless %}
+
+  {% unless metafields['disable_newsletter'] %}
+    <section class="block-newsletter" {% if metafields['btn_bg_color'] != blank %}style="background-color: {{ metafields['btn_bg_color'] }};"{% endif %}>
+      <div class="block-newsletter__container container-m custom-newsletter-om">
+        <h2>{{ metafields['newsletter_block_title'] }}</h2>
+        <div id="om-{{ metafields['newsletter_block_om_id'] }}-holder"></div>
+      </div>
+    </section>
+  {% endunless %}
+
+  {% unless metafields['disable_instagram'] %}
+    {% include 'block-instagram' %}
+  {% endunless %}
+</div>

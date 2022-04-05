@@ -1,0 +1,15 @@
+.product-grid {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 30px;
+  @media (--xs) {
+    flex-direction: row;
+    margin-top: 40px;
+  }
+  @media (--l) {
+  	margin-top: 60px;
+  }
+}

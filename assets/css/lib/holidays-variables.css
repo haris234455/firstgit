@@ -1,0 +1,40 @@
+:root {
+  /* Breakpoints */
+  --xxs: 320px;
+  --xs: 540px;
+  --s: 640px;
+  --m: 980px;
+  --l: 1200px;
+  --xl: 1440px;
+  --xxl: 1920px;
+
+  /* Basic Colors */
+  --white: #FFF;
+  --black: #000;
+  --green: #78C500;
+
+  /* Transitions */
+  --speed: 0.2s;
+  --ease: ease-in-out;
+
+  /* Animations */
+  --animation-duration: 0.2s;
+  --animation-timing-function: linear;
+}
+
+/* Breakpoint Queries */
+@custom-media --xxs (min-width: 320px);
+@custom-media --xs (min-width: 540px);
+@custom-media --s (min-width: 640px);
+@custom-media --m (min-width: 980px);
+@custom-media --l (min-width: 1200px);
+@custom-media --xl (min-width: 1440px);
+@custom-media --xxl (min-width: 1920px);
+
+@custom-media --xxs-down (max-width: 319px);
+@custom-media --xs-down (max-width: 539px);
+@custom-media --s-down (max-width: 639px);
+@custom-media --m-down (max-width: 979px);
+@custom-media --l-down (max-width: 1199px);
+@custom-media --xl-down (max-width: 1439px);
+@custom-media --xxl-down (max-width: 1919px);

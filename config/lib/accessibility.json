@@ -1,0 +1,10 @@
+{
+  "name": "Accessibility",
+  "settings": [
+    {
+      "type": "url",
+      "id": "accessibility_statement_page",
+      "label": "Accessibility Statement Page"
+    }
+  ]
+}

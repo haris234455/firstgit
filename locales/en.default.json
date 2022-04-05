@@ -1,0 +1,326 @@
+{
+  "general": {
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    },
+    "404": {
+      "title": "Page Not Found",
+      "subtext_html": "We're sorry, but the page you requested could not be found. <a href=\"\/index\">Click here to return to our homepage<\/a>."
+    },
+    "newsletter_form": {
+      "newsletter_email_header": "Email address",
+      "newsletter_email": "Enter email address",
+      "confirmation": "Thanks for subscribing",
+      "error": "Please enter a valid email.",
+      "already_subscribed": "This email is already subscribed",
+      "submission_error": "There was an error with this submission. Please try again shortly."
+    },
+    "search": {
+      "no_results": "No results were found.",
+      "results_number": "{{ results }} results total",
+      "title": "Search",
+      "submit": "Submit",
+      "placeholder": "Search..."
+    },
+    "accessibility_statement": {
+      "notice": "Click to view our Accessibility Statement or contact us with accessibility related questions."
+    }
+  },
+  "home_page": {
+    "meta": {
+      "title": "Hurom Online Store",
+      "description": "Hurom is an industry leader in slow juicers, backed by 40 years of research. Shop the official online store and make your own fresh, nutritious juice today."
+    }
+  },
+  "press": {
+    "general": {
+      "description": "Hear what people are saying about Hurom in the news."
+    },
+    "article": {
+      "back_to_press": "Back to Press"
+    }
+  },
+  "blogs": {
+    "article": {
+      "author_on_date_html": "Posted by {{ author }} on {{ date }}",
+      "older_post": "Older Post",
+      "newer_post": "Newer Post",
+      "tags": "Tags",
+      "comment_meta_html": "{{ author }} on {{ date }}",
+      "read_more": "Read more"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Shopping Cart",
+      "remove": "Remove",
+      "subtotal": "Subtotal",
+      "update": "Update Cart",
+      "checkout": "Check Out",
+      "empty": "Your cart is currently empty.",
+      "continue_browsing_html": "Continue browsing <a href=\"\/collections\">here<\/a>.",
+      "shipping_at_checkout": "Shipping & taxes calculated at checkout.",
+      "guarantee": "Don't wait to start juicing. If you don't love your juicer, we got you covered with a 30-day money back guarantee for a used product. There's also a 15-day return policy for unopened gifts.",
+      "pre_order": "There is a Pre-order product in your cart. Please be aware that pre-ordered products must be paid for during checkout and will be shipped to you once they become available."
+    },
+    "label": {
+      "product": "Product",
+      "variant": "Color",
+      "sku": "SKU",
+      "price": "Price",
+      "quantity": "Quantity",
+      "total": "Total"
+    }
+  },
+  "collections": {
+    "meta": {
+      "title": "Shop Hurom Juicers",
+      "description": "Browse the latest slow juicers from Hurom. Come experience what 40 years of relentless research and development in the pursuit of juice perfection tastes like."
+    },
+    "general": {
+      "all_collections": "All Collections",
+      "all_of_collection": "All {{ collection }}",
+      "more": "Shop"
+    }
+  },
+  "contact": {
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone Number",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Submit",
+      "error": "Please enter a valid email.",
+      "title_success": "Thank You",
+      "post_success": "Thank you for reaching out to us! We’ll be in touch shortly.",
+      "browse_products": "Browse All Products"
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "My Account",
+      "details": "Account Details",
+      "view_orders": "Order History",
+      "view_addresses": "Manage Addresses",
+      "return": "Return to Order History",
+      "log_out": "Log Out"
+    },
+    "activate_account": {
+      "title": "Activate Account",
+      "subtext": "Create your password to activate your account.",
+      "password": "Password",
+      "password_confirm": "Confirm Password",
+      "submit": "Activate Account",
+      "cancel": "Decline Invitation",
+      "error_blank": "Please enter a valid password.",
+      "error_match": "The password confirmation must match the provided password."
+    },
+    "addresses": {
+      "title": "Saved Addresses",
+      "default": "Default",
+      "add_new": "Add a New Address",
+      "edit_address": "Edit address",
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "company": "Company",
+      "address1": "Address1",
+      "address2": "Address2",
+      "city": "City",
+      "country": "Country",
+      "province": "State\/Province",
+      "zip": "Postal\/Zip Code",
+      "phone": "Phone",
+      "set_default": "Set as default address",
+      "add": "Add",
+      "update": "Update",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "delete": "Delete",
+      "none": "You have no saved addresses."
+    },
+    "login": {
+      "title": "Login",
+      "forgot_password": "Forgot your password?",
+      "not_registered": "Don’t have an account?",
+      "create_account": "Register now.",
+      "cancel": "Return to Home",
+      "guest_title": "Continue as a guest",
+      "guest_continue": "Continue",
+      "form": {
+        "email": "Email",
+        "password": "Password",
+        "error_email": "Please enter a valid email.",
+        "error_password": "Please enter a valid password",
+        "submit": "Sign In"
+      }
+    },
+    "orders": {
+      "title": "Your Order History",
+      "order_number": "Order Number",
+      "date": "Date",
+      "payment_status": "Payment Status",
+      "shipping_status": "Shipping Status",
+      "total": "Total",
+      "none": "You have not completed any orders.",
+      "shop": "Shop now"
+    },
+    "order": {
+      "title": "Order {{ name }}",
+      "date": "Placed on {{ date }}",
+      "cancelled": "Cancelled on {{ date }}",
+      "tracking_number": "Tracking Number",
+      "billing_address": "Billing Address",
+      "payment_status": "Payment Status",
+      "shipping_address": "Shipping Address",
+      "shipping_status": "Shipping Status",
+      "discount": "Discount Code",
+      "shipping": "Shipping",
+      "tax": "Tax",
+      "product": "Product",
+      "sku": "SKU",
+      "price": "Price",
+      "quantity": "Quantity",
+      "variant": "Color",
+      "total": "Total",
+      "fulfilled_at": "Fulfilled {{ date }}",
+      "subtotal": "Subtotal"
+    },
+    "recover_password": {
+      "title": "Reset Your Password",
+      "subtext": "Please enter your email and we will send you a password reset link.",
+      "email": "Email",
+      "submit": "Reset password",
+      "cancel": "Cancel",
+      "success_title": "Thank You",
+      "success_subtext": "We've sent you an email with a link to update your password."
+    },
+    "reset_password": {
+      "title": "Reset account password",
+      "subtext": "Please enter a new password below.",
+      "password": "Password",
+      "password_confirm": "Confirm Password",
+      "submit": "Reset Password",
+      "error_password": "Please enter a valid password.",
+      "error_confirmation": "Please confirm your password."
+    },
+    "register": {
+      "title": "Create Account",
+      "already_registered": "Already have an account?",
+      "sign_in": "Sign in here.",
+      "cancel": "Return to Home",
+      "form": {
+        "first_name": "First Name",
+        "last_name": "Last Name",
+        "email": "Email",
+        "password": "Password",
+        "error_email": "Email address is already registered",
+        "error_password": "Please enter a valid password",
+        "submit": "Create Account"
+      }
+    }
+  },
+  "layout": {
+    "navigation": {
+      "search": "Search",
+      "log_in": "My Account",
+      "cart": "Cart"
+    },
+    "mobile_navigation": {
+      "shop": "Shop All",
+      "all_collections": "All Collections",
+      "all_products": "Browse All Products",
+      "compare_juicers": "Compare"
+    },
+    "drawers": {
+      "browse": "Browse",
+      "close_menu": "Close menu"
+    },
+    "cart": {
+      "title": "Cart",
+      "items_count": {
+        "one": "item",
+        "other": "items"
+      }
+    },
+    "customer": {
+      "account": "Account",
+      "log_out": "Log out",
+      "log_in": "Log in",
+      "create_account": "Create account"
+    },
+    "footer": {
+      "customer_title": "Customer Service",
+      "newsletter_title": "Sign up for news, offers, recipes and more!",
+      "social_title": "Get inspired with #Hurom4Health",
+      "accepted_payments": "Accepted Payments"
+    },
+    "country_selector": {
+      "pick_location": "Pick your location",
+      "united_states": "United States (USD)",
+      "canada": "Canada (CAD)"
+    }
+  },
+  "products": {
+    "general": {
+      "sale_price": "Sale price",
+      "regular_price": "Regular price",
+      "browse_all_products": "Browse All Products",
+      "all_products": "All Products"
+    },
+    "product": {
+      "sold_out": "Sold Out",
+      "on_sale": "On Sale",
+      "on_sale_from_html": "<strong>On Sale<\/strong> from {{ price }}",
+      "unavailable": "Unavailable",
+      "compare_at": "Compare at",
+      "quantity": "Quantity",
+      "see_details": "See Product Details",
+      "rated_reviews": "Rated",
+      "read_reviews": "Read Reviews",
+      "warranty": "Our motor is covered by a 10 year warranty. The remaining parts are covered by a 2 year warranty.",
+      "shipping": "Free ground shipping on all orders over $50 within the 48 contiguous US states.",
+      "add_to_cart": "Add to Cart",
+      "added_to_cart": "Added!",
+      "fit_these_models": "Fits These Models",
+      "pre_order_html": "Please be aware that pre-ordered products must be paid for during checkout and will be shipped to you once they become available.<br><a href=\"\/pages\/faq\" target=\"_blank\">View FAQ for more details<\/a>"
+    },
+    "reviews": {
+      "title": "What People Are Saying"
+    },
+    "featured": {
+      "title": "Featured Accessories"
+    }
+  },
+  "date_formats": {
+    "month_day_year": "%B %d, %Y"
+  },
+  "store_locator": {
+    "general": {
+      "title": "Where to Buy",
+      "lead_text": "Looking for Hurom in store? Enter your zip code below to find a retailer near you."
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "shipping": {
+        "shipping_method_notice": "*We try to process all orders placed by 11PM EST within the next business day. Shipping estimates below are not guaranteed. Pre-Orders will not begin processing until inventory is replenished.",
+        "estimated_delivery_date_range": "Processing: 1-2 business days | Shipping: {{ maximum }} business days",
+        "estimated_delivery_date": {
+          "other": "Processing: 1-2 business days | Shipping: {{ count }} business days",
+          "one": "Processing: 1-2 business days | Shipping: 1 business day"
+        },
+        "free_rate_label": "$0.00"
+      },
+      "shop_policies": {
+        "refund_policy": "Shipping Policy",
+        "privacy_policy": "Returns Policy",
+        "terms_of_service": "Privacy Policy"
+      },
+      "order_summary": {
+        "gift_card_and_discount_placeholder": "Enter promo\/gift code (limit 1 code per order)"
+      }
+    }
+  }
+}

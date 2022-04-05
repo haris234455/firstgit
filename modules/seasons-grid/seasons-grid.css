@@ -1,0 +1,12 @@
+.seasons-grid {
+	align-content: space-between;
+	align-items: flex-start;
+  display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+
+	@media (--xs) {
+		flex-direction: row;
+	}
+}

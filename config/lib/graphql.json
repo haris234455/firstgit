@@ -1,0 +1,10 @@
+{
+  "name": "GraphQL",
+  "settings": [
+    {
+      "type": "text",
+      "id": "storefront_access_token",
+      "label": "Storefront Access Token"
+    }
+  ]
+}

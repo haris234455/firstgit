@@ -1,0 +1,28 @@
+.about-single {
+  @extend %about-bottom;
+}
+.about-single__container {
+  text-align: center;
+
+  @media (--xs) {
+    max-width: 510px;
+  }
+  @media (--xl) {
+    max-width: 700px;
+  }
+}
+.about-single__image {
+  width: 60px;
+  margin: 0 auto 30px;
+}
+.about-single__headline {
+  @extend .h2-about;
+  margin-bottom: 10px;
+
+  @media (--xs) {
+    margin-bottom: 5px;
+  }
+  @media (--xl) {
+    margin-bottom: 20px;
+  }
+}

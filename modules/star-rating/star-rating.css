@@ -1,0 +1,29 @@
+.star-rating__list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.star-rating__item {
+  display: block;
+  margin-left: 3px;
+  margin-right: 3px;
+  padding: 0;
+
+  &:before {
+    content: none;
+  }
+}
+
+.star-rating__icon {
+  display: block;
+  height: 14px;
+  width: 14px;
+
+  @media (--s) {
+    width: 16px;
+    height: 16px;
+  }
+}

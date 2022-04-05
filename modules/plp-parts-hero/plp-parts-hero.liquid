@@ -1,0 +1,47 @@
+{%- assign background_type = background_type | default: nil -%}
+{%- assign image_src = image_src | default: nil -%}
+{%- assign image_src_media = image_src_media | default: nil -%}
+{%- assign image_text = image_text | default: nil -%}
+{%- assign video_url = video_url | default: nil -%}
+{%- assign video_url_intermediate = video_url_intermediate | default: nil -%}
+{%- assign video_url_mobile = video_url_mobile | default: nil -%}
+{%- assign video_fallback_src = video_fallback_src | default: nil -%}
+{%- assign video_fallback_src_media = video_fallback_src_media | default: nil -%}
+{%- assign video_fallback_text = video_fallback_text | default: nil -%}
+{%- assign enable_overlay = enable_overlay | default: nil -%}
+{%- assign title = title | default: nil -%}
+{%- assign description = description | default: nil -%}
+
+<div class="plp-parts-hero">
+  <div class="plp-parts-hero__ratio ratio">
+    {%- if background_type == 'image' -%}
+      {%- render 'image',
+        mod_class: 'plp-parts-hero__image',
+        mod_text: image_text,
+        mod_src: image_src,
+        mod_src_media: image_src_media,
+        mod_loader: false
+      -%}
+    {%- else -%}
+      {%- render 'video' with video_url
+        mod_class: 'plp-parts-hero__video',
+        mod_video_intermediate: video_url_intermediate,
+        mod_video_mobile: video_url_mobile,
+        mod_fallback_src: video_fallback_src,
+        mod_fallback_src_media: video_fallback_src_media,
+        mod_fallback_text: video_fallback_text
+      -%}
+    {%- endif -%}
+    {%- if enable_overlay -%}
+      <div class="plp-parts-hero__overlay abs fit"></div>
+    {%- endif -%}
+      <div class="plp-parts-hero__content">
+        {%- if title != blank -%}
+          <h1 class="plp-parts-hero__title h1">{{- title -}}</h1>
+        {%- endif -%}
+        {%- if description -%}
+          <div class="plp-parts-hero__description p1">{{- description -}}</div>
+        {%- endif -%}
+      </div>
+  </div>
+</div>

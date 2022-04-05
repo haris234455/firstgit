@@ -1,0 +1,83 @@
+.block-critics {
+  padding: 50px 0;
+
+  @media (--s) {
+    padding: 70px 0;
+  }
+}
+.block-critics__holder {
+  .__head {
+    @extend %h1;
+    margin-bottom: 10px;
+
+    @media (--xs) {
+      margin-bottom: 15px;
+    }
+  }
+
+  .__review {
+    @extend %clearlist;
+    margin-bottom: 30px;
+    text-align: center;
+
+    .__star {
+      @extend %clearitem;
+      @extend %ico-star;
+      color: var(--green);
+      display: inline-block;
+      font-size: 1.3em;
+      margin: 0 1px;
+    }
+  }
+
+  .__description {
+    @extend %h3;
+    line-height: 1.75;
+    margin: 0 auto 30px;
+    max-width: 650px;
+  }
+
+  .__critics {
+    background-image: url('{{ "facebook-critics-logo.jpg" | asset_url }}');
+    background-repeat: no-repeat;
+    display: block;
+    height: 40px;
+    margin: 0 auto;
+    overflow: hidden;
+    text-indent: -9999px;
+    width: 155px;
+  }
+
+  .__customer {
+    @extend %h5;
+  }
+
+  &:first-child {
+    margin-bottom: 30px;
+
+    @media (--xs) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &:last-child {
+    margin-top: 30px;
+
+    @media (--xs) {
+      margin-top: 50px;
+    }
+  }
+}
+
+.no-touch {
+  .block-critics {
+    .__critics {
+      transition: opacity var(--speed) var(--ease);
+      opacity: 1;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}

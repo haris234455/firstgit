@@ -1,0 +1,65 @@
+{%- assign fields = section.settings -%}
+
+{%- assign image_1_src = fields['image_1'] | img_url: '1000x' -%}
+{%- assign image_2_src = fields['image_2'] | img_url: '1000x' -%}
+
+{%- include 'banner-two-up',
+  mod_image_1_src: image_1_src,
+  mod_title_1: fields['title_1'],
+  mod_text_1: fields['text_1'],
+  mod_url_1: fields['url_1'],
+  mod_image_2_src: image_2_src,
+  mod_title_2: fields['title_2'],
+  mod_text_2: fields['text_2'],
+  mod_url_2: fields['url_2'] -%}
+
+{%- assign image_1_src = nil -%}
+{%- assign image_2_src = nil -%}
+{%- assign fields = nil -%}
+
+{% schema %}
+  {
+    "name": "Home Shop 2-up",
+    "settings": [{
+      "type": "header",
+      "content": "Block #1"
+    }, {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image",
+      "info": "Upload JPEG ~ 960x960px"
+    }, {
+      "type": "text",
+      "id": "title_1",
+      "label": "Title"
+    }, {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text"
+    }, {
+      "type": "url",
+      "id": "url_1",
+      "label": "URL"
+    }, {
+      "type": "header",
+      "content": "Block #2"
+    }, {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image",
+      "info": "Upload JPEG ~ 960x960px"
+    }, {
+      "type": "text",
+      "id": "title_2",
+      "label": "Title"
+    }, {
+      "type": "text",
+      "id": "text_2",
+      "label": "Text"
+    }, {
+      "type": "url",
+      "id": "url_2",
+      "label": "URL"
+    }]
+  }
+{% endschema %}

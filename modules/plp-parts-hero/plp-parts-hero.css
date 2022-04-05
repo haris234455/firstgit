@@ -1,0 +1,70 @@
+.plp-parts-hero__ratio {
+  overflow: hidden;
+
+  @media (--xs) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 307px;
+  }
+
+  @media (--l) {
+    min-height: 410px;
+  }
+
+  @media (--xl) {
+    min-height: 440px;
+  }
+
+  .video__el {
+    position: absolute;
+    z-index: 3;
+  }
+
+  .video__fallback {
+    display: block;
+  }
+}
+
+.plp-parts-hero__overlay {
+  z-index: 4;
+  background-color: var(--black);
+  opacity: 0.2;
+}
+
+.plp-parts-hero__content {
+  position: relative;
+  z-index: 5;
+  padding-top: 54px;
+  padding-bottom: 54px;
+  max-width: 279px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--white);
+  text-align: center;
+
+  @media (--xs) {
+    max-width: 499px;
+  }
+}
+
+.plp-parts-hero__title {
+  margin-bottom: 5px;
+
+  @media (--xl) {
+    font-size: 52px;
+  }
+}
+
+.plp-parts-hero__description {
+  color: inherit;
+
+  p {
+    color: inherit;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}

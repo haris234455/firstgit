@@ -1,0 +1,11 @@
+.register-footer {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: 20px 0 0;
+	flex-direction: column;
+}
+.register-already-registered {
+	margin: 0 0 60px;
+}

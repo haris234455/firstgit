@@ -1,0 +1,143 @@
+.three-up-grid__container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 30px 20px;
+  background: var(--light-grey);
+  @media (--xs) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  @media (--s) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+.three-up-grid__headline {
+ @extend .featured-recipes__headline;
+  margin-top: 0;
+  margin-bottom: 25px;
+  @media (--xs) {
+    margin-bottom: 30px;
+  }
+  @media (--s) {
+    margin-bottom: 60px;
+  }
+}
+.three-up-grid__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  @media (--xs) {
+    max-width: 650px;
+  }
+  @media (--s) {
+    max-width: 1320px;
+  }
+}
+.three-up-grid__item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  &:nth-child(n+10) {
+    opacity: 0;
+    visibility: hidden;
+    margin-bottom: 0;
+    height: 0;
+    transition: all .3s;
+  }
+  &.js-load-active {
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+    margin-bottom: 30px;
+    @media (--s) {
+      margin-bottom: 40px;
+    }
+  }
+  @media (--xs) {
+    width: 50%;
+  }
+  @media (--s) {
+    width: percentage(1/3);
+    margin-bottom: 40px;
+  }
+}
+.three-up-grid__item-inner {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  @media (--xs) {
+    padding: 0 15px;
+  }
+  @media (--s) {
+    padding: 0 20px;
+  }
+}
+.three-up-grid__link {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  text-decoration: none;
+}
+.three-up-grid__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  padding: 20px;
+  @media (--xs) {
+    padding: 30px;
+  }
+}
+.three-up-grid__thumbnail {
+  width: 100%;
+  overflow: hidden;
+}
+.three-up-grid__image {
+  @add-mixin ratio 280,158;
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform .3s;
+  .three-up-grid__item:hover & {
+    transform: scale(1.1,1.1);
+  }
+}
+.three-up-grid__title {
+  @extend %h3;
+  margin-bottom: 8px;
+  color: var(--black);
+  @media (--xs) {
+    margin-bottom: 10px;
+  }
+}
+.three-up-grid__icon {
+  display: inline-block;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+.three-up-grid__tag {
+  @extend %ff-azo;
+  margin-top: auto;
+  color: var(--dark-green);
+}
+.three-up-grid__loadmore {
+  text-align: center;
+}
+.three-up-grid__button {
+  cursor: pointer;
+}
+.three-up-grid__footer {
+  margin-top: 35px;
+  text-align: center;
+}
+.three-up-grid__footer-button {
+  width: 170px;
+
+  @media (min-width: 660px) {
+    width: 186px;
+  }
+}

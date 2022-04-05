@@ -1,0 +1,19 @@
+{
+  "name": "Product Video",
+  "settings": [
+  {
+    "type": "image",
+    "id": "media-video-thumbnail.jpg",
+    "label": "Video Thumbnail",
+    "max-width": 2800,
+    "max-height": 1600,
+    "info": "Dimensions must respect a 16:9 ratio."
+  },
+  {
+    "type": "text",
+    "id": "youtube_video_id",
+    "default": "q7o7R5BgWDY",
+    "label": "Youtube Video ID",
+    "info": "Enter the ID of the youtube video to display."
+  }]
+}

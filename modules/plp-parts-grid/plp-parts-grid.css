@@ -1,0 +1,24 @@
+.plp-parts-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.plp-parts-grid__item {
+  width: 50%;
+
+  @media (--xs) {
+    width: 33.33%;
+  }
+
+  @media (--l) {
+    margin-bottom: 40px;
+  }
+}
+
+.plp-parts-grid__item--callout {
+  @media (--xs-down) {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}

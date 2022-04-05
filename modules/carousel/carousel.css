@@ -1,0 +1,69 @@
+/***
+@stylesheet:	carousel
+@project:		hurom theme
+@version:		1.0
+@groups:		* slick carousel
+@target:		all
+***/
+
+
+/* Slick Carousel
+------------------------------------------------------------ */
+.slick-dots {
+	@extend %clearlist;
+	font-size: 0;
+	text-align: center;
+	li {
+		@extend %clearitem;
+		border: 1px solid var(--black);
+		border-radius: 50%;
+		display: inline-block;
+		height: 10px;
+		margin: 0 0 0 15px;
+		position: relative;
+		width: 10px;
+		&:first-child {
+			margin: 0;
+		}
+		&:before {
+			background: none no-repeat scroll 0 0 var(--green);
+			bottom: 0;
+			content: '';
+			height: 0;
+			left: 0;
+			margin: auto;
+			position: absolute;
+			right: 0;
+			top: 0;
+			transition-property: height, margin, width;
+      transition-duration: var(--speed);
+      transition-timing-function: var(--ease);
+			width: 0;
+		}
+	}
+	li.slick-active {
+		&:before {
+			height: 4px;
+			width: 4px;
+		}
+	}
+	button {
+		background: none no-repeat scroll 0 0 transparent;
+		height: 10px;
+		opacity: 0;
+		width: 10px;
+	}
+	.about-info-slideshow & {
+		margin-top: 25px;
+	}
+}
+.no-touch .slick-dots {
+	li {
+		&:hover {
+			&:before {
+				height: 4px;
+				width: 4px;
+			}
+		}
+	}
+}

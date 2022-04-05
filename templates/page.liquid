@@ -1,0 +1,17 @@
+<!-- /templates/page.liquid -->
+
+{%- assign fields = page.metafields.accentuate -%}
+
+<div class="{{ page.handle}} page">
+  <div class="{{ page.handle}}__container {% if fields['page_large_content'] %}container-l{% else %}container-s{% endif %}">
+    <header class="page-title" data-view="fadein-down">
+      <h1 class="page-title__head">{{ page.title }}</h1>
+      </header>
+
+      <section class="page-content page-content--post" data-module="page-content" data-view="fadein-up">
+      {{ page.content }}
+      </section>
+  </div>
+</div>
+
+{%- assign fields = nil -%}

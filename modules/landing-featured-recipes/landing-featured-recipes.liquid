@@ -1,0 +1,39 @@
+<!-- /snippets/modules/landing-featured-recipes.liquid -->
+
+<section class="featured-recipes" data-module="landing-featured-recipes">
+    <div class="container featured-recipes__container">
+        <h2 class="featured-recipes__headline">Featured Recipes on <em>Full Plate</em></h2>
+        <p class="featured-recipes__intro">
+            Did you know Hurom Juicers can make much more than just juice? Learn how Hurom can enhance your meals with these easy and healthy <em>Full Plate</em> recipes.
+        </p>
+        <div class="featured-recipes__content">
+            <div class="featured-recipes__list">
+                <div class="featured-recipes__item">
+                    {% assign featured_recipe_handle = 'recipes/seared-scallops-and-cauliflower-grits' %}
+                    {% assign video = 'B3bXHS6zh1U' %}
+                    {% assign description = 'Join Katie, John, Sur La Table National Chef Joel Gamoran, and special guest Chilina Kennedy (Broadway superstar of “Beautiful: The Carole King Musical”) as they put a spin on a seafood classic.' %}
+                    {% assign tips = 'The Hurom HZ Slow Juicer has taste and pulp control. The control lever and ﬁne and course strainers allow you to control the amount of pulp to suit your taste.' %}
+                    {% include 'landing-featured-recipes-item' %}
+
+                    {% assign featured_recipe_handle = 'recipes/moroccan-lamb-chops-with-green-couscous-and-tahini' %}
+                    {% assign video = 'ZE7_4AN5uPU' %}
+                    {% assign description = 'Couscous flavored with freshly juiced greens and a tangy tahini sauce complement rich lamb chops in this bold dish.' %}
+                    {% assign tips = 'Hurom juicer works great with leafy greens. This recipe uses green juice from parsley, mint, and cilantro to create a healthy and flavorful dish. Mix and match different leafy greens to make the perfect juice or sauce.' %}
+                    {% include 'landing-featured-recipes-item' %}
+
+                    {% assign featured_recipe_handle = 'recipes/turkey-meatball-naan-wich-with-yogurt-and-pickled-vegetables' %}
+                    {% assign video = 'l6Uty3-Eduo' %}
+                    {% assign description = 'Katie, John and Joel give the classic meatball sub a run for its money with healthy turkey meatballs, tangy yogurt sauce and giardiniera pickles—all tucked into a piece of naan flatbread.' %}
+                    {% assign tips = "Don't throw out the pulp! You can use pulp from juicing in cooking, and pulp from almond milk in baking." %}
+                    {% include 'landing-featured-recipes-item' %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% assign featured_recipe_handle = false %}
+{% assign video = false %}
+{% assign description = false %}
+{% assign tips = false %}

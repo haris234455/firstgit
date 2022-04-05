@@ -1,0 +1,36 @@
+<title>
+  {% if template %}
+    {% case template %}
+      {% when 'list-collections' %}
+        {{ 'collections.meta.title' | t }}
+      {% else %}
+        {{ page_title }}
+    {% endcase %}
+
+    {% if current_tags %}
+      {% assign meta_tags = current_tags | join: ', ' %} | {{ 'general.meta.tags' | t: tags: meta_tags }}
+    {% endif %}
+
+    {% if current_page != 1 %}
+     | {{ 'general.meta.page' | t: page: current_page }}
+    {% endif %}
+  {%- elsif request.path contains 'help-center' or request.path contains 'community/faq' -%}
+    Frequently Asked Questions | Hurom
+  {% else %}
+    Where to Buy Hurom Juicers
+  {% endif %}
+</title>
+{% if template == 'index' %}
+  <meta name="description" content="Shop Hurom Slow Juicers and Juicing Accessories. Hurom created the healthiest and best-tasting juice in the world. Shipping to US and Canada.">
+  <meta property="description" content="{{ page_description }}">
+{% elsif template contains 'product' %}
+  <meta property="description" content="{{ page_description | escape }}">
+{% elsif template contains 'article' %}
+  <meta property="description" content="{{ article.excerpt_or_content | strip_html | escape }}">
+{% else %}
+  {% if template contains 'list-collections' %}
+    <meta property="description" content="{{ 'collections.meta.description' | t }}">
+  {% else %}
+    <meta property="description" content="{{ page_description | escape }}">
+  {% endif %}
+{% endif %}

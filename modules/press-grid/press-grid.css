@@ -1,0 +1,23 @@
+.press-grid {
+	background: none no-repeat scroll 0 0 var(--light-grey);
+	padding: 20px 0;
+  @media (--xs) {
+    padding: 60px 0;
+  }
+}
+.press-grid__container {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	align-items: flex-start;
+  flex-direction: column;
+	align-items: stretch;
+  @media (--xs) {
+    flex-direction: row;
+  }
+}
+.press-grid__pagination {
+	margin: 40px 0 0;
+	width: 100%;
+	flex: 1 0 auto;
+}

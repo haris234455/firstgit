@@ -1,0 +1,249 @@
+.ingredients-grid {
+	text-align: center;
+}
+.ingredients-grid__head {
+	margin-bottom: 20px;
+
+	@media (--xs) {
+		margin-bottom: 10px;
+	}
+}
+.ingredients-grid__list {
+	@extend %clearlist;
+	align-content: center;
+	align-items: flex-start;
+	display: inline-flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	@media (--xxs) {
+		align-items: center;
+	}
+
+	@media (--xs) {
+		flex-direction: row;
+	}
+}
+.ingredients-grid__item {
+	@extend %clearitem;
+	@extend %clearlink;
+	align-content: center;
+	align-items: center;
+	flex: 0 1 auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	margin-top: 20px;
+	text-align: left;
+
+	@media (--xs) {
+		flex-direction: column;
+		flex-wrap: wrap;
+		display: block;
+		margin: 30px 45px 0;
+		text-align: center;
+	}
+}
+.ingredients-grid__icon {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-size: 70px 350px;
+	display: block;
+	height: 70px;
+	width: 70px;
+	flex: 0 1 auto;
+
+	@media (--xxs) {
+		background-size: 90px 450px;
+		height: 90px;
+		width: 90px;
+	}
+
+	@media (--xs) {
+		background-size: 140px 700px;
+		height: 140px;
+		margin-bottom: 20px;
+		width: 140px;
+	}
+
+	&.is-winter {
+		background-position: 0 -280px;
+
+		@media (--xxs) { background-position: 0 -360px; }
+
+		@media (--xs) { background-position: 0 -560px; }
+
+		&.is-cabbage {
+			background-position: 0 0;
+
+			@media (--xxs) { background-position: 0 0; }
+
+			@media (--xs) { background-position: 0 0; }
+		}
+		&.is-sweet-potato {
+			background-position: 0 -70px;
+
+			@media (--xxs) { background-position: 0 -90px; }
+
+			@media (--xs) { background-position: 0 -140px; }
+		}
+		&.is-beets {
+			background-position: 0 -140px;
+
+			@media (--xxs) { background-position: 0 -180px; }
+
+			@media (--xs) { background-position: 0 -280px; }
+		}
+		&.is-pear {
+			background-position: 0 -210px;
+
+			@media (--xxs) { background-position: 0 -270px; }
+
+			@media (--xs) { background-position: 0 -420px; }
+		}
+	}
+
+	&.is-autumn {
+		background-position: 0 -280px;
+
+		@media (--xxs) { background-position: 0 -360px; }
+
+		@media (--xs) { background-position: 0 -560px; }
+
+		&.is-pumpkin {
+			background-position: 0 0;
+
+			@media (--xxs) { background-position: 0 0; }
+
+			@media (--xs) { background-position: 0 0; }
+		}
+		&.is-kale {
+			background-position: 0 -70px;
+
+			@media (--xxs) { background-position: 0 -90px; }
+
+			@media (--xs) { background-position: 0 -140px; }
+		}
+		&.is-apple {
+			background-position: 0 -140px;
+
+			@media (--xxs) { background-position: 0 -180px; }
+
+			@media (--xs) { background-position: 0 -280px; }
+		}
+		&.is-pomegranate {
+			background-position: 0 -210px;
+
+			@media (--xxs) { background-position: 0 -270px; }
+
+			@media (--xs) { background-position: 0 -420px; }
+		}
+	}
+
+	&.is-spring {
+		background-position: 0 -280px;
+
+		@media (--xxs) { background-position: 0 -360px; }
+
+		@media (--xs) { background-position: 0 -560px; }
+
+		&.is-spinach {
+			background-position: 0 0;
+
+			@media (--xxs) { background-position: 0 0; }
+
+			@media (--xs) { background-position: 0 0; }
+		}
+		&.is-pineapple {
+			background-position: 0 -70px;
+
+			@media (--xxs) { background-position: 0 -90px; }
+
+			@media (--xs) { background-position: 0 -140px; }
+		}
+		&.is-swiss-chard {
+			background-position: 0 -140px;
+
+			@media (--xxs) { background-position: 0 -180px; }
+
+			@media (--xs) { background-position: 0 -280px; }
+		}
+		&.is-grapefruit {
+			background-position: 0 -210px;
+
+			@media (--xxs) { background-position: 0 -270px; }
+
+			@media (--xs) { background-position: 0 -420px; }
+		}
+	}
+
+	&.is-summer {
+		background-position: 0 -280px;
+
+		@media (--xxs) { background-position: 0 -360px; }
+
+		@media (--xs) { background-position: 0 -560px; }
+
+		&.is-watermelon {
+			background-position: 0 0;
+
+			@media (--xxs) { background-position: 0 0; }
+
+			@media (--xs) { background-position: 0 0; }
+		}
+		&.is-cucumber {
+			background-position: 0 -70px;
+
+			@media (--xxs) { background-position: 0 -90px; }
+
+			@media (--xs) { background-position: 0 -140px; }
+		}
+		&.is-peach {
+			background-position: 0 -140px;
+
+			@media (--xxs) { background-position: 0 -180px; }
+
+			@media (--xs) { background-position: 0 -280px; }
+		}
+		&.is-strawberries {
+			background-position: 0 -210px;
+
+			@media (--xxs) { background-position: 0 -270px; }
+
+			@media (--xs) { background-position: 0 -420px; }
+		}
+	}
+
+    &.b-lazy {
+    	transition: opacity var(--speed) var(--ease);
+    	opacity: 0;
+    	transition-duration: 0.4s;
+
+    	&.b-loaded {
+	    	opacity: 1;
+    	}
+    }
+}
+.ingredients-grid__info {
+	flex: 0 1 auto;
+	margin-left: 20px;
+
+	@media (--xs) {
+		margin-left: 0;
+	}
+}
+.ingredients-grid__name {
+	margin-bottom: 5px;
+	width: 100%;
+
+	@media (--xxs) {
+		width: 150px;
+	}
+
+	@media (--xs) {
+		margin-left: 0;
+		width: auto;
+	}
+}

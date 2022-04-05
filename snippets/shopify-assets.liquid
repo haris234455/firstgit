@@ -1,0 +1,178 @@
+<style>
+  /* Image Load */
+  .img-load {
+    background-image: url({{ 'loading.gif' | asset_url }});
+  }
+  /* Promo Banner */
+  .promo-banner__close {
+    background-image: url({{ 'ico-close.svg' | asset_url }});
+  }
+  /* Image Caption */
+  .page-content .caption:after {
+    background-image: url({{ 'ico-caption.svg' | asset_url }});
+  }
+  /* Store Locator */
+  #addresses_list ul li {
+    background-image: url({{ 'ico-marker.svg' | asset_url }});
+  }
+  /* Cart */
+  .cart-preorder__icon {
+    background-image: url({{ 'ico-alert.svg' | asset_url }});
+  }
+  .cart-error__icon {
+    background-image: url({{ 'ico-alert.svg' | asset_url }});
+  }
+  /* Country Dropdown */
+  .flag.store-us:before {
+    background-image: url({{ 'flag-us.jpg' | asset_url }});
+  }
+  .flag.store-ca:before {
+    background-image: url({{ 'flag-ca.jpg' | asset_url }});
+  }
+  /* Modal */
+  .dialog-infographic__close-btn,
+  .dialog-article__close-btn {
+    background-image: url({{ 'ico-close-white.svg' | asset_url }});
+  }
+  /* About Page */
+  .about .slick-prev {
+    background-image: url({{ 'ico-arrow-carousel-left.svg' | asset_url }});
+  }
+  .about .slick-next {
+    background-image: url({{ 'ico-arrow-carousel-right.svg' | asset_url }});
+  }
+  /* Page Hero */
+  .theme-holidays {
+    background-image: url({{ 'page-hero-holidays.jpg' | asset_url }});
+  }
+  .theme-giftcard {
+    background-image: url({{ 'page-hero-gift-card.jpg' | asset_url }});
+  }
+  .theme-new {
+    background-image: url({{ 'page-hero-new-product.jpg' | asset_url }});
+  }
+  .theme-why-hurom .page-hero__featured {
+    background-image: url({{ 'why-hurom-hero-green.jpg' | asset_url }});
+  }
+  /* Recipe Carousel */
+  .recipe-slide.is-active .recipe-accordion:after {
+    background-image: url({{ 'ico-accordion-minimize.svg' | asset_url }});
+  }
+  .recipe-carousel__holder .slick-prev {
+    background-image: url({{ 'ico-arrow-carousel-left.svg' | asset_url }});
+  }
+  .recipe-carousel__holder .slick-next {
+    background-image: url({{ 'ico-arrow-carousel-right.svg' | asset_url }});
+  }
+  .recipe-accordion:after {
+    background-image: url({{ 'ico-accordion-expand.svg' | asset_url }});
+  }
+  /* Product Description */
+  #tabs-app-accordion .ui-accordion-header-active .ui-accordion-header-icon {
+    background-image: url({{ 'ico-accordion-minimize.svg' | asset_url }});
+  }
+  #tabs-app-accordion .ui-accordion-header-icon {
+    background-image: url({{ 'ico-accordion-expand.svg' | asset_url }})
+  }
+  .product-best {
+    background-image: url({{ 'bg-best.jpg' | asset_url }});
+  }
+  .product-why-hurom:before {
+    background-image: url({{ 'bg-why-hurom-top.png' | asset_url }});
+  }
+  /* Why Hurom */
+  .wh-design__images {
+    background-image: url({{ 'wh-design-sketch-mobile.jpg' | asset_url }});
+  }
+  @media (min-width: 660px) {
+    .wh-design__images {
+      background-image: url({{ 'wh-design-sketch.jpg' | asset_url }});
+    }
+  }
+  .wh-video__images {
+    background-image: url({{ 'wh-video-mobile.png' | asset_url }});
+  }
+  .wh-confidence__food--fruits {
+    background-image: url({{ 'wh-food-fruits.jpg' | asset_url }});
+  }
+  .wh-confidence__food--vegetables {
+    background-image: url({{ 'wh-food-vegetables.jpg' | asset_url }});
+  }
+  .wh-confidence__food--nuts {
+    background-image: url({{ 'wh-food-nuts.jpg' | asset_url }});
+  }
+  .wh-confidence__food--herbs {
+    background-image: url({{ 'wh-food-herbs.jpg' | asset_url }});
+  }
+  .wh-difference__block:first-child .wh-difference__juice {
+    background-image: url({{ 'wh-difference-juice-left.jpg' | asset_url }});
+  }
+  .wh-difference__block:last-child .wh-difference__juice {
+    background-image: url({{ 'wh-difference-juice-right.jpg' | asset_url }});
+  }
+  /* Ingredients */
+  .ingredients.is-autumn:before {
+    background-image: url({{ 'bg-season-autumn-left.jpg' | asset_img_url: '160x' }});
+  }
+  @media (min-width: 660px) {
+    .ingredients.is-autumn:before {
+      background-image: url({{ 'bg-season-autumn-left.jpg' | asset_url }});
+    }
+  }
+  .ingredients.is-autumn:after {
+    background-image: url({{ 'bg-season-autumn-right.jpg' | asset_img_url: '150x' }});
+  }
+  @media (min-width: 660px) {
+    .ingredients.is-autumn:after {
+      background-image: url({{ 'bg-season-autumn-right.jpg' | asset_url }});
+    }
+  }
+  .ingredients.is-winter:before {
+    background-image: url({{ 'bg-season-winter-left.jpg' | asset_img_url: '140x' }});
+  }
+  @media (min-width: 800px) {
+    .ingredients.is-winter:before {
+      background-image: url({{ 'bg-season-winter-left.jpg' | asset_url }});
+    }
+  }
+  .ingredients.is-winter:after {
+    background-image: url({{ 'bg-season-winter-right.jpg' | asset_img_url: '120x' }});
+  }
+  @media (min-width: 800px) {
+    .ingredients.is-winter:after {
+      background-image: url({{ 'bg-season-winter-right.jpg' | asset_url }});
+    }
+  }
+  .ingredients.is-spring:before {
+    background-image: url({{ 'bg-season-spring-left.jpg' | asset_img_url: '150x' }});
+  }
+  @media (min-width: 800px) {
+    .ingredients.is-spring:before {
+      background-image: url({{ 'bg-season-spring-left.jpg' | asset_url }});
+    }
+  }
+  .ingredients.is-spring:after {
+    background-image: url({{ 'bg-season-spring-right.jpg' | asset_img_url: '130x' }});
+  }
+  @media (min-width: 800px) {
+    .ingredients.is-spring:after {
+      background-image: url({{ 'bg-season-spring-right.jpg' | asset_url }});
+    }
+  }
+  .ingredients.is-summer:before {
+    background-image: url({{ 'bg-season-summer-left.jpg' | asset_img_url: '140x' }});
+  }
+  @media (min-width: 800px) {
+    .ingredients.is-summer:before {
+      background-image: url({{ 'bg-season-summer-left.jpg' | asset_url }});
+    }
+  }
+  .ingredients.is-summer:after {
+    background-image: url({{ 'bg-season-summer-right.jpg' | asset_img_url: '120x' }});
+  }
+  @media (min-width: 800px) {
+    .ingredients.is-summer:after {
+      background-image: url({{ 'bg-season-summer-right.jpg' | asset_url }});
+    }
+  }
+</style>

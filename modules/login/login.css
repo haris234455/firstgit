@@ -1,0 +1,11 @@
+.login-footer{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: 20px 0 0;
+	flex-direction: column;
+}
+.login-not-registered {
+	margin: 15px 0 60px;
+}

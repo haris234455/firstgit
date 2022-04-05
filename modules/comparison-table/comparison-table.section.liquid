@@ -1,0 +1,441 @@
+<!-- /sections/comparison-table.liquid -->
+{% comment %}
+
+NOTE THIS TEMPLATE HAS NOT BEEN IMPLEMENTED.
+PLEASE SEE snippets/base/modules/comparison-table.liquid
+
+{% endcomment %}
+<div class="cd-products-comparison-table" data-module="comparison-table">
+  <div class="actions">
+    <a href="#0" class="reset">Reset</a>
+    <a href="#0" class="btn filter" title="Compare">Compare</a>
+  </div>
+
+  <div class="cd-products-table">
+    <div class="features">
+      <div class="top-info">Models</div>
+      <ul class="cd-features-list">
+        <li>
+          <span>Series <i class="cd-product-info" data-dialog="compare-series" data-module="modal" onClick="ga('send', 'event', 'Compare Juicers Info Modal Clicks', 'Click: Series', 'Referrer: {{ page_title }}')"></i></span>
+        </li>
+        <li class="cd-feature--tall">
+          <span>Technology</span>
+        </li>
+        <li>
+          <span>Price</span>
+        </li>
+        <li>
+          <span>Reviews</span>
+        </li>
+        <li>
+          <span>Colors Available</span>
+        </li>
+        <li>
+          <span>Capacity</span>
+        </li>
+        <li>
+          <span>Motor & Speed</span>
+        </li>
+        <li>
+          <span>Feed Chute</span>
+        </li>
+        <li>
+          <span>Control Lever <i class="cd-product-info" data-dialog="compare-control-lever" data-module="modal" onClick="ga('send', 'event', 'Compare Juicers Info Modal Clicks', 'Click: Control Lever', 'Referrer: {{ page_title }}')"></i></span>
+        </li>
+        <li>
+          <span>Fine Strainer <i class="cd-product-info" data-dialog="compare-fine-strainer" data-module="modal" onClick="ga('send', 'event', 'Compare Juicers Info Modal Clicks', 'Click: Fine Strainer', 'Referrer: {{ page_title }}')"></i></span>
+        </li>
+        <li>
+          <span>Coarse Strainer <i class="cd-product-info" data-dialog="compare-coarse-strainer" data-module="modal" onClick="ga('send', 'event', 'Compare Juicers Info Modal Clicks', 'Click: Coarse Strainer', 'Referrer: {{ page_title }}')"></i> </span>
+        </li>
+        <li class="cd-feature--tall">
+          <span>Juicing Versatility</span>
+        </li>
+        <li class="cd-feature--tall">
+          <span>Accessories</span>
+        </li>
+        <li>
+          <span>Stainless Steel</span>
+        </li>
+        <li>
+          <span>Self Feeding Hopper</span>
+        </li>
+        <li></li>
+      </ul>
+    </div> <!-- .features -->
+
+    <div class="cd-products-wrapper">
+      <ul class="cd-products-columns">
+        {% for block in section.blocks %}
+          {% assign handle = block.settings.product %}
+          {% assign product = all_products[handle] %}
+          {% assign series = block.settings.series %}
+          {% assign technology = block.settings.technology %}
+          {% assign new_product = block.settings.new_product %}
+          {% assign capacity = block.settings.capacity %}
+          {% assign motor_speed = block.settings.motor_speed %}
+          {% assign feed_chute = block.settings.feed_chute %}
+          {% assign control_lever = block.settings.control_lever %}
+          {% assign fine_strainer = block.settings.fine_strainer %}
+          {% assign coarse_strainer = block.settings.coarse_strainer %}
+          {% assign juicing_versatility = block.settings.juicing_versatility %}
+          {% assign accessories = block.settings.accessories %}
+          {% assign stainless_steel = block.settings.stainless_steel %}
+          {% assign self_feeding_hopper = block.settings.self_feeding_hopper %}
+
+          <li class="product">
+            <div class="top-info">
+              <div class="check"></div>
+              <img src="{% if product.featured_image %}{{ product.featured_image | img_url: 'compact' }}{% else %}{{ 'fallback-product-item.svg' | asset_url }}{% endif %}" alt="{{ product.title }}">
+              <h3>{{ product.title | remove: ' Slow Juicer' }}<br>Slow Juicer</h3>
+              <a class="product__top-btn btn" href="{{ product.url }}" title="View Details">View Details</a>
+            </div> <!-- .top-info -->
+
+            <ul class="cd-features-list">
+              <li>
+                <span>
+                  {{ series }}
+                </span>
+              </li>
+              <li class="cd-feature--tall">
+                <span>
+                  {{ technology | newline_to_br }}
+                </span>
+              </li>
+              <li>
+                <span>
+                  {{ product.price | money }}
+                </span>
+              </li>
+              <li>
+                <div>
+                  {% if new_product %}
+                    NEW
+                  {% else %}
+                    <div class="product-item__reviews">
+                      <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+                    </div>
+                  {% endif %}
+                </div>
+              </li>
+              <li>
+                <span>
+                  {% for variant in product.variants %}
+                    {{ variant.title }}{% unless forloop.last == true %}, {% endunless %}
+                  {% endfor %}
+                </span>
+              </li>
+              <li>
+                <span>
+                  {{ capacity }}
+                </span>
+              </li>
+              <li>
+                <span>
+                  {{ motor_speed }}
+                </span>
+              </li>
+              <li>
+                <span>
+                  {{ feed_chute }}
+                </span>
+              </li>
+              <li>
+                <span>
+                  {% if control_lever %}
+                    <i class="cd-icon ico-check"></i>
+                  {% endif %}
+                </span>
+              </li>
+              <li>
+                <span>
+                  {% if fine_strainer %}
+                    <i class="cd-icon ico-check"></i>
+                  {% endif %}
+                </span>
+              </li>
+              <li>
+                <span>
+                  {% if coarse_strainer %}
+                    <i class="cd-icon ico-check"></i>
+                  {% endif %}
+                </span>
+              </li>
+              <li class="cd-feature--tall">
+                <span>
+                  {{ juicing_versatility | newline_to_br }}
+                </span>
+              </li>
+              <li class="cd-feature--tall">
+                <span>
+                  {{ accessories | newline_to_br }}
+                </span>
+              </li>
+              <li>
+                <span>
+                  {% if stainless_steel %}
+                    <i class="cd-icon ico-check"></i>
+                  {% endif %}
+                </span>
+              </li>
+              <li>
+                <span>
+                  {% if self_feeding_hopper %}
+                    <i class="cd-icon ico-check"></i>
+                  {% endif %}
+                </span>
+              </li>
+              <li><a class="btn" href="{{ product.url }}" title="View Details">View Details</a></li>
+            </ul>
+          </li>
+
+          {% assign handle = false %}
+          {% assign product = false %}
+          {% assign series = false %}
+          {% assign technology = false %}
+          {% assign new_product = false %}
+          {% assign capacity = false %}
+          {% assign motor_speed = false %}
+          {% assign feed_chute = false %}
+          {% assign control_lever = false %}
+          {% assign fine_strainer = false %}
+          {% assign coarse_strainer = false %}
+          {% assign juicing_versatility = false %}
+          {% assign accessories = false %}
+          {% assign self_feeding_hopper = false %}
+        {% endfor %}
+      </ul>
+    </div>
+    <ul class="cd-table-navigation">
+      <li><a href="#0" class="prev inactive"></a></li>
+      <li><a href="#0" class="next"></a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="compare-series" class="dialog">
+  <span class="dialog__overlay"></span>
+  <div class="dialog__content">
+    <video class="dialog__video" src="{{ 'compare-series-video.mp4' | file_url }}" controls onError="style.display = 'none';"></video>
+    Alpha Series: Featuring our newest Alpha technology, these juicers are easier to clean and have the ability to make ice cream from the chamber. Perfect for juicer enthusiasts.<br/><br/>
+    Classic Series: These are our tried and true favorites that have won multiple design awards.<br/><br/>
+    Personal Series: Take care of all your basic juicing needs with these compact and stylish juicers. <br/><br/>
+    Limited Edition: Our premium, highest quality juicers with all the available features.
+    <footer class="dialog-footer">
+      <a class="dialog-footer__cancel-link" data-dialog-close>Close</a>
+    </footer>
+  </div>
+</div>
+{% comment %}
+<div id="compare-price" class="dialog">
+  <span class="dialog__overlay"></span>
+  <div class="dialog__content">
+    Lorem ipsum dolor sit amet
+    <footer class="dialog-footer">
+      <a class="dialog-footer__cancel-link" data-dialog-close>Close</a>
+    </footer>
+  </div>
+</div>
+
+<div id="compare-color" class="dialog">
+  <span class="dialog__overlay"></span>
+  <div class="dialog__content">
+    <video class="dialog__video" src="{{ 'compare-color-video.mp4' | file_url }}" controls onError="style.display = 'none';"></video>
+    Lorem ipsum dolor sit amet
+    <footer class="dialog-footer">
+      <a class="dialog-footer__cancel-link" data-dialog-close>Close</a>
+    </footer>
+  </div>
+</div>
+
+<div id="compare-capacity" class="dialog">
+  <span class="dialog__overlay"></span>
+  <div class="dialog__content">
+    <video class="dialog__video" src="{{ 'compare-capacity-video.mp4' | file_url }}" controls onError="style.display = 'none';"></video>
+    Lorem ipsum dolor sit amet
+    <footer class="dialog-footer">
+      <a class="dialog-footer__cancel-link" data-dialog-close>Close</a>
+    </footer>
+  </div>
+</div>
+
+<div id="compare-technology" class="dialog">
+  <span class="dialog__overlay"></span>
+  <div class="dialog__content">
+    <video class="dialog__video" src="{{ 'compare-technology-video.mp4' | file_url }}" controls onError="style.display = 'none';"></video>
+    Lorem ipsum dolor sit amet
+    <footer class="dialog-footer">
+      <a class="dialog-footer__cancel-link" data-dialog-close>Close</a>
+    </footer>
+  </div>
+</div>
+{% endcomment %}
+<div id="compare-control-lever" class="dialog">
+  <span class="dialog__overlay"></span>
+  <div class="dialog__content">
+    <video class="dialog__video" src="{{ 'compare-control-lever-video.mp4' | file_url }}" controls onError="style.display = 'none';"></video>
+    The control lever is used to control the pressure inside the chamber. The lever should be placed on “close” whenever you start juicing. Once the chamber begins to fill with juice, switching the lever to “half-close” helps release pressure and allows pulp to leave freely. (This is a good idea when juicing ingredients with lots of seeds, such as grapes or kiwi.
+    <footer class="dialog-footer">
+      <a class="dialog-footer__cancel-link" data-dialog-close>Close</a>
+    </footer>
+  </div>
+</div>
+
+<div id="compare-fine-strainer" class="dialog">
+  <span class="dialog__overlay"></span>
+  <div class="dialog__content">
+    <!--<video class="dialog__video" src="{{ 'compare-fine-strainer-video.mp4' | file_url }}" controls onError="style.display = 'none';"></video>-->
+    <img src="{{'fine-strainer.jpg' | asset_url}}">
+    <strong>For a smoother texture</strong><br/>The fine strainer is great for making smooth, pulp-free juices and silky nut milks. You can use any fruits, veggies, leafy greens, or nuts with the fine strainer.
+    <footer class="dialog-footer">
+      <a class="dialog-footer__cancel-link" data-dialog-close>Close</a>
+    </footer>
+  </div>
+</div>
+
+<div id="compare-coarse-strainer" class="dialog">
+  <span class="dialog__overlay"></span>
+  <div class="dialog__content">
+    <!--<video class="dialog__video" src="{{ 'compare-coarse-strainer-video.mp4' | file_url }}" controls onError="style.display = 'none';"></video>-->
+    <img src="{{'coarse-strainer.jpg' | asset_url}}">
+    <strong>For a thicker texture</strong><br/>The coarse strainer lets in more pulp into the juice, making it great for smoothies, soups, or baby solids. Add frozen fruit, yogurt, or milk for a creamy treat.
+    <footer class="dialog-footer">
+      <a class="dialog-footer__cancel-link" data-dialog-close>Close</a>
+    </footer>
+  </div>
+</div>
+{% comment %}
+<div id="compare-ice-cream-strainer" class="dialog">
+  <span class="dialog__overlay"></span>
+  <div class="dialog__content">
+    <video class="dialog__video" src="{{ 'compare-icecream-strainer-video.mp4' | file_url }}" controls onError="style.display = 'none';"></video>
+    <img src="{{'icecream-strainer.jpg' | asset_url}}">
+    The Alpha Series juicers includes a ice cream strainer that will allow you to create ice cream straight from the chamber. Simply switch out the fine/coarse strainer and spinning brush and place the ice cream strainer into the drum so that the opening aligns with the juice outlet. Then, take your choice of frozen fruit (slightly thawed) and use your Hurom as you would when juicing.<br/><br/>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/sV27unwNeKo?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+      <footer class="dialog-footer">
+        <a class="dialog-footer__cancel-link" data-dialog-close>Close</a>
+      </footer>
+  </div>
+</div>
+
+<div id="compare-drying-rack" class="dialog">
+  <span class="dialog__overlay"></span>
+  <div class="dialog__content">
+    <video class="dialog__video" src="{{ 'compare-drying-rack-video.mp4' | file_url }}" controls onError="style.display = 'none';"></video>
+    <img src="{{'drying-rack-full.jpg' | asset_url}}">
+    After you’ve finished washing the detachable parts of your juicer, leave your drum, auger, spinning brush, strainer and hopper to dry on this handy drying rack.
+    <footer class="dialog-footer">
+      <a class="dialog-footer__cancel-link" data-dialog-close>Close</a>
+    </footer>
+  </div>
+</div>
+
+<div id="compare-tofu-press" class="dialog">
+  <span class="dialog__overlay"></span>
+  <div class="dialog__content">
+    <video class="dialog__video" src="{{ 'compare-tofu-press-video.mp4' | file_url }}" controls onError="style.display = 'none';"></video>
+    <img src="{{'tofu-press.jpg' | asset_url}}">
+    Included with Alpha Series juicers, this tofu press makes it easy for you to make your own tofu at home!<br/><br/><br/>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/OlQ6Xcx_8Gs?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+    <footer class="dialog-footer">
+      <a class="dialog-footer__cancel-link" data-dialog-close>Close</a>
+    </footer>
+  </div>
+</div>
+
+<div id="compare-squeezer" class="dialog">
+  <span class="dialog__overlay"></span>
+  <div class="dialog__content">
+    <video class="dialog__video" src="{{ 'compare-squeezer-video.mp4' | file_url }}" controls onError="style.display = 'none';"></video>
+    <img src="{{'citrus-squeezer.jpg' | asset_url}}">
+    Available for the Alpha Series Juicers, this citrus squeezer makes it easy to juice your favorite citrus fruits in half the time! Simply cut your citrus fruit in half, turn on your Hurom juicer with the citrus attachment, and lightly press the citrus (pulp side down) into the citrus squeezer.
+    <footer class="dialog-footer">
+      <a class="dialog-footer__cancel-link" data-dialog-close>Close</a>
+    </footer>
+  </div>
+</div>
+
+<div id="compare-stainless-steel-finish" class="dialog">
+  <span class="dialog__overlay"></span>
+  <div class="dialog__content">
+    <video class="dialog__video" src="{{ 'compare-stainless-steel-finish-video.mp4' | file_url }}" controls onError="style.display = 'none';"></video>
+    Lorem ipsum dolor sit amet
+    <footer class="dialog-footer">
+      <a class="dialog-footer__cancel-link" data-dialog-close>Close</a>
+    </footer>
+  </div>
+</div>
+{% endcomment %}
+
+{% schema %}
+  {
+    "name": "Comparison Table",
+    "blocks": [ {
+      "type": "product",
+      "name": "Product",
+      "settings": [ {
+        "type": "product",
+        "id": "product",
+        "label": "Product"
+      }, {
+        "type": "text",
+        "id": "series",
+        "label": "Series"
+      }, {
+        "type": "textarea",
+        "id": "technology",
+        "label": "Technology"
+      }, {
+        "type": "checkbox",
+        "id": "new_product",
+        "label": "New Product",
+        "default": false
+      }, {
+        "type": "text",
+        "id": "capacity",
+        "label": "Capacity"
+      }, {
+        "type": "text",
+        "id": "motor_speed",
+        "label": "Motor & Speed"
+      }, {
+        "type": "text",
+        "id": "feed_chute",
+        "label": "Feed Chute"
+      }, {
+        "type": "checkbox",
+        "id": "control_lever",
+        "label": "Control Lever",
+        "default": false
+      }, {
+        "type": "checkbox",
+        "id": "fine_strainer",
+        "label": "Fine Strainer",
+        "default": false
+      }, {
+        "type": "checkbox",
+        "id": "coarse_strainer",
+        "label": "Coarse Strainer",
+        "default": false
+      }, {
+        "type": "textarea",
+        "id": "juicing_versatility",
+        "label": "Juicing Versatility"
+      }, {
+        "type": "textarea",
+        "id": "accessories",
+        "label": "Accessories"
+      }, {
+        "type": "checkbox",
+        "id": "stainless_steel",
+        "label": "Stainless Steel",
+        "default": false
+      }, {
+        "type": "checkbox",
+        "id": "self_feeding_hopper",
+        "label": "Self Feeding Hopper",
+        "default": false
+      } ]
+    } ]
+  }
+{% endschema %}

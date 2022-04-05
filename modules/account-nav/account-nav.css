@@ -1,0 +1,35 @@
+.account-nav {
+	margin: 0 0 40px;
+	@media (--s) {
+		margin: 0 0 60px;
+	}
+}
+.account-nav__list {
+	@extend %clearlist;
+}
+.account-nav__item {
+	@extend %clearitem;
+	display: inline-block;
+	margin: 0 0 0 30px;
+	&:first-child {
+		margin: 0;
+	}
+}
+.account-nav__link {
+	@extend %clearlink;
+	padding: 0 0 2px;
+}
+.no-touch .account-nav__link {
+	@add-mixin hover-drawline-center 1px, var(--dark-grey);
+}
+.account-nav__link--active {
+  &:after {
+    background: none no-repeat scroll 0 0 var(--dark-grey);
+    bottom: 0;
+    content: '';
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+}

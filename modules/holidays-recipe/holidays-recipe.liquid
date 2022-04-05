@@ -1,0 +1,90 @@
+{% assign featured = color | prepend: 'holidays-recipe-featured-' | append: '.jpg' %}
+
+{% case color %}
+	{% when 'orange' %}
+		{% assign title = 'Persimmon, Orange, Mango' %}
+		{% assign subtitle = 'Energize for a busy day of Thanksgiving cooking, or repair yourself the day after.' %}
+		{% assign about = 'Tannins in persimmons will cure a hangover, while vitamin C from orange and mango will give you a much needed energy boost to carry on with festivities.' %}
+		{% assign recipes = '1 and ¼ cups of orange[orange],½ cut of mango[mango],⅓ of medium persimmon[persimmon]' | split: ',' %}
+		{% assign instructions = 'Peel the orange. Cut into appropriate sizes.|Remove seeds from persimmon and mango, slice.|Insert half of the oranges, then mango and persimmon into juicer.|Insert the remainder of the orange.|Pour over ice, if desired. Enjoy!' | split: '|' %}
+	{% when 'blue' %}
+		{% assign title = 'Blueberry Smoothie' %}
+		{% assign subtitle = 'It’s true. The holidays can be stressful. Luckily we have the perfect recipe to lower stress levels and help you to relieve fatigue.' %}
+		{% assign about = 'Luckily, blueberries are known for their ability to lower active oxygen levels which in turn help lower stress and fight early signs of aging. And just as good are pears, an organic acid that can help relieve fatigue.' %}
+		{% assign recipes = '1 large pear[pear],½ cup of grapes[grapes],1 cup of blueberries[blueberries]' | split: ',' %}
+		{% assign instructions = 'Wash the pear thoroughly, and remove stem and seeds. Slice into appropriate sizes.|Remove grapes from stem, and then wash grapes and blueberries thoroughly.|Add pear, grapes, and blueberries to juicer.|Pour over ice, if desired. Enjoy!' | split: '|' %}
+	{% when 'white' %}
+		{% assign title = 'Sweet Squash Shake' %}
+		{% assign subtitle = 'This drink is fantastic the day after a much-too-filling holiday meal.' %}
+		{% assign about = 'Combine broccoli, pear and squash for this jam packed vitamin C shake. Sweet squash is a low calorie food with high dietary fiber to stimulate digestion. Broccoli and squash paired together aid in inflammation and eliminate waste.' %}
+		{% assign recipes = '½ milk[milk],½ cup of broccoli[broccoli],1 cup of squash[squash],⅓ cup of sliced pear[pear]' | split: ',' %}
+		{% assign instructions = 'Boil squash until it is softened, then slice.|Wash and cut broccoli into appropriate size. Remove stem and seeds from pear and cut.|Insert ingredients in order of milk, broccoli, squash, and pear.|Pour over ice, if desired. Enjoy!' | split: '|' %}
+	{% when 'red' %}
+		{% assign title = 'Beet Apple' %}
+		{% assign subtitle = 'At some point this holiday season, given all that celebrating, you might find yourself wanting a little cleanse.' %}
+		{% assign about = 'Beet contains large amount of iron, which is great for protecting liver cells. Combining beet with apple’s digestion benefits and lemon’s waste removal properties, this is an ideal juice recipe for detox.' %}
+		{% assign recipes = '3 and ½ apples[apple],⅛ cup of beets[beet],⅓ lemon[lemon]' | split: ',' %}
+		{% assign instructions = 'Wash all ingredients, remove seeds from apple, and cut into appropriate sizes.|Peel lemon, and then slice into appropriate sizes.|Insert about half of the apple, and then beet and lemon into juicer.|Insert the rest of the apple.|Pour over ice, if desired. Enjoy!' | split: '|' %}
+	{% when 'gold' %}
+		{% assign title = 'Lemon Detox' %}
+		{% assign subtitle = 'If you think of the holidays as one long cheat day, then drink this lemon, banana and pear juice to cleanse out harmful toxins and help repair your body.' %}
+		{% assign about = 'The vitamin C in lemon aids in removing waste and increasing energy. Banana helps strengthen your immune system and pear helps to relieve fatigue.' %}
+		{% assign recipes = '1 and ¼ cups of sliced pears[pear],1 sliced banana[banana],½ lemon[lemon]' | split: ',' %}
+		{% assign instructions = 'Peel lemon and banana. Remove seeds and core of pear. Cut into appropriate sizes.|Insert half of the pear, then banana and lemon into juicer.|Insert the rest of the pear.|Pour over ice, if desired. Enjoy!' | split: '|' %}
+	{% when 'green' %}
+		{% assign title = 'White Grape, Spinach, Basil & Pineapple' %}
+		{% assign subtitle = 'If you need some pep in your holiday step, this juice is for you.' %}
+		{% assign about = 'Basil, white grape and pineapples help you recover from exhaustion, while spinach provides iron and prevents anemia. All your holiday errands will be a breeze.' %}
+		{% assign recipes = 'I cup of white grapes[white-grapes],⅛ cup of spinach[spinach],2 tablespoons of basil[basil],1 cup pineapple[pineapple]' | split: ',' %}
+		{% assign instructions = 'Remove and peel the core of the pineapple. Slice into appropriate sizes.|Wash white grapes, basil and spinach thoroughly.|Insert ingredients into juicer, alternating their order.|Pour over ice, if desired. Enjoy!' | split: '|' %}
+{% endcase %}
+
+<section class="hol-recipe section">
+	<div class="container-l">
+		<div class="center text-center mw-800">
+			<h2 class="h3 hfancy mg-10 is-{{ color }}">Juice Your Way to Recovery</h2>
+			<h3 class="h1 mg-20">{{ title }}</h3>
+			<p class="p1">{{ subtitle }}</p>
+		</div>
+		<div class="hol-recipe__holder">
+			<div class="hol-recipe__featured js-lazy" data-src="{{ featured | asset_img_url: '1300x', format: 'pjpg' }}">
+			</div>
+			<div class="hol-recipe__content">
+				<div class="mg-30">
+					<h4 class="h6 underline mg-20 is-{{ color }}">About</h4>
+					<p class="p1">{{ about }}</p>
+				</div>
+				<div class="mg-30">
+					<h4 class="h6 underline mg-20 is-{{ color }}">Ingredients</h4>
+					<ul class="ingr-list">
+						{% for recipe in recipes %}
+							{% assign ingredient = recipe | split: '[' | last | prepend: 'ico-' | replace: ']', '.jpg' %}
+							{% assign dosage = recipe | split: '[' | first %}
+							<li class="ingr-item">
+								<i class="ingr-icon" style="background-image:url( {{ ingredient | asset_img_url: '130x', format: 'pjpg' }} );"></i>
+								<label class="ingr-label">{{ dosage }}</label>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="mg-30">
+					<h4 class="h6 underline is-{{ color }}">How To Make</h4>
+					<ol class="ol">
+						{% for instruction in instructions %}
+							<li class="ol-item">{{ instruction }}</li>
+						{% endfor %}
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% assign featured = false %}
+{% assign title = false %}
+{% assign subtitle = false %}
+{% assign about = false %}
+{% assign recipes = false %}
+{% assign ingredient = false %}
+{% assign dosage = false %}
+{% assign instructions = false %}

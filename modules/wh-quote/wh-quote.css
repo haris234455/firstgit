@@ -1,0 +1,76 @@
+.wh-quote {
+	padding: 0 0 40px;
+
+	@media (--xs) {
+    padding: 10px 0 50px;
+	}
+
+	@media (--s) {
+    padding: 30px 0 70px;
+	}
+}
+.wh-quote__container {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.wh-quote__block {
+  margin: 0 0 30px;
+  outline: none;
+
+  @media (--xs) {
+    margin: 0 0 50px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.wh-quote__head {
+  @extend %h4;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+.wh-quote__content {
+  @extend %h3;
+  line-height: 33px;
+  margin-bottom: 20px;
+
+  @media (--s) {
+    line-height: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+.wh-quote__user {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 40px 0 0;
+
+  @media (--xs) {
+    margin: 40px 0 0;
+  }
+
+  @media (--s) {
+    margin: 30px 0 0;
+  }
+}
+
+.wh-quote__profile {
+  border-radius: 50%;
+  cursor: default;
+  display: block;
+  height: 60px;
+  margin: 0 0 10px;
+  width: 60px;
+}
+
+.wh-quote__name {
+  @extend %h5;
+  margin-bottom: 0;
+}

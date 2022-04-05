@@ -1,0 +1,10 @@
+.custom-newsletter-bar {
+  background-color: var(--light-grey);
+  padding: 40px 0;
+  @media (--s) {
+    padding: 60px 0;
+  }
+}
+.custom-newsletter-bar__text {
+  margin-bottom: 20px;
+}

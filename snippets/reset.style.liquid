@@ -1,0 +1,21 @@
+<!-- Disable "Product Reviews" app style -->
+<script type="text/javascript">
+    var head = document.querySelector( 'head' );
+    var firefox = navigator.userAgent.toLowerCase().indexOf( 'firefox' ) > -1;
+    var resetStyle =  function() {
+        var stylesheets = head.querySelectorAll( 'link' ) || false;
+
+        if( stylesheets ) {
+            for( var i = 0; i < stylesheets.length; i++ ) {
+                var stylesheet = stylesheets[ i ];
+
+                if( stylesheet.hasAttribute( 'href' ) && stylesheet.getAttribute( 'href' ).indexOf( 'spr' ) != -1 ) {
+                    ( firefox ) ? stylesheet.remove() : stylesheet.parentNode.removeChild( stylesheet );
+                    head.removeEventListener( 'DOMSubtreeModified', resetStyle );
+                }
+            }
+        }
+    }
+
+    head.addEventListener( 'DOMSubtreeModified', resetStyle );
+</script>

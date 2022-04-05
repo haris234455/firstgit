@@ -1,0 +1,129 @@
+.product-media {
+	margin-top: 0;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	text-align: center;
+	width: 100%;
+	z-index: 1;
+}
+.product-media__container {
+  width: 100%;
+}
+.product-lifestyle {
+	position: relative;
+	width: 100%;
+	@add-mixin ratio 5, 2;
+}
+.product-lifestyle__img {
+	height: 100%;
+	left: 0;
+	object-fit: cover;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+.product-demo {
+	position: relative;
+}
+.product-demo__holder {
+    position: relative;
+	width: 100%;
+	@add-mixin ratio 16, 9;
+}
+.product-demo__video {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+}
+.product-demo__thumbnail {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+	z-index: 999;
+  &:after {
+  	background: none no-repeat scroll 0 0 rgba( 0, 0, 0, 0.10 );
+  	content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+  }
+}
+.product-demo__img {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+}
+.product-demo__btn-play {
+	@extend %ico-play;
+  background: none no-repeat scroll 0 0 #fff;
+	border-radius: 50%;
+	bottom: 0;
+  cursor: pointer;
+  height: 65px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  text-decoration: none;
+	top: 0;
+  transition-property: height, margin, width;
+  transition-timing-function: var(--ease);
+  transition-duration: var(--speed);
+  width: 65px;
+  z-index: 999;
+  &:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    width: 65px;
+    height: 65px;
+    padding-left: 5px;
+    border-radius: 50%;
+    margin: auto;
+    font-size: 30px;
+    line-height: 65px;
+    color: var(--green);
+	}
+}
+.no-touch .product-demo__btn-play {
+  &:hover {
+    height: 80px;
+    width: 80px;
+  }
+}
+
+.product-media--video {
+  padding: 40px 20px;
+  background-color: var(--light-grey);
+
+  @media (--m) {
+    padding: 60px 83px;
+  }
+
+  @media (--l) {
+    padding: 68px 124px 80px;
+  }
+
+  .product-media__title {
+    margin-bottom: 20px;
+
+    @media (--l) {
+      margin-bottom: 40x;
+    }
+  }
+}

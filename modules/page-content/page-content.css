@@ -1,0 +1,47 @@
+.page-content {
+  margin: 20px auto 0;
+  width: 100%;
+  @media (--xs) {
+    margin-top: 30px;
+  }
+  @media (--l) {
+    margin-top: 45px;
+  }
+}
+.page-content--with-form {
+  max-width: var(--page-content-form-max);
+}
+.page-content--post {
+  img {
+    height: auto;
+    object-fit: contain;
+  }
+
+  a {
+    @extend %a;
+  }
+}
+.caption {
+  @extend %h6;
+  @extend %ff-azo-light-italic;
+  line-height: 16px;
+  margin: 6px 0 25px;
+  padding: 0 0 0 35px;
+  position: relative;
+  @media (--s) {
+    margin: 10px 0 25px;
+  }
+  &:after {
+    background-size: cover;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    content: '';
+    color: var(--green);
+    font-size: 0.65rem;
+    height: 6px;
+    left: 15px;
+    position: absolute;
+    top: 5px;
+    width: 12px;
+  }
+}

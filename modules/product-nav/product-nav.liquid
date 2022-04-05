@@ -1,0 +1,13 @@
+<!-- /snippets/modules/product-nav.liquid -->
+{% assign current_variant = product.selected_or_first_available_variant %}
+{% assign featured_price = current_variant.price %}
+
+<nav class="product-nav js-product-nav" data-module="product-nav">
+	<div class="product-nav__container container-sp">
+		<p class="product-nav__head">{{ product.title }}</p>
+		<div class="product-nav__buy">
+			<p class="product-nav__buy-price js-price-field">{{ featured_price | money }}</p>
+			<a class="product-nav__buy-btn btn js-product-nav-button" title="Buy Now" onClick="ga('send', 'event', 'Product Page CTAs', 'Click: Buy Now', 'Referrer: {{ page_title }}')">Buy Now</a>
+		</div>
+	</div>
+</nav>

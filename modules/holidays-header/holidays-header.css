@@ -1,0 +1,65 @@
+.hol-header {
+	padding-top: 30px;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 99999;
+}
+.hol-shop {
+	background-color: var(--black);
+	color: var(--white);
+	display: block;
+  font-family: "azo-sans-web", sans-serif;
+  font-size: 13px;
+	left: 0;
+	padding: 10px 20px;
+	position: absolute;
+  text-align: center;
+	top: -10px;
+  @media (--s) {
+    font-size: 14px;
+  }
+}
+.hol-logo {
+	display: block;
+	height: 16px;
+	margin: 0 auto;
+	width: 94px;
+	@media (--s) {
+		height: 22px;
+		width: 130px;
+	}
+	&.is-black {
+		path { fill: var(--black); }
+	}
+}
+.hol-menu {
+	background-color: transparent;
+	display: block;
+	height: 21px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 32px;
+}
+.no-touch {
+	.hol-shop {
+		transition: opacity var(--speed) var(--ease);
+		&:hover { opacity: 0.6; }
+	}
+	.hol-logo {
+		transition: opacity var(--speed) var(--ease);
+		&:hover { opacity: 0.6; }
+		&.is-black {
+			path { transition: fill var(--speed) var(--ease); }
+			&:hover {
+				opacity: 1;
+				path { fill: var(--green); }
+			}
+		}
+	}
+	.hol-menu {
+		transition: opacity var(--speed) var(--ease);
+		&:hover { opacity: 0.6; }
+	}
+}

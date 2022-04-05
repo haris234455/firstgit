@@ -1,0 +1,73 @@
+{%- render 'plp-parts-main' -%}
+
+{% schema %}
+{
+  "name": "Main",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Select Your Product"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>If you already know which model you have, select your model from the dropdown below. You can find your model number on the label sticker underneath your Hurom product.</p>"
+    },
+    {
+      "type": "collection",
+      "id": "models",
+      "label": "Models"
+    },
+    {
+      "type": "link_list",
+      "id": "collections_menu",
+      "label": "Collections Menu"
+    },
+    {
+      "type": "header",
+      "content": "Callouts"
+    },
+    {
+      "type": "paragraph",
+      "content": "#1"
+    },
+    {
+      "type": "text",
+      "id": "callout_1_title",
+      "label": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "callout_1_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "richtext",
+      "id": "callout_1_description",
+      "label": "Description"
+    },
+    {
+      "type": "paragraph",
+      "content": "#2"
+    },
+    {
+      "type": "text",
+      "id": "callout_2_title",
+      "label": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "callout_2_icon",
+      "label": "Icon"
+    },
+    {
+      "type": "richtext",
+      "id": "callout_2_description",
+      "label": "Description"
+    }
+  ]
+}
+{% endschema %}

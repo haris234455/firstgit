@@ -1,0 +1,196 @@
+#col-main {
+  .header_html,
+  .footer_html,
+  .distance,
+  .directions {
+    display: none;
+  }
+  .main_search_bar,
+  .main_search_label,
+  .search_within_distance,
+  .distance_label,
+  .search_limit,
+  .search_limit_label {
+    float: none;
+    width: auto;
+  }
+  select#limit {
+    width: 100%;
+  }
+  select#within_distance {
+    width: 100%;
+  }
+}
+#col-main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  @media (--l) {
+    flex-direction: row;
+  }
+  .name {
+    @extend %h5;
+    color: var(--dark-grey);
+    margin: 0 0 5px;
+  }
+  .address,
+  .city,
+  .prov_state,
+  .postal_zip,
+  .phone {
+    @extend %ff-azo-light;
+    font-size: var(--paragraph-small);
+    line-height: 20px;
+  }
+}
+#col-main {
+  .search_bar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    background: none no-repeat scroll 0 0 transparent;
+    border: none;
+    margin: 0 0 30px;
+    padding: 0;
+    width: 100%;
+    flex: 1 0 auto;
+    flex-direction: column;
+    order: 1;
+    @media (--xs) {
+      margin: 0 0 50px;
+    }
+    @media (--l) {
+      align-items: flex-end;
+      flex-direction: row;
+    }
+    .main_search_bar,
+    .search_within_distance,
+    .search_limit {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      margin: 0 0 20px;
+      width: 100%;
+      flex-direction: column;
+      @media (--xs) {
+        width: 295px;
+      }
+      @media (--l) {
+        margin: 0;
+      }
+    }
+    .main_search_label,
+    .distance_label,
+    .search_limit_label {
+      @extend %h5;
+      margin: 0 0 6px;
+    }
+    .main_search_bar {
+      input {
+        @extend %field;
+      }
+    }
+    .search_within_distance,
+    .search_limit {
+      @media (--l) {
+        margin: 0 0 0 30px;
+        width: 115px;
+      }
+    }
+    button {
+      @extend .btn-s;
+      border-radius: 0;
+      box-shadow: none;
+      height: 45px;
+      text-align: center;
+      text-shadow: none;
+      padding: 10px 0;
+      width: 100px;
+      @media (--l) {
+        margin: 0 0 0 30px;
+      }
+    }
+  }
+}
+#addresses_list {
+  border-bottom: 1px solid var(--grey);
+  height: 670px !important;
+  margin: 15px 0 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  flex: 1 0 auto;
+  order: 3;
+  @media (--l) {
+    border-top: 1px solid var(--grey);
+    margin: 0;
+    padding: 0 60px 0 0;
+    width: 25%;
+    order: 2;
+  }
+  &:after {
+    transition: height var(--speed) var(--ease);
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.45) 40%, rgba(255, 255, 255, 0.85) 70%, rgba(255, 255, 255, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.45) 40%, rgba(255, 255, 255, 0.85) 70%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.45) 40%, rgba(255, 255, 255, 0.85) 70%, rgba(255, 255, 255, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+    bottom: 0;
+    content: '';
+    height: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+  }
+  ul {
+    @extend %clearlist;
+    li {
+      @extend %clearitem;
+      transition: background-color var(--speed) var(--ease);
+      background-repeat: no-repeat;
+      background-position: 20px 25px;
+      border-top: 1px solid var(--grey);
+      padding: 25px 0 25px 50px;
+      position: relative;
+      &:first-child {
+        border-top: none;
+      }
+      a {
+        margin: 0;
+      }
+    }
+  }
+}
+.no-touch #addresses_list {
+  ul {
+    li {
+      &:hover {
+        background-color: var(--light-grey);
+      }
+    }
+  }
+}
+#addresses_list.scrolling {
+  &:after {
+    height: 60px;
+  }
+}
+#store_map {
+  height: 200px !important;
+  width: 100% !important;
+  flex: 1 0 auto;
+  order: 2;
+  @media (--xs) {
+    height: 670px !important;
+  }
+  @media (--l) {
+    width: 75% !important;
+    order: 3;
+  }
+  .gm_popup {
+    padding: 20px;
+  }
+}

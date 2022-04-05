@@ -1,0 +1,41 @@
+.plp-parts-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 349px;
+
+  @media (--xs) {
+    margin-top: 18px;
+    margin-bottom: 40px;
+  }
+
+  @media (--l) {
+    margin-bottom: 50px;
+  }
+
+  @media (--xl) {
+    max-width: 413px;
+    margin-bottom: 95px;
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    flex: 1;
+    height: 1px;
+    background-color: var(--grey);
+  }
+
+  &:before {
+    margin-right: 12px;
+  }
+
+  &:after {
+    margin-left: 12px;
+  }
+}

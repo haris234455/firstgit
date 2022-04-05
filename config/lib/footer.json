@@ -1,0 +1,45 @@
+{
+  "name": "Footer",
+  "settings": [
+  {
+    "type": "select",
+    "id": "footer_style",
+    "default": "light",
+    "label": "Footer Style",
+    "info": "Footer style",
+    "options": [
+      {
+        "value": "light",
+        "label": "Light"
+      },
+      {
+        "value": "dark",
+        "label": "Dark"
+      }
+    ]
+  },
+  {
+    "type": "text",
+    "id": "footer_column_2_header",
+    "default": "Customer Service",
+    "label": "Column 2 Header"
+  },
+  {
+    "type": "text",
+    "id": "footer_column_2_text",
+    "default": "800-253-2140",
+    "label": "Column 2 Text"
+  },
+  {
+    "type": "text",
+    "id": "footer_column_signup_header",
+    "default": "Sign up for news, offers, recipes and more!",
+    "label": "Newsletter Signup Header"
+  },
+  {
+    "type": "text",
+    "id": "footer_column_social_media_header",
+    "default": "Get inspired with #Hurom4Health",
+    "label": "Social Media Header"
+  }]
+}

@@ -1,0 +1,89 @@
+.product-three-up {
+  padding-top: 36px;
+  padding-bottom: 20px;
+
+  @media (--xs) {
+    padding-top: 40px;
+    padding-bottom: 0;
+  }
+
+  @media (--m) {
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+
+  @media (--xl) {
+    padding-top: 80px;
+    padding-bottom: 45px;
+  }
+
+  .no-touch & {
+    .flickity-viewport {
+      padding-top: 10px;
+    }
+  }
+
+  .flickity-page-dots {
+    position: relative;
+    bottom: 0;
+    padding-bottom: 20px;
+
+    @media (--xs) {
+      padding-bottom: 50px;
+    }
+
+    @media (--l) {
+      display: none;
+    }
+  }
+}
+
+.product-three-up__items {
+  display: flex;
+  justify-content: center;
+
+  &.flickity-enabled {
+    display: block;
+  }
+
+  .plp-parts-product-card {
+    width: 50%;
+    margin: 0 0 20px;
+    padding: 0 0 20px;
+
+    @media (--xs) {
+      width: 33.33%;
+      padding: 0 50px 30px;
+    }
+
+    @media (--m) {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+
+    @media (--xl) {
+      padding-left: 120px;
+      padding-right: 120px;
+    }
+
+    &:only-child {
+      padding-bottom: 0;
+
+      @media (--xs) {
+        padding-bottom: 30px;
+      }
+    }
+  }
+}
+
+.product-three-up__title {
+  margin-bottom: 20px;
+
+  @media (--xs) {
+    margin-bottom: 30px;
+  }
+
+  @media (--m) {
+    margin-bottom: 40px;
+  }
+}

@@ -1,0 +1,18 @@
+{%- assign mod_brands = mod_brands | default: blank -%}
+
+{%- if mod_brands != blank -%}
+  <section class="brand-carousel clearfix" data-module="brand-carousel">
+    {%- for brand in mod_brands -%}
+      {%- assign fields = brand.settings -%}
+
+      {%- include 'brand-carousel-card',
+        mod_id: brand.id,
+        mod_logo: fields['logo'],
+        mod_text: fields['text'] -%}
+
+      {%- assign fields = nil -%}
+    {%- endfor -%}
+  </section>
+{%- endif -%}
+
+{%- assign mod_brands = nil -%}

@@ -1,0 +1,14 @@
+<!-- /snippets/modules/product-featured.liquid -->
+<section class="product-featured {{ class }}">
+    <div class="product-featured__container container-xl">
+        <h2 class="product-featured__head align-c">{{ 'products.featured.title' | t }}</h2>
+        <div class="product-featured__grid">
+            {% assign featured_accessories = product.metafields.accentuate.featured_accessories | split: '|'  %}
+            {% for accessory in featured_accessories limit: 3 %}
+                {% assign current_product = all_products[accessory] %}
+                {% include 'product-item', product: current_product %}
+                {% assign current_product = nil %}
+            {% endfor %}
+        </div>
+    </div>
+</section>

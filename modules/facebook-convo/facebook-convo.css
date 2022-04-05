@@ -1,0 +1,21 @@
+.facebook-convo {
+	background-color: var(--white);
+}
+.facebook-convo__title {
+	text-align: center;
+}
+.facebook-convo__content {
+	.__box {
+		display: block;
+		margin: 0 auto;
+		max-width: 600px;
+		width: 100%;
+
+		> span {
+			width: 100% !important;
+			> iframe {
+				width: 100% !important;
+			}
+		}
+	}
+}

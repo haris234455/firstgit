@@ -1,0 +1,34 @@
+{%- assign metafields = page.metafields.accentuate -%}
+
+<section class="block-instagram">
+  <div class="block-instagram__container container-xl">
+    <div class="block-instagram__title fx-2">
+      <h2 class="__head">Follow Us on Instagram</h2>
+      <a class="__link link-s"
+        href="https://www.instagram.com/huromamerica/"
+        alt="@huromamerica"
+        target="_blank">@huromamerica</a>
+    </div>
+    <div class="block-instagram__featured fx-2">
+      {%- if metafields['showcase_id'] and metafields['showcase_id'] != blank -%}
+        <script
+          src="https://showcase.abovemarket.com/embed/gallery/{{- metafields['showcase_id'] -}}"
+          data-gallery-id="{{ showcase_id }}"
+          data-columns="3"
+          data-rows="2"></script>
+      {%- else -%}
+        {%- if metafields['instagram_featured'] != blank -%}
+          {%- assign featured_image = metafields['instagram_featured'] -%}
+        {%- else -%}
+          {%- assign featured_image = 'featured-instagram.jpg' | file_url -%}
+        {%- endif -%}
+        <img class="__img"
+          src="{{- featured_image -}}"
+          alt="Juice made by Hurom slow juicer"
+          title="Juice by Hurom">
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{%- assign metafields = nil -%}

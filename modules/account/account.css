@@ -1,0 +1,105 @@
+.account__logout-link {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.order-history__head {
+	margin-bottom: 20px;
+}
+.table-history {
+	/* Order Column. */
+	.table-history__order-head {
+		display: none;
+
+		@media (--xs) {
+			display: table-cell;
+		}
+	}
+	.table-history__order-data {
+		@extend %clearlist;
+	}
+	.table-history__data {
+		@extend %clearitem;
+		@extend %ff-azo-light;
+		font-size: var(--paragraph-small);
+		margin: 5px 0 0;
+
+		&:first-child {
+			margin: 10px 0 0;
+		}
+	}
+	.table-history__data-date {
+		display: block;
+
+		@media (--l) {
+			display: none;
+		}
+	}
+	.table-history__data-payment {
+		display: block;
+
+		@media (--s) {
+			display: none;
+		}
+	}
+	.table-history__data-shipping {
+		display: block;
+
+		@media (--xs) {
+			display: none;
+		}
+	}
+	/* Date Column. */
+	.table-history__date-head {
+		display: none;
+
+		@media (--l) {
+			display: table-cell;
+		}
+	}
+	.table-history__date {
+		display: none;
+
+		@media (--l) {
+			display: table-cell;
+		}
+	}
+	/* Payment Column. */
+	.table-history__payment-head {
+		display: none;
+
+		@media (--s) {
+			display: table-cell;
+		}
+	}
+	.table-history__payment {
+		display: none;
+
+		@media (--s) {
+			display: table-cell;
+		}
+	}
+	/* Shipping Column. */
+	.table-history__shipping-head {
+		display: none;
+
+		@media (--xs) {
+			display: table-cell;
+		}
+	}
+	.table-history__shipping {
+		display: none;
+
+		@media (--xs) {
+			display: table-cell;
+		}
+	}
+	/* Total Column. */
+	.table-history__total-head {
+		display: none;
+
+		@media (--xs) {
+			display: table-cell;
+		}
+	}
+}

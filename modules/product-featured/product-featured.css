@@ -1,0 +1,14 @@
+.product-featured__grid {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+  flex-direction: row;
+  margin: 20px -10px 0;
+  @media (--xs) {
+  	margin: 40px -12px 0;
+  	flex-direction: row;
+  }
+  @media (--l) {
+  	margin-top: 60px;
+  }
+}

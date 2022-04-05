@@ -1,0 +1,57 @@
+{
+  "name": "Promo Banner",
+  "settings": [
+  {
+    "type": "select",
+    "id": "promo_banner_display",
+    "label": "Display",
+    "options": [
+    {
+      "value": "show",
+      "label": "Show"
+    },
+    {
+      "value": "hide",
+      "label": "Hide"
+    }],
+    "default": "hide",
+    "info": "Select if the promo banner needs to be displayed or not on the website."
+  },
+  {
+    "type": "text",
+    "id": "promo_banner_title",
+    "default": "Title",
+    "label": "Title"
+  },
+  {
+    "type": "text",
+    "id": "promo_banner_content",
+    "default": "Content",
+    "label": "Content"
+  },
+  {
+    "type": "text",
+    "id": "promo_banner_code",
+    "default": "Promo Code",
+    "label": "Promo Code"
+  },
+  {
+    "type": "text",
+    "id": "promo_banner_expire_date",
+    "default": "1",
+    "label": "Expiration Cookie",
+    "info": "Enter how many days the promo banner should not reappear for after being closed by a user."
+  },
+  {
+    "type": "color",
+    "id": "promo_banner_background_color",
+    "label": "Background",
+    "default": "#000000"
+  },
+  {
+    "type": "color",
+    "id": "promo_banner_text_color",
+    "label": "CTA Text Color",
+    "default": "#ffffff"
+  }]
+}

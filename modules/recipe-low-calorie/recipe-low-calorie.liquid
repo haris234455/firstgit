@@ -1,0 +1,51 @@
+<!-- /snippets/datas/recipe.low-calorie.liquid -->
+
+
+{% comment %} Title {% endcomment %}
+{% assign head = 'Low Calorie Juice Recipes' %}
+{% assign lead = 'Using cold-pressed juice as part of your low calorie diet can be a great way to ensure that your body receives the necessary nutrients and enzymes. Check out our natural, low-calorie juice recipes.' %}
+
+
+{% comment %} Tomato Grape {% endcomment %}
+{% assign recipes = 'Tomato Grape' %}
+{% assign descriptions = 'Combining cherry tomatoes, red grapes, and lemon creates a delicious post-workout juice. The anthocyanin from grapes work to heat sore muscles after intense workouts. Cherry tomato contains vitamin A and C which help your body build a stronger defense system against infectious organisms. Lemon helps with digestion.' %}
+{% assign ingredients = '1 and ½ cups of red grapes [*] 1 cup cherry tomatoes [*] ⅓ lemon' %}
+{% assign ingredients_tags = 'red-grapes [*] cherry-tomato [*] lemon' %}
+{% assign instructions = 'Peel lemon and cut into appropriate sizes. [*] Remove the stem from the cherry tomato and separate grapes to wash thoroughly. [*] Insert half of the grapes, then lemon and cherry tomatoes. [*] Insert the remaining grapes into the juicer. [*] Enjoy! Pour over ice, if desired.' %}
+{% assign colors = 'red' %}
+
+
+{% comment %} White Grapes, Spinach, Basil, & Pineapple {% endcomment %}
+{% assign recipes = recipes | append: '[&]' | append: 'White Grapes, Spinach, Basil, & Pineapple' %}
+{% assign descriptions =  descriptions | append: '[&]' | append: 'This green juice is full of energizing vitamins. Basil, white grape, and pineapples help you recover from exhaustion, while spinach provides iron and prevents anemia making this juice combination ideal for those who need an extra pep in their step.' %}
+{% assign ingredients = ingredients | append: '[&]' | append: '1 cup of white grapes [*] ⅛ cup of spinach [*] 2 tablespoons of  basil [*] 1 cup pineapple' %}
+{% assign ingredients_tags = ingredients_tags | append: '[&]' | append: 'white-grapes [*] spinach [*] basil [*] pineapple' %}
+{% assign instructions = instructions | append: '[&]' | append: 'Remove peel and core of the pineapple. Slice into appropriate sizes. [*] Wash white grapes, basil, and spinach thoroughly. [*] Insert ingredients into juicer alternating their order. [*] Enjoy! Pour over ice, if desired.' %}
+{% assign colors = colors | append: '[&]' | append: 'green' %}
+
+
+{% comment %} Grapefruit Triple {% endcomment %}
+{% assign recipes = recipes | append: '[&]' | append: 'Grapefruit Triple' %}
+{% assign descriptions =  descriptions | append: '[&]' | append: 'This combination of vitamin C packed juice is perfect for rejuvenating a tired body and aiding in weight-loss. Grapefruit is effective at detoxifying and breaking down fat and pineapple promotes digestion. The oranges and carrots help improve immunity and fight fatigue. One low calorie juice, multiple benefits.' %}
+{% assign ingredients = ingredients | append: '[&]' | append: '⅓  grapefruit [*] ½  orange [*] 1 and ⅛ cups of pineapple chunks [*] ⅛ cup of sliced carrots' %}
+{% assign ingredients_tags = ingredients_tags | append: '[&]' | append: 'grapefruit [*] orange [*] pineapple [*] carrots' %}
+{% assign instructions = instructions | append: '[&]' | append: 'Peel the grapefruit, orange, and carrot, and slice. [*] Remove pineapple peel and core, and slice. [*] Insert ingredients all of the ingredients. [*] Enjoy! Pour over ice, if desired.' %}
+{% assign colors = colors | append: '[&]' | append: 'orange' %}
+
+
+{% comment %} Wheatgrass Pear {% endcomment %}
+{% assign recipes = recipes | append: '[&]' | append: 'Wheatgrass Pear' %}
+{% assign descriptions =  descriptions | append: '[&]' | append: 'Wheatgrass, packed with dietary fiber, helps stimulate digestion and improve the body’s ability to detoxify while boosting immunity. Luteolin, a flavonoid found in pears, helps keep bronchial tubes healthy. Pairing the two creates a delicious and potent low calorie, detox juice.' %}
+{% assign ingredients = ingredients | append: '[&]' | append: '1 and ¼ cups of sliced pears [*] 1 ounce of wheatgrass' %}
+{% assign ingredients_tags = ingredients_tags | append: '[&]' | append: 'pear [*] wheatgrass' %}
+{% assign instructions = instructions | append: '[&]' | append: 'Wash the pear, then remove the seeds and core. Cut into appropriate sizes. [*] Wash wheatgrass, and cut into appropriate sizes. [*] Insert half of the pear, then wheatgrass. [*] Insert the rest of the pear. [*] Enjoy! Pour over ice, if desired.' %}
+{% assign colors = colors | append: '[&]' | append: 'green' %}
+
+
+{% comment %} Setup {% endcomment %}
+{% assign recipes = recipes | split: '[&]' %}
+{% assign descriptions = descriptions | split: '[&]' %}
+{% assign ingredients = ingredients | split: '[&]' %}
+{% assign ingredients_tags = ingredients_tags | split: '[&]' %}
+{% assign instructions = instructions | split: '[&]' %}
+{% assign colors = colors | split: '[&]' %}

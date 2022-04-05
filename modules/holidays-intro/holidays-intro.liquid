@@ -1,0 +1,30 @@
+{% case color %}
+	{% when 'orange' %}
+		{% assign title = 'Gift for Wife' %}
+		{% assign content = 'Always see your wife with bottles of store-bought, cold-pressed juice? Why not do her a favor and get her her very own juicer. Treat her to fresh cold-pressed juices whenever she wants at the comfort of her own home.' %}
+	{% when 'blue' %}
+		{% assign title = 'Gift for Husband' %}
+		{% assign content = 'What could possibly be the best gift to give to your husband? His health! This juicer is the perfect way for your husband to start rejuvenating his health while he consumes the recommended daily amount of vegetables and fruits.' %}
+	{% when 'green' %}
+    {% assign title = 'Gift for Foodies' %}
+    {% assign content = 'Surprise your foodie friend with a juicer. Help them channel their inner foodie while they explore Hurom’s endless recipes of, not only juice, but also smoothies, soups, sauces, and desserts!' %}
+  {% when 'red' %}
+		{% assign title = 'Gift for Fitness Lovers' %}
+		{% assign content = 'This juicer is a great way to maintain all your workouts and be able to keep up with the energy and strength needed. With all the nutrition intact in the juice, anyone will be ready to push their workout limits.' %}
+	{% when 'gold' %}
+		{% assign title = 'Gift for the Hostess' %}
+		{% assign content = 'Know someone who loves to host parties, and dinners at their home? Why not do them a favor and help them entice their guests with fresh cold-pressed juices that can be *ahem* spiked, too?' %}
+	{% when 'white' %}
+		{% assign title = 'Gift for the Yogi' %}
+		{% assign content = 'Yoga is more than just a workout, it’s a lifestyle. Help your favorite yogi refuel by treating them to a juicer. Your yogi will not just be able to rejuvenate their soul, but also their body with fresh cold-pressed juice.' %}
+{% endcase %}
+
+<section class="hol-intro section is-{{ color }}">
+	<div class="container-m">
+		<h2 class="h5 mg-20">{{ title }}</h2>
+		<h3 class="h2">{{ content }}</h3>
+	</div>
+</section>
+
+{% assign title = false %}
+{% assign content = false %}

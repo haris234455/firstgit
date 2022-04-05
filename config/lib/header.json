@@ -1,0 +1,28 @@
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "select",
+      "id": "header_style",
+      "default": "light",
+      "label": "Header Style",
+      "info": "Header style at the Home Page",
+      "options": [
+        {
+          "value": "light",
+          "label": "Light"
+        },
+        {
+          "value": "dark",
+          "label": "Dark"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "header_form_title",
+      "default": "Want to hear more from us?",
+      "label": "Header Form Title"
+    }
+  ]
+}

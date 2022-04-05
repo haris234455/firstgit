@@ -1,0 +1,271 @@
+#nprogress {
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99999;
+  .bar {
+    background: none no-repeat scroll 0 0 var(--green);
+    height: 2px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+}
+[data-page-load] {
+  transition: opacity var(--speed) var(--ease);
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+[data-view] {
+  animation-duration: 0.75s;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fadein {
+  animation-name: fadein;
+}
+@-webkit-keyframes fadein-up {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d( 0, 50px , 0 );
+    transform: translate3d( 0, 50px , 0 );
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadein-up {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d( 0, 50px, 0 );
+    transform: translate3d( 0, 50px, 0 );
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.fadein-up {
+  animation-name: fadein-up;
+}
+@-webkit-keyframes fadein-down {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d( 0, -30px , 0 );
+    transform: translate3d( 0, -30px , 0 );
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadein-down {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d( 0, -30px, 0 );
+    transform: translate3d( 0, -30px, 0 );
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.fadein-down {
+  animation-name: fadein-down;
+}
+@-webkit-keyframes fadein-left {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d( -50px, 0 , 0 );
+    transform: translate3d( -50px, 0 , 0 );
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadein-left {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d( -50px, 0, 0 );
+    transform: translate3d( -50px, 0 , 0 );
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.fadein-left {
+  animation-name: fadein-left;
+}
+@-webkit-keyframes fadein-left-big {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d( -200px, 0 , 0 );
+    transform: translate3d( -200px, 0 , 0 );
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadein-left-big {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d( -200px, 0, 0 );
+    transform: translate3d( -200px, 0 , 0 );
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.fadein-left-big {
+  animation-name: fadein-left-big;
+}
+@-webkit-keyframes fadein-right {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d( 50px, 0 , 0 );
+    transform: translate3d( 50px, 0 , 0 );
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadein-right {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d( 50px, 0, 0 );
+    transform: translate3d( 50px, 0 , 0 );
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.fadein-right {
+  animation-name: fadein-right;
+}
+@-webkit-keyframes fadein-right-big {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d( 200px, 0 , 0 );
+    transform: translate3d( 200px, 0 , 0 );
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadein-right-big {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d( 200px, 0, 0 );
+    transform: translate3d( 200px, 0 , 0 );
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.fadein-right-big {
+  animation-name: fadein-right-big;
+}
+@-webkit-keyframes expand-wide {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes expand-wide {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+.expand-wide {
+  animation-name: expand-wide;
+}
+@-webkit-keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.flicker {
+  animation-name: flicker;
+}

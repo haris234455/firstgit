@@ -1,0 +1,12 @@
+<!-- /snippets/components/collection-item.liquid -->
+
+<a class="collection-item collection-{{ collection.handle }}" data-view="fadein-up" data-view-delay="{{ delay }}s" href="{{ collection.url }}">
+	<div class="collection-item__featured" href="{{ collection.url }}">
+    	<img class="collection-item__img" src="{% if collection.image %}{{ collection.image.src | img_url: 'grande' }}{% else %}{{ 'fallback-collection-item.svg' | asset_url }}{% endif %}" alt="Hurom Slow Juicers - {{ collection.title }}" title="{{ collection.title }}">
+    </div>
+    <div class="collection-item__description">
+        <h2 class="collection-item__title">{{ collection.title }}</h2>
+        <p class="collection-item__content">{{ collection.description | strip_html }}</p>
+        <span class="collection-item__link link-s">{{ 'collections.general.more' | t }} {{ collection.title }}</span>
+    </div>
+</a>

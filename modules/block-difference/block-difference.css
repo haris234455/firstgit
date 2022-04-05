@@ -1,0 +1,144 @@
+.block-difference {
+  padding: 50px 0;
+  text-align: center;
+
+  @media (--s) {
+    padding: 70px 0;
+  }
+}
+.block-difference__container {
+  margin: 0 auto;
+  max-width: 850px;
+}
+.block-difference__title {
+  width: 100%;
+
+  .__sup {
+    @extend %h4;
+    margin-bottom: 15px;
+  }
+
+  .__head {
+    @extend %h1;
+    margin-bottom: 10px;
+
+    @media (--xs) {
+      margin-bottom: 15px;
+    }
+  }
+
+  .__lead {
+    margin: 0 auto;
+    max-width: 650px;
+  }
+}
+.block-difference__media {
+  margin-top: 30px;
+  position: relative;
+  width: 100%;
+  @add-mixin ratio 850, 440;
+
+  @media (--xxs) {
+    margin-top: 40px;
+  }
+}
+
+.block-difference__video {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+}
+.block-difference__group {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+
+  @media (--xxs) {
+    flex-direction: row;
+  }
+
+  .__holder {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+
+    &:first-child {
+      padding: 30px 0 50px;
+
+      @media (--xxs) {
+        padding: 40px 30px 40px 0;
+      }
+
+      @media (--s) {
+        padding-right: 60px;
+      }
+    }
+
+    &:last-child {
+      border-top: 1px solid var(--grey);
+      padding: 50px 0 0;
+
+      @media (--xxs) {
+        border-left: 1px solid var(--grey);
+        border-top: none;
+        padding: 40px 0 40px 30px;
+      }
+
+      @media (--s) {
+        padding-left: 60px;
+      }
+
+      &:before {
+        @extend %h4;
+        background: none no-repeat scroll 0 0 var(--white);
+        border: 1px solid var(--grey);
+        border-radius: 50%;
+        content: 'vs';
+        height: 40px;
+        left: 0;
+        line-height: 42px;
+        margin: 0 auto;
+        position: absolute;
+        right: 0;
+        text-transform: uppercase;
+        top: -21px;
+        width: 40px;
+
+        @media (--xxs) {
+          bottom: 0;
+          left: -21px;
+          margin: auto 0;
+          right: auto;
+          top: 0;
+        }
+
+        @media (--s) {
+          height: 45px;
+          left: -23px;
+          line-height: 48px;
+          width: 45px;
+        }
+      }
+    }
+  }
+}
+.block-difference__info {
+  position: relative;
+  width: 100%;
+
+  .__sub {
+    margin-bottom: 10px;
+  }
+
+  .__content {
+    width: 100%;
+  }
+}

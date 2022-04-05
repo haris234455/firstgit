@@ -1,0 +1,35 @@
+.plp-parts-back-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  @media (--xs) {
+    margin-bottom: 12px;
+  }
+
+  .plp-parts-dropdown + & {
+    margin-top: 25px;
+
+    @media (--l) {
+      margin-bottom: 55px;
+    }
+  }
+
+  .plp-parts-header + & {
+    @media (--xs) {
+      margin-top: 30px;
+    }
+
+    @media (--l) {
+      margin-top: 35px;
+      margin-bottom: 55px;
+    }
+  }
+}
+
+.plp-parts-back-link__icon {
+  display: block;
+  width: 5px;
+  margin-right: 10px;
+}

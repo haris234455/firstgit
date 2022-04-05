@@ -1,0 +1,60 @@
+.brand-carousel {
+  padding: 30px 0 60px;
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    background-image: linear-gradient(to right, rgba(255,255,255,0.04) 0%, #FFFFFF 100%);
+    opacity: 0.6;
+    z-index: 1;
+
+    @media (--xs) {
+      width: 14%;
+    }
+
+    @media (--s) {
+      display: none;
+    }
+  }
+
+  @media (--xs) {
+    padding: 54px 0 60px;
+  }
+
+  @media (--s) {
+    padding: 49px 0 49px;
+  }
+
+  @media (--l) {
+    padding: 51px 0 51px;
+  }
+
+  .flickity-page-dots {
+    @media (--s) {
+      display: none;
+    }
+  }
+
+
+  .flickity-prev-next-button.previous {
+    left: -10px;
+  }
+
+  .flickity-prev-next-button.next {
+    right: -10px;
+  }
+
+  .flickity-prev-next-button {
+    z-index: 2;
+    @media (--s) {
+      display: none;
+    }
+  }
+}

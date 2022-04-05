@@ -1,0 +1,211 @@
+:root {
+  /* Breakpoints */
+  --xxxs: 330px;
+  --xxs: 480px;
+  --xs: 600px;
+  --s: 800px;
+  --m: 900px;
+  --l: 1000px;
+  --xl: 1280px;
+  --xxl: 1440px;
+
+  /* Colors */
+  --black: #000000;
+  --white: #ffffff;
+  --red: #e32b2d;
+  --grey: #e6e6e6;
+  --grey-2: #acacac;
+  --grey-3: #E6E6E6;
+  --grey-4: #E9E9E9;
+  --grey-5: #F7F7F7;
+  --light-grey: #f9f9f9;
+  --light-grey-2: #FBFBFB;
+  --light-grey-3: #B7B7B7;
+  --dim-grey: #707070;
+  --dark-grey: #292929;
+  --purple: #9b9bad;
+  --dark-purple: #566172;
+  --green: #78c500;
+  --green-2: #55a400;
+  --green-3: #77C043;
+  --light-green: #eff9e4;
+  --dark-green: #528406;
+  --dark-green-2: #446c00;
+  --very-light-grey: #FAF8F6;
+  --alto: #D8D8D8;
+  --boulder: #757575;
+  --panache: #f4f9f2;
+  --geyser: #E0E5E8;
+  --matisse: #168292;
+
+  /* Borders */
+  --border-grey: 1px solid #e6e6e6;
+  --border-light-grey: 1px solid #f9f9f9;
+  --border-red: 1px solid #e32b2d;
+
+  /* Transitions */
+  --speed: 0.2s;
+  --ease: ease-in-out;
+
+  /* Animations */
+  --animation-duration: 0.2s;
+  --animation-timing-function: linear;
+
+  /* Typography Size */
+  --font-size-mobile: 13px;
+  --font-size-tablet: 15px;
+  --font-size-desktop: 15px;
+
+  /* Pargraph. */
+  --paragraph: 1rem;
+
+  /* Paragraph small
+  ** - 13px (desktop)
+  ** - 13px (tablet)
+  ** - 11px (mobile)
+  */
+  --paragraph-small: 0.9rem;
+
+  /* Heading 1
+  ** - 40px (desktop)
+  ** - 30px (tablet)
+  ** - 24px (mobile)
+  */
+  --h1-mobile: 1.85rem;
+  --h1-tablet: 2rem;
+  --h1-desktop: 2.7rem;
+
+  /* Heading 2
+  ** - 28px (desktop)
+  ** - 22px (tablet)
+  ** - 17px (mobile)
+  */
+  --h2-mobile: 1.35rem;
+  --h2-tablet: 1.5rem;
+  --h2-desktop: 1.9rem;
+
+  /* Heading 3
+  ** - 21px (desktop)
+  ** - 18px (tablet)
+  ** - 15px (mobile)
+  */
+  --h3: 1.3rem;
+
+  /* Heading 4
+  ** - 17px (desktop)
+  ** - 17px (tablet)
+  ** - 14px (mobile)
+  */
+  --h4: 1.15rem;
+
+  /* Heading 5
+  ** - 14px (desktop)
+  ** - 14px (tablet)
+  ** - 12px (mobile)
+  */
+  --h5: 0.95rem;
+
+  /* Heading 6
+  ** - 11px (desktop)
+  ** - 11px (tablet)
+  ** - 11px (mobile)
+  */
+  --h6: 0.8rem;
+
+  /* Container Width */
+  --container-xs: 620px;
+  --container-s: 700px;
+  --container-m: 890px;
+  --container-l: 1060px;
+  --container-ml: 1160px;
+  --container-xl: 1280px;
+  --container-sl: 1440px;
+  --container-max: 1800px;
+
+  /* Container Bleeds */
+  --bleed-small: 20px;
+  --bleed-medium: 30px;
+  --bleed-large: 40px;
+  --bleed-special: 30px;
+
+  /* Horizontale Rule */
+  --hr-max: 1260px;
+
+  /* Header Font Size */
+  --header-font-mobile: 1.15rem;
+  --header-font-tablet: 0.95rem;
+  --header-font-desktop: 0.95rem;
+
+  /* Header Width */
+  --header-width: 100%;
+
+  /* Header Height */
+  --header-mobile: 60px;
+  --header-tablet: 60px;
+  --header-desktop: 70px;
+
+  /* Footer Font Size */
+  --footer-font: 0.95rem;
+
+  /* Footer Width */
+  --footer-width: 100%;
+
+  /* Footer Height */
+  --footer-mobile: 600px;
+  --footer-tablet: 400px;
+  --footer-desktop: 310px;
+
+  /* Footer CTA Height */
+  --footer-cta-mobile: 190px;
+  --footer-cta-tablet: 260px;
+  --footer-cta-desktop: 340px;
+
+  /* Footer CTA Default Height */
+  --footer-cta-default-mobile: 210px;
+  --footer-cta-default-tablet: 310px;
+  --footer-cta-default-desktop: 450px;
+
+  /* Page Hero Height */
+  --hero-cta-mobile: 290px;
+  --hero-cta-tablet: 460px;
+  --hero-cta-desktop: 650px;
+
+  /* Page Elements Max Width */
+  --page-title-max: 700px;
+  --page-content-form-max: 620px;
+
+  /* Page Hero Height */
+  --product-nav-mobile: 60px;
+  --product-nav-tablet: 60px;
+  --product-nav-desktop: 70px;
+
+  /* Index Page Max Width */
+  --index-max: 1280px;
+
+  /* Input */
+  --input-height: 45px;
+}
+
+/* Breakpoint Queries */
+@custom-media --xxxs (min-width: 330px);
+@custom-media --xxs (min-width: 480px);
+@custom-media --xs (min-width: 600px);
+@custom-media --ms (min-width: 769px);
+@custom-media --s (min-width: 800px);
+@custom-media --m (min-width: 900px);
+@custom-media --l (min-width: 1000px);
+@custom-media --xsl (min-width: 1025px);
+@custom-media --xl (min-width: 1280px);
+@custom-media --xxl (min-width: 1440px);
+@custom-media --xxxl (min-width: 1600px);
+@custom-media --full-hd (min-width: 1920px);
+@custom-media --xxl-plus (min-width: 1441px);
+
+@custom-media --xxxs-down (max-width: 330px);
+@custom-media --xxs-down (max-width: 479px);
+@custom-media --xs-down (max-width: 659px);
+@custom-media --s-down (max-width: 799px);
+@custom-media --m-down (max-width: 899px);
+@custom-media --l-down (max-width: 1099px);
+@custom-media --xl-down (max-width: 1279px);
+@custom-media --xxl-down (max-width: 1839px);

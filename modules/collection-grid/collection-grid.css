@@ -1,0 +1,15 @@
+/***
+@stylesheet:	collection-grid
+@project:		hurom theme
+@version:		1.0
+@groups:		* collection grid
+@target:		snippets/modules/collection-grid.liquid
+***/
+
+
+/* Collection Grid
+------------------------------------------------------------ */
+.collection-grid {
+	display: flex;
+	flex-direction: column;
+}

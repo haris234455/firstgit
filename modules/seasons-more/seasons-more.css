@@ -1,0 +1,96 @@
+.seasons-more {
+	padding: 30px 0;
+
+	@media (--xxs) {
+		padding: 60px 0;
+	}
+}
+.seasons-more__container {
+	text-align: center;
+}
+.seasons-more__head {
+	text-align: center;
+}
+.seasons-more__wrapper {
+	align-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+}
+.seasons-more__link {
+	align-content: center;
+	align-items: center;
+	flex: 0 1 auto;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	text-decoration: none;
+	margin: 20px 15px 0;
+	text-align: center;
+
+	@media (--xs) {
+		margin: 20px 30px 0;
+	}
+}
+.seasons-more__icon {
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-position: 0 0;
+	display: block;
+	height: 60px;
+	margin-bottom: 15px;
+	width: 60px;
+
+	@media (--xs) {
+		height: 90px;
+		width: 90px;
+	}
+
+	&.is-winter {
+		background-position: 0 0;
+
+		@media (--xs) { background-position: 0 0; }
+	}
+
+	&.is-summer {
+		background-position: 0 -60px;
+
+		@media (--xs) { background-position: 0 -90px; }
+	}
+
+	&.is-spring {
+		background-position: 0 -120px;
+
+		@media (--xs) { background-position: 0 -180px; }
+	}
+
+	&.is-autumn {
+		background-position: 0 -180px;
+
+		@media (--xs) { background-position: 0 -270px; }
+	}
+
+    &.b-lazy {
+    	transition: opacity var(--speed) var(--ease);
+    	opacity: 0;
+    	transition-duration: 0.4s;
+
+    	&.b-loaded {
+	    	opacity: 1;
+    	}
+    }
+}
+.seasons-more__name {
+	margin-bottom: 0;
+}
+.seasons-more__view {
+	display: block;
+	margin-top: 20px;
+
+	@media (--xxs) {
+		margin-top: 40px;
+	}
+}

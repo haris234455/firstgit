@@ -1,0 +1,99 @@
+.recipe-cta {
+	&.section {
+		padding: 0 0 40px;
+		position: relative;
+
+		@media (--xs) {
+			padding-top: 40px;
+		}
+		@media (--s) {
+			padding: 60px 0;
+		}
+		@media (--l) {
+			padding: 100px 0;
+		}
+	}
+
+	&.is-fall {
+		background-color: #FEF9F3;
+	}
+	&.is-winter {
+		background-color: #ECF7FD;
+	}
+	&.is-spring {
+		background-color: #F5FFDC;
+	}
+	&.is-summer {
+		background-color: #FFF2D2;
+	}
+
+
+	&:before,
+	&:after {
+		position: relative;
+		width: 100%;
+
+		@media (--xs) {
+			background-size: contain;
+			position: absolute;
+			top: 0;
+			z-index: 0;
+		}
+	}
+
+	&:before {
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		content: '';
+		display: block;
+		padding-bottom: ( 340 / 640 ) * 100%;
+
+		@media (--xs) {
+			background-size: contain;
+			height: 100%;
+			left: 0;
+			padding-bottom: 0;
+		}
+	}
+
+	&:after {
+
+		@media (--xs) {
+			background-position: 100% 0;
+			background-repeat: no-repeat;
+			background-size: contain;
+			content: '';
+			height: 100%;
+			right: 0;
+		}
+	}
+
+	.__container {
+		display: flex;
+		text-align: center;
+		align-content: center;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		flex-direction: row;
+			@media (--xs) {
+		}
+	}
+}
+.recipe-cta__title {
+	margin-top: 30px;
+
+	@media (--xs) {
+		margin-top: 0;
+		max-width: 300px;
+		width: 100%;
+		z-index: 9;
+	}
+
+	@media (--l) {
+		max-width: 600px;
+	}
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Google Analytics",
+  "settings": [ {
+    "type": "text",
+    "id": "google_analytics",
+    "label": "Google Analytics"
+  } ]
+}

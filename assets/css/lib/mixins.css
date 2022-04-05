@@ -1,0 +1,123 @@
+/* Animations
+------------------------------------------------------------ */
+@define-mixin animation $animation {
+    animation: $animation var(--animation-duration) var(--animation-timing-function) forwards;
+}
+
+
+/* Aspect Ratio
+------------------------------------------------------------ */
+@define-mixin ratio $width, $height {
+  position: relative;
+  &:before {
+    content: '';
+    display: block;
+    padding-top: calc($height / $width * 100%);
+    width: 100%;
+  }
+}
+
+
+/* Hover Effects
+------------------------------------------------------------ */
+@define-mixin hover-fill $color {
+    path {
+        transition: fill var(--speed) var(--ease);
+    }
+    &:hover {
+        path {
+            fill: $color;
+        }
+    }
+}
+@define-mixin hover-background $color {
+    transition: background-color var(--speed) var(--ease);
+    &:hover {
+        background-color: $color;
+    }
+}
+@define-mixin hover-color $color {
+    transition: color var(--speed) var(--ease);
+    &:hover {
+        color: $color;
+    }
+}
+@define-mixin hover-underline $size, $color {
+    position: relative;
+    &:after {
+        transition: height var(--speed) var(--ease);
+        background: none no-repeat scroll 0 0 $color;
+        bottom: 0;
+        content: '';
+        height: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+    }
+    &:hover {
+        &:after {
+            height: $size;
+        }
+    }
+}
+@define-mixin hover-drawline $size, $color {
+    position: relative;
+    &:after {
+        transition: width var(--speed) var(--ease);
+        background: none no-repeat scroll 0 0 $color;
+        bottom: 0;
+        content: '';
+        height: $size;
+        left: 0;
+        position: absolute;
+        width: 0;
+    }
+    &:hover {
+        &:after {
+            width: 100%;
+        }
+    }
+}
+@define-mixin hover-drawline-center $size, $color {
+    position: relative;
+    &:after {
+        transition: width var(--speed) var(--ease);
+        background: none no-repeat scroll 0 0 $color;
+        bottom: 0;
+        content: '';
+        height: $size;
+        left: 0;
+        margin: 0 auto;
+        position: absolute;
+        right: 0;
+        width: 0;
+    }
+    &:hover {
+        &:after {
+            width: 100%;
+        }
+    }
+}
+@define-mixin bg-full {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@define-mixin absolute-full {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+@define-mixin fadeIn {
+    opacity: 1;
+    visibility: visible;
+}
+
+@define-mixin fadeOut {
+    opacity: 0;
+    visibility: hidden;
+}

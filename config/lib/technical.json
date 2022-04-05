@@ -1,0 +1,15 @@
+{
+  "name": "Technical",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Development"
+    },
+    {
+      "type": "checkbox",
+      "id": "is_dev_mode",
+      "label": "Access site through BrowserSync?",
+      "default": false
+    }
+  ]
+}

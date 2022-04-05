@@ -1,0 +1,56 @@
+.hol-next {
+	background-position: center center;
+	background-size: cover;
+	display: block;
+	position: relative;
+	&:before {
+		background-color: var(--black);
+		content: '';
+		display: block;
+		height: 100%;
+		left: 0;
+		opacity: 0.3;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 0;
+	}
+}
+.hol-next__number {
+	color: var(--white);
+	display: block;
+	font-family: "azote", sans-serif;
+	font-size: 115px;
+	margin: 0 auto;
+	position: relative;
+	text-align: center;
+	width: 160px;
+	z-index: 9;
+	@media (--s) {
+		font-size: 136px;
+	}
+	&:before,
+	&:after {
+		background-color: transparent;
+		border-radius: 50%;
+		border: 3px solid var(--white);
+		bottom: 0;
+		content: '';
+		display: block;
+		height: 6px;
+		margin: auto 0;
+		position: absolute;
+		top: 0;
+		width: 6px;
+	}
+	&:before { left: 0; }
+	&:after { right: 0; }
+}
+.no-touch {
+	.hol-next {
+		&:before { transition: opacity var(--speed) var(--ease); }
+		&:hover {
+			&:before { opacity: 0.2; }
+		}
+	}
+}

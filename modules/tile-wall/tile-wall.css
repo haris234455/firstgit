@@ -1,0 +1,65 @@
+.tile-wall {
+  padding-top: 30px;
+  padding-bottom: 20px;
+
+  @media (--xs) {
+    padding-top: 35px;
+    padding-bottom: 10px;
+  }
+
+  @media (--s) {
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
+
+  @media (--l) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  @media (--xxl) {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+
+.tile-wall__title {
+  text-align: center;
+}
+
+.tile-wall__content {
+  @media (--s) {
+    display: flex;
+  }
+}
+
+.tile-wall__content-left {
+  margin-bottom: 20px;
+
+  @media (--s) {
+    margin-bottom: 0;
+    width: 50%;
+  }
+
+  @media (--l) {
+    width: 52%;
+  }
+
+  @media (--xxl) {
+    width: 47%;
+  }
+}
+
+.tile-wall__content-right {
+  @media (--s) {
+    width: 50%;
+  }
+
+  @media (--l) {
+    width: 48%;
+  }
+
+  @media (--xxl) {
+    width: 53%;
+  }
+}

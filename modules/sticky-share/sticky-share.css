@@ -1,0 +1,74 @@
+.sticky-share {
+	display: none;
+
+  @media (--xl) {
+		display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+		align-content: center;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		flex-wrap: nowrap;
+		background-color: var(--white);
+		box-shadow: 1px 1px 5px rgba( 0, 0, 0, 0.2);
+    left: 0;
+    padding: 20px 10px;
+    position: fixed;
+    top: 20%;
+    z-index: 999;
+  }
+
+	.__list {
+		@extend %clearlist;
+	}
+	.__item {
+		@extend %clearitem;
+	}
+	.__link {
+		@extend %clearlink;
+		border-radius: 50%;
+		color: var(--white);
+		display: block;
+		height: 23px;
+		line-height: 23px;
+		font-size: 12px;
+		margin-top: 15px;
+		text-align: center;
+		width: 23px;
+
+		&.is-facebook {
+			@extend %ico-facebook;
+			background-color: #3D5CA0;
+		}
+		&.is-twitter {
+			@extend %ico-twitter;
+			background-color: #00AAF3;
+		}
+		&.is-pinterest {
+			@extend %ico-pinterest;
+			background-color: #CD1928;
+		}
+		&.is-email {
+			@extend %ico-mail-plain;
+			background-color: var(--black);
+			font-size: 10px;
+		}
+
+		.fallback {
+			display: none;
+		}
+	}
+}
+
+.no-touch {
+	.sticky-share {
+		.__link {
+			transition: opacity var(--speed) var(--ease);
+			&:hover {
+				color: var(--white);
+				opacity: 0.8;
+			}
+		}
+	}
+}

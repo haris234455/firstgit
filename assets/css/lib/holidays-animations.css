@@ -1,0 +1,47 @@
+/** 
+ * @style:      Animations
+ * @author:     Barrel
+ * @theme:      Hurom Holidays
+ * @version:    1.0
+ * @target:     -
+ */
+
+
+/** 
+ * Animations
+ */
+@keyframes shakin {
+	0% {  transform: rotate3d(0);  }
+	10%, 20% { transform: rotate3d(0, 0, 1, -5deg); }
+	30%, 50%, 70%, 90% { transform: rotate3d(0, 0, 1, 5deg); }
+	40%, 60%, 80% { transform: rotate3d(0, 0, 1, -5deg); }
+    0% {  transform: rotate3d(0);  }
+	100% {  transform: rotate3d(0);  }
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes floatin {
+    0% {
+        transform: translateY( 0 );
+    }
+    50% {
+        transform: translateY( -15px );
+    }
+    100% {
+        transform: translateY( 0 );
+    }
+}
+
+/* Transitions
+------------------------------------------------------------ */
+%trans {
+   transition-duration: var(--speed);
+   transition-timing-function: var(--ease);
+}

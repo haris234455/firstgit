@@ -1,0 +1,72 @@
+.strike {
+  text-decoration: line-through;
+}
+
+.frame-white {
+  background: none no-repeat scroll 0 0 var(--white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  padding: 20px;
+  position: relative;
+  @media (--s) {
+    padding: 25px 30px;
+  }
+  @media (--l) {
+    padding: 30px 40px;
+  }
+
+  .product-description & {
+    box-shadow: none;
+
+    @media (--l) {
+      padding: 30px 70px 80px;
+    }
+  }
+}
+
+.clearfix {
+  &:after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+.ratio {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+  }
+}
+
+.fill {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.bg-very-light-grey {
+  background-color: var(--very-light-grey);
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+[v-cloak] {
+  display: none;
+}

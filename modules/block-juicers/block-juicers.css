@@ -1,0 +1,145 @@
+.block-juicers {
+  background-color: var(--light-grey);
+  padding: 50px 0;
+
+  @media (--s) {
+    padding: 70px 0;
+  }
+
+  &.block-juicers-black-friday{
+    background-color: #fff;
+  }
+}
+.block-juicers__title {
+  margin-bottom: 30px;
+
+  @media (--xs) {
+    margin-bottom: 40px;
+  }
+
+  .__head {
+    @extend %h1;
+    margin-bottom: 10px;
+
+    @media (--xs) {
+      margin-bottom: 15px;
+    }
+  }
+}
+.block-juicers__group {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  margin: 0 auto 50px;
+  width: 100%;
+
+  @media (--xxs) {
+    width: 70%;
+  }
+
+  @media (--s) {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .__juicer {
+    @extend %clearlink;
+    display: block;
+    flex: 0 1 auto;
+    font-weight: normal;
+    margin-top: 40px;
+    text-align: center;
+    width: 100%;
+
+    @media (--s) {
+      flex: 0 1 33.33%;
+      margin-left: 20px;
+      margin-top: 0;
+      width: 30%;
+    }
+
+    &:first-child {
+      margin-top: 0;
+
+      @media (--s) {
+         margin-left: 0;
+      }
+    }
+
+    .__featured {
+      margin-bottom: 15px;
+      width: 100%;
+      @add-mixin ratio 1, 1;
+    }
+
+    .__img {
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      object-fit: contain;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 100%;
+      height:100%;
+    }
+
+    .__name {
+      @extend %h3;
+      font-family: azo-sans-web, arial, sans-serif;
+      margin-bottom: 10px;
+    }
+
+    .__price {
+      @extend %h4;
+      display: block;
+      font-family: azo-sans-web, arial, sans-serif;
+      font-weight: 300;
+      margin-bottom: 10px;
+    }
+
+    .__description {
+      font-family: azo-sans-web, arial, sans-serif;
+      font-weight: 300;
+    }
+  }
+
+  &.is-five {
+    .__juicer {
+      @media (--s) {
+        flex: 0 0 auto;
+        margin-left: 20px;
+        margin-top: 0;
+        width: calc( 20% - 16px);
+      }
+
+      &:first-child {
+        @media (--s) {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+#custom-template {
+  .block-juicers {
+    background-color: var(--white);
+  }
+}
+.no-touch {
+  .block-juicers {
+    .__juicer {
+      .__img {
+        transition: opacity var(--speed) var(--ease);
+        opacity: 1;
+      }
+      &:hover {
+        .__img {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}

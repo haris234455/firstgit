@@ -1,0 +1,14 @@
+.hol-intro {
+	background-color: var(--white);
+	padding-top: 60px;
+	text-align: center;
+	@media (--s) {
+		padding-top: 100px;
+	}
+  &.is-orange { background-color: #FBF6F4; }
+  &.is-blue { background-color: #F6F9FE; }
+  &.is-white { background-color: #F8F8F8; }
+  &.is-red { background-color: #FCF9F9; }
+  &.is-gold { background-color: #F8F5F0; }
+  &.is-green { background-color: #F7FBFA; }
+}

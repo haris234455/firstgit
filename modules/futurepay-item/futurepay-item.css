@@ -1,0 +1,42 @@
+.futurepay-item {
+	align-items: flex-start;
+	display: flex;
+	flex: 1 0 auto;
+	justify-content: center;
+	margin-top: 50px;
+	position: relative;
+	text-align: center;
+	width: 100%;
+  @media (--xs) {
+		flex: 0 1 50%;
+  }
+  @media (--s) {
+		flex: 0 1 33.33%;
+  }
+}
+.futurepay-item:first-child {
+	margin-top: 0;
+}
+.futurepay-item:nth-child(2) {
+  @media (--xs) {
+		margin-top: 0;
+  }
+}
+.futurepay-item:nth-child(3) {
+  @media (--s) {
+		margin-top: 0;
+  }
+}
+.futurepay-item__holder {
+	border: 1px solid var(--grey);
+	flex: 0 0 auto;
+	max-width: 300px;
+	padding: 30px 40px 40px;
+	width: 100%;
+}
+.futurepay-item__featured {
+	display: block;
+	margin: 40px auto;
+	max-width: 80px;
+	width: 100%;
+}

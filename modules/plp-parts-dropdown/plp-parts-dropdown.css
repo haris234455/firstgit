@@ -1,0 +1,13 @@
+.plp-parts-dropdown {
+  max-width: 349px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (--l) {
+    max-width: 344px;
+  }
+
+  @media (--xl) {
+    max-width: 413px;
+  }
+}

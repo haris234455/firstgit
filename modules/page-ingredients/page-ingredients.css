@@ -1,0 +1,125 @@
+.ingredients {
+	text-align: center;
+	&:before,
+	&:after {
+		background-position-y: 30px;
+		background-repeat: no-repeat;
+		content: '';
+		height: 100%;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 0;
+
+		@media (--xs) {
+			background-position-y: 60px;
+		}
+
+		@media (--l) {
+			background-position-y: 70px;
+		}
+	}
+
+	&:before {
+		background-position-x: 0;
+		left: 0;
+	}
+
+	&:after {
+		background-position-x: 100%;
+		right: 0;
+	}
+
+	&.is-autumn {
+		background-color: #FEF9F3;
+
+		&:before {
+			background-size: 80px auto;
+
+			@media (--xs) {
+				background-size: 146px auto;
+			}
+		}
+
+		&:after {
+			background-size: 75px auto;
+
+			@media (--xs) {
+				background-size: 133px auto;
+			}
+		}
+	}
+	&.is-winter {
+		background-color: #EDF8FE;
+
+		&:before {
+			background-size: 70px auto;
+
+			@media (--s) {
+				background-size: 150px auto;
+			}
+		}
+
+		&:after {
+			background-size: 60px auto;
+
+			@media (--s) {
+				background-size: 147px auto;
+			}
+		}
+	}
+	&.is-spring {
+		background-color: #F5FFDC;
+
+		&:before {
+			background-size: 75px auto;
+
+			@media (--s) {
+				background-size: 136px auto;
+			}
+		}
+
+		&:after {
+			background-size: 65px auto;
+
+			@media (--s) {
+				background-size: 166px auto;
+			}
+		}
+	}
+	&.is-summer {
+		background-color: #FFF2D2;
+
+		&:before {
+			background-size: 70px auto;
+
+			@media (--s) {
+				background-size: 156px auto;
+			}
+		}
+
+		&:after {
+			background-size: 60px auto;
+
+			@media (--s) {
+				background-size: 145px auto;
+			}
+		}
+	}
+}
+.ingredients__container {
+	z-index: 9;
+}
+.ingredients-title {
+	border-bottom: 1px solid var(--grey);
+	margin: 0 auto 40px;
+	max-width: 650px;
+	padding-bottom: 40px;
+	text-align: center;
+}
+.ingredients-title__head {
+	margin-bottom: 5px;
+}
+.ingredients-view {
+	margin-top: 50px;
+}

@@ -1,0 +1,152 @@
+/**
+ * @style: 		Buttons
+ * @author:		Barrel
+ * @theme: 		Hurom Holidays
+ * @version:	1.0
+ * @target:		-
+ */
+
+
+/**
+ * Primary Button
+ */
+.btn-1 {
+	background-color: deepskyblue;
+	color: #FFF;
+	display: inline-block;
+    font-family: "azo-sans-web", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+	height: 40px;
+	line-height: 40px;
+	width: 250px;
+    text-align: center;
+    @media (--s) {
+        font-size: 14px;
+    }
+    &.is-black { background-color: var(--black); }
+    &.is-orange { background-color: #DA6126; }
+    &.is-blue { background-color: #194F9C; }
+    &.is-white { background-color: #A6A6AF; }
+    &.is-red { background-color: #CA1723; }
+    &.is-gold { background-color: #AF7F0F; }
+    &.is-green { background-color: #1F5A43; }
+}
+
+
+/**
+ * Secondary Button
+ */
+.btn-2 {
+	border: 1px solid deepskyblue;
+	color: deepskyblue;
+	display: inline-block;
+    font-family: "azo-sans-web", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+	height: 38px;
+	line-height: 38px;
+	text-align: center;
+	width: 248px;
+    @media (--s) {
+        font-size: 14px;
+    }
+    &.is-orange {
+        border-color: #DA6126;
+        color: #DA6126;
+    }
+    &.is-blue {
+        border-color: #194F9C;
+        color: #194F9C;
+    }
+    &.is-white {
+        border-color: #A6A6AF;
+        color: #A6A6AF;
+    }
+    &.is-red {
+        border-color: #CA1723;
+        color: #CA1723;
+    }
+    &.is-gold {
+        border-color: #AF7F0F;
+        color: #AF7F0F;
+    }
+    &.is-green {
+        border-color: #1F5A43;
+        color: #1F5A43;
+    }
+}
+
+
+/**
+ * No Touch
+ */
+.no-touch {
+	.btn-1 {
+		transition-property: background-color, color;
+    transition-duration: var(--speed);
+    transition-timing-function: var(--ease);
+	    &.is-black {
+	    	&:hover { background-color: var(--green); }
+	    }
+	    &.is-orange {
+	    	&:hover { background-color: #C45725; }
+	    }
+	    &.is-blue {
+	    	&:hover { background-color: #174789; }
+	    }
+	    &.is-white {
+	    	&:hover { background-color: #919199; }
+	    }
+	    &.is-red {
+	    	&:hover { background-color: #AD141E; }
+	    }
+	    &.is-gold {
+	    	&:hover { background-color: #91690D; }
+	    }
+	    &.is-green {
+	    	&:hover { background-color: #174432; }
+	    }
+	}
+	.btn-2 {
+		transition-property: background-color, color;
+    transition-duration: var(--speed);
+    transition-timing-function: var(--ease);
+	    &.is-orange {
+	    	&:hover {
+		        background-color: #DA6126;
+		        color: var(--white);
+	    	}
+	    }
+	    &.is-blue {
+	    	&:hover {
+		        background-color: #194F9C;
+		        color: var(--white);
+	    	}
+	    }
+	    &.is-white {
+	    	&:hover {
+		        background-color: #A6A6AF;
+		        color: var(--white);
+	    	}
+	    }
+	    &.is-red {
+	    	&:hover {
+		        background-color: #CA1723;
+		        color: var(--white);
+	    	}
+	    }
+	    &.is-gold {
+	    	&:hover {
+		        background-color: #AF7F0F;
+		        color: var(--white);
+	    	}
+	    }
+	    &.is-green {
+	    	&:hover {
+		        background-color: #1F5A43;
+		        color: var(--white);
+	    	}
+	    }
+	}
+}

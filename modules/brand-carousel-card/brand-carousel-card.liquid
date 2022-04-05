@@ -1,0 +1,44 @@
+{%- assign mod_logo = mod_logo | default: blank -%}
+{%- assign mod_text = mod_text | default: blank -%}
+{%- assign mod_class = mod_class | default: blank -%}
+{%- assign mod_id = mod_id | default: blank -%}
+
+{%- assign mod_logo_width = mod_logo.width | plus: 0.0 -%}
+{%- assign mod_logo_height = mod_logo.height | plus: 0.0 -%}
+{%- assign mod_logo_ratio = mod_logo_height | divided_by: mod_logo_width | times: 100 -%}
+{%- assign mod_logo_size = mod_logo.width | append: 'x' -%}
+{%- assign mod_logo_src = mod_logo | img_url: mod_logo_size -%}
+
+<style>
+  .brand-carousel--{{ mod_id }} .brand-carousel-card__featured {
+    width: {{ mod_logo_width }}px;
+  }
+  .brand-carousel--{{ mod_id }} .brand-carousel-card__featured:before {
+    padding-bottom: {{ mod_logo_ratio }}%;
+  }
+</style>
+
+{%- if mod_logo != blank -%}
+<div class="brand-carousel-card brand-carousel--{{ mod_id }}">
+    <div class="brand-carousel-card__text text-quote align-c">{{ mod_text }}</div>
+
+    <div class="brand-carousel-card__featured ratio">
+      {%- include 'image',
+        mod_fit: 'contain',
+        mod_text: mod_logo.alt,
+        mod_loader: false,
+        mod_src: mod_logo_src -%}
+    </div>
+  </div>
+{%- endif %}
+
+{%- assign mod_styles = nil -%}
+{%- assign mod_logo_size = nil -%}
+{%- assign mod_logo_ratio = nil -%}
+{%- assign mod_logo_width = nil -%}
+{%- assign mod_logo_height = nil -%}
+{%- assign mod_logo_src = nil -%}
+{%- assign mod_logo = nil -%}
+{%- assign mod_text = nil -%}
+{%- assign mod_class = nil -%}
+{%- assign mod_id = nil -%}

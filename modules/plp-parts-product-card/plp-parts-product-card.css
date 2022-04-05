@@ -1,0 +1,183 @@
+.plp-parts-product-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  @media (--xs) {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  @media (--l) {
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+
+  &:before {
+    .no-touch & {
+      position: absolute;
+      top: 0;
+      right: 11%;
+      bottom: 0;
+      left: 11%;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.09);
+      opacity: 0;
+      transition: opacity var(--speed) var(--ease);
+
+      @media (--l) {
+        content: "";
+      }
+    }
+  }
+
+  .no-touch &:hover {
+    &:before {
+      opacity: 1;
+    }
+  }
+}
+
+.plp-parts-product-card__link {
+  display: block;
+  margin-bottom: auto;
+  width: 100%;
+  max-width: 331px;
+}
+
+.plp-parts-product-card__ratio {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 307px;
+
+  &:before {
+    padding-bottom: 100%;
+  }
+}
+
+.plp-parts-product-card__image {
+  background-color: transparent;
+
+  & .img__el--shim {
+    background-repeat: no-repeat;
+    background-position-x: center;
+  }
+}
+
+.plp-parts-product-card__title {
+  display: block;
+  margin-top: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 13px;
+  text-align: center;
+
+  @media (--xs) {
+    margin-top: 20px;
+    font-size: 15px;
+  }
+}
+
+.plp-parts-product-card__price {
+  display: block;
+  text-align: center;
+  font-size: 13px;
+
+  @media (--xs) {
+    margin-top: 5px;
+  }
+
+  @media (--l) {
+    font-size: 15px;
+  }
+}
+
+.plp-parts-product-card__button {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 130px;
+  margin: 5px auto 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 1px solid var(--white);
+
+  @media (--xs) {
+    margin-top: 10px;
+    width: calc(100% - 20px);
+    max-width: 224px;
+  }
+
+  @media (--l) {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 287px;
+  }
+
+  .plp-parts-product-card__colors + & {
+    margin-top: 0;
+  }
+
+  &.is-transparent {
+    border-color: var(--green);
+    color: var(--green);
+
+    &.btn:hover {
+      color: var(--green);
+    }
+  }
+}
+
+.plp-parts-product-card__colors {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 15px;
+
+  @media (--xs) {
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+}
+
+.plp-parts-product-card__color {
+  width: 10px;
+  height: 10px;
+  margin-left: 7px;
+
+  &:before {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.plp-parts-product-card--pdp-three-up {
+  .plp-parts-product-card__ratio {
+    @add-mixin ratio 205, 307;
+
+    max-width: 92px;
+
+    @media (--xs) {
+      max-width: 148px;
+    }
+
+    @media (--m) {
+      max-width: 188px;
+    }
+
+    @media (--l) {
+      max-width: 205px;
+    }
+
+    &::before {
+      padding-bottom: 0;
+    }
+  }
+
+  .plp-parts-product-card__image {
+    @add-mixin absolute-full;
+  }
+}

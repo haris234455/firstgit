@@ -1,0 +1,168 @@
+.hero {
+  position: relative;
+}
+
+.hero--light {
+  color: var(--black);
+}
+
+.hero--dark {
+  color: var(--white);
+}
+
+.hero--overlay {
+  &::after {
+    background-color: var(--black);
+    content: '';
+    height: 100%;
+    left: 0;
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+  }
+}
+
+.hero__featured {
+  overflow: hidden;
+  z-index: 0;
+  max-height: 535px;
+
+  &:before {
+    padding-bottom: 167.1875%;
+
+    @media (--xs) {
+      padding-bottom: 89.16666%;
+    }
+
+    @media (--s) {
+      padding-bottom: 89.90024%;
+    }
+
+    @media (--l) {
+      padding-bottom: 50%;
+    }
+  }
+
+  @media (--s) {
+    max-height: 721px;
+  }
+
+  @media (--xxl) {
+    max-height: 720px;
+  }
+}
+
+.hero__container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: auto;
+
+  @media (--l) {
+    display: block;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+    text-align: left;
+  }
+}
+
+.hero__title {
+  margin-bottom: 15px;
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (--s) {
+    max-width: 480px;
+  }
+
+  @media (--l) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  @media (--xxl) {
+    max-width: 600px;
+    margin-bottom: 30px;
+  }
+}
+
+.hero__text {
+  color: inherit;
+  position: absolute;
+  right: 0;
+  bottom: 25px;
+  left: 0;
+  font-size: 12px;
+  font-weight: normal;
+
+  @media (--s) {
+    font-size: 15px;
+  }
+
+  @media (--l) {
+    position: static;
+    line-height: 1.4;
+  }
+}
+
+.hero__actions {
+  @media (--l) {
+    display: flex;
+  }
+}
+
+.hero__cta {
+  @media (--l) {
+    margin-right: 20px;
+  }
+
+  @media (--xxl) {
+    margin-right: 30px;
+  }
+}
+
+.hero__link {
+  margin-left: .5em;
+
+  @media (--l) {
+    display: block;
+    margin-left: 0;
+  }
+}
+
+.hero__image--mobile {
+  @media (--s) {
+    display: none;
+  }
+}
+
+.hero__image--intermediate {
+  display: none;
+
+  @media (--s) {
+    display: block;
+  }
+
+  @media (--l) {
+    display: none;
+  }
+}
+
+.hero__image--desktop {
+  display: none;
+
+  @media (--l) {
+    display: block;
+  }
+}

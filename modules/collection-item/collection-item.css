@@ -1,0 +1,101 @@
+/***
+@stylesheet:	collection-item
+@project:		hurom theme
+@version:		1.0
+@groups:		* collection item
+				* collection order
+@target:		snippets/components/collection-item.liquid
+***/
+
+
+/* Collection Item
+------------------------------------------------------------ */
+.collection-item {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: nowrap;
+	align-items: center;
+	color: var(--dark-grey);
+	margin: 0 0 30px 0;
+	text-decoration: none;
+	flex-direction: column;
+    @media (--s) {
+    	flex-direction: row;
+    }
+    @media (--l) {
+    	flex-direction: row;
+    }
+}
+.no-touch .collection-item {
+    &:hover {
+    	color: var(--dark-grey);
+    }
+}
+.collection-item__featured {
+	transition: opacity var(--speed) var(--ease);
+	background: none no-repeat scroll 0 0 / cover var(--light-grey);
+	cursor: pointer;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+    @add-mixin ratio 1.7, 1;
+	flex: 1 0 auto;
+	order: 1;
+    @media (--s) {
+		flex: 1 1 40%;
+    }
+    @media (--l) {
+		flex: 1 1 60%;
+    }
+}
+.no-touch .collection-item__featured {
+    &:hover {
+    	color: var(--dark-grey);
+    	opacity: 0.8;
+    }
+}
+.collection-item__img {
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	margin: auto;
+	object-fit: cover;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+}
+.collection-item__description {
+	margin: 15px 0 0;
+	width: 100%;
+	flex: 1 0 auto;
+	order: 2;
+    @media (--s) {
+		margin: 0;
+		padding: 0 0 0 30px;
+		flex: 1 1 60%;
+    }
+    @media (--l) {
+		padding: 0 0 0 55px;
+		flex: 1 1 40%;
+    }
+}
+.collection-item__title {
+	margin: 0 0 10px;
+	white-space: nowrap;
+    @media (--s) {
+		margin: 0 0 15px;
+    }
+    @media (--l) {
+		margin: 0 0 20px;
+    }
+}
+.collection-item__content {
+	margin: 0 0 10px;
+    @media (--s) {
+		margin: 0 0 15px;
+    }
+    @media (--l) {
+		margin: 0 0 20px;
+    }
+}

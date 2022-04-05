@@ -1,0 +1,21 @@
+.video.no-fallback .video__el {
+  display: block;
+}
+.video__el {
+  display: none;
+  @media (--xs) {
+    display: block;
+    height: auto;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+}
+.video__fallback {
+  display: block;
+  @media (--xs) {
+    display: none;
+  }
+}

@@ -1,0 +1,271 @@
+.hol-landing {
+  -webkit-transform: translate3d(0, 0, 0);
+  background-color: var(--black);
+  height: auto;
+  overflow: visible;
+  position: relative;
+  width: 100%;
+
+  @media (--s) {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+.hol-landing__holder {
+  height: auto;
+  position: relative;
+  width: 100%;
+
+  @media (--s) {
+    align-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    display: flex;
+    width: 2400px;
+
+    @media (min-width: 2400px) {
+      width: 108%;
+    }
+  }
+}
+
+.hol-tile {
+  cursor: pointer;
+  display: block;
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  @media (--s) {
+    flex: 0 1 auto;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+    text-align: center;
+    width: 400px;
+  }
+
+  @media (min-width: 2400px) {
+    width: 18%;
+  }
+
+  &:after,
+  &:before {
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &:before {
+    background-color: var(--black);
+    content: '';
+    height: 100%;
+    opacity: 0.3;
+    top: 0;
+
+    @media (--s) {
+      content: none;
+    }
+  }
+
+  &:after {
+    content: none;
+
+    @media (--s) {
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+      bottom: 0;
+      content: '';
+      height: 38%;
+    }
+  }
+
+  .hol-number {
+    bottom: 10px;
+
+    @media (--s) {
+      bottom: 50px;
+    }
+  }
+
+  .hol-title {
+    display: none;
+
+    @media (--s) {
+      display: block;
+      line-height: 1.5;
+      white-space: normal;
+      width: 200px;
+    }
+  }
+
+  .hol-scroll {
+    display: none;
+
+    @media (--s) {
+      bottom: -90px;
+      display: block;
+
+      .hol-scroll__arrow {
+        bottom: -20px;
+      }
+
+      .hol-scroll__ribbon {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+}
+
+.hol-tile__featured {
+  background-position: center center;
+  background-size: cover;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+
+  &.on-mobile {
+    display: block;
+
+    @media (--s) {
+      display: none;
+    }
+  }
+
+  &.on-desktop {
+    display: none;
+
+    @media (--s) {
+      display: block;
+    }
+  }
+}
+
+.hol-nav {
+  display: none;
+
+  @media (--s) {
+    background-color: rgba(255, 255, 255, 0.4);
+    display: block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 80px;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    z-index: 999;
+  }
+
+  &.is-prev {
+    @media (--s) {
+      border-radius: 0 40px 40px 0;
+      left: 0;
+    }
+  }
+
+  &.is-next {
+    @media (--s) {
+      border-radius: 40px 0 0 40px;
+      right: 0;
+    }
+  }
+}
+
+.hol-nav__icon {
+  bottom: 0;
+  display: block;
+  height: 25px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 10px;
+
+  &.is-prev {
+    left: -10px;
+  }
+
+  &.is-next {
+    right: -10px;
+  }
+}
+
+
+/**
+* No Touch
+*/
+.no-touch {
+
+  .hol-number,
+  .hol-scroll {
+    transition: transform var(--speed) var(--ease);
+  }
+
+  .hol-tile {
+    @extend %trans;
+
+    &:before {
+      transition: opacity var(--speed) var(--ease);
+    }
+
+    &:hover {
+      &:before {
+        opacity: 0.2;
+      }
+    }
+
+    @media (--s) {
+      &:before {
+        transition-property: none;
+      }
+
+      .hol-number,
+      .hol-scroll {
+        transition-duration: 0.4s;
+      }
+
+      .hol-title {
+        transition-duration: 0.4s;
+        transition-property: opacity, transform;
+      }
+
+      &:hover {
+        &:before {
+          opacity: 1;
+        }
+
+        .hol-number {
+          transform: translateY(-100px);
+        }
+
+        .hol-scroll {
+          transform: translateY(-80px);
+        }
+
+        .hol-title {
+          opacity: 1;
+          transform: translateY(-70px);
+        }
+      }
+    }
+  }
+
+  .hol-nav {
+    transition: background-color var(--speed) var(--ease);
+
+    &:hover {
+      background-color: var(--white);
+    }
+  }
+}

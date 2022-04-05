@@ -1,0 +1,32 @@
+.product-action {
+	text-align: center;
+}
+.product-action__container {
+  max-width: 1130px;
+}
+.product-action__title {
+	margin: 0 auto;
+	max-width: 700px;
+	width: 100%;
+}
+.product-action__head {
+	@media (--xs) {
+		margin-bottom: 30px;
+	}
+}
+.product-action__holder {
+	display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.product-action__block {
+	width: 50%;
+	&:last-of-type { display: none; }
+	@media (--xs) {
+		width: 20%;
+		&:last-of-type { display: block; }
+	}
+}
+.product-action__img {
+  width: 100%;
+}

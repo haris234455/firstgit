@@ -1,0 +1,84 @@
+.text-input {
+  position: relative;
+  margin: 1em 0;
+}
+
+.text-input--no-v-margin{
+  margin: 0;
+}
+
+.text-input__wrap {
+  position: relative;
+
+  .text-input--border & {
+    border-bottom: 0;
+  }
+}
+
+.text-input__label {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  height: 1em;
+  margin: auto;
+  border-radius: 0.5em;
+
+  line-height: 100%;
+  transform: translateY(0);
+  transition: top var(--speed) var(--ease);
+
+  .is-active:not(.hide-label) & {
+    top: -125%;
+  }
+  .is-active.hide-label & {
+    display: none;
+  }
+
+  .text-input--center & {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .text-input--border & {
+    position: static;
+  }
+}
+.text-input__el {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: var(--input-height);
+  padding: 0.75em 1em;
+  border: 1px solid var(--grey);
+  box-shadow: none;
+  font-size: 13px;
+
+  @media (--s) {
+    font-size: 14px;
+  }
+
+  .text-input--center & {
+    text-align: center;
+  }
+
+  .is-active & {
+    border: 1px solid var(--green);
+  }
+
+  .text-input--border & {
+    padding: 1.13em;
+    margin-top: 8px;
+    border: var(--border-light-grey);
+  }
+
+  .has-errors.text-input--border & {
+    border: var(--border-red);
+  }
+}
+.text-input__error {
+  padding-top: 0.25em;
+  transform: translate(0, 100%);
+  overflow: auto;
+  white-space: nowrap;
+}

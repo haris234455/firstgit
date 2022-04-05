@@ -1,0 +1,28 @@
+/* Ensure Zendesk help icon doesn't overlay "Buy Now" CTA on mobile PDP */
+.template-product .zEWidget-launcher {
+  bottom: 60px!important;
+
+  @media (--s) {
+    bottom: 0!important;
+  }
+}
+
+.s4com-sub-heading .s4com-section-title {
+  color: var(--green) !important;
+}
+
+button.cBhSDd {
+  background-color: var(--green) !important;
+}
+
+button.jPhSuY {
+  color: var(--boulder) !important;
+}
+
+.pw-route-protection .pw-toggle-wrapper .pw-toggle {
+  color: var(--matisse) !important;
+}
+
+.pw-route-protection .pw-learn-more {
+  color: var(--boulder) !important;
+}

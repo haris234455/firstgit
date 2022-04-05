@@ -1,0 +1,98 @@
+<!-- /snippets/partials/meta-social.liquid -->
+
+{% comment %}
+    Open graph tags
+{% endcomment %}
+{% if template == 'index' %}
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ page_title }}">
+    <meta property="og:description" content="{{ page_description }}">
+    <meta property="og:image" content="http:{{ 'share-facebook.jpg' | asset_url }}" />
+    <meta property="og:image:secure_url" content="https:{{ 'share-facebook.jpg' | asset_url }}" />
+{% elsif template contains 'product' %}
+    <meta property="og:type" content="product">
+    <meta property="og:title" content="{{ product.title | strip_html | escape }}">
+    <meta property="og:image" content="http:{{ product.featured_image.src | product_img_url: 'grande' }}" />
+    <meta property="og:image:secure_url" content="https:{{ product.featured_image.src | product_img_url: 'grande' }}" />
+    {% comment %}
+    {% for image in product.images reversed limit:3 %}
+        <meta property="og:image" content="http:{{ image | img_url: 'grande' }}">
+        <meta property="og:image:secure_url" content="https:{{ image | img_url: 'grande' }}">
+    {% endfor %}
+    {% endcomment %}
+    <meta property="og:description" content="{{ page_description | escape }}">
+    <meta property="og:price:amount" content="{{ product.price | money_without_currency | strip_html | escape }}">
+    <meta property="og:price:currency" content="{{ shop.currency }}">
+{% elsif template contains 'recipes' %}
+    <meta property="og:image" content="http:{{ 'share-facebook-recipes.jpg' | asset_url }}" />
+    <meta property="og:image:secure_url" content="https:{{ 'share-facebook-recipes.jpg' | asset_url }}" />
+{% elsif template contains 'seasons' %}
+    <meta property="og:title" content="{{ page_title }}">
+    <meta property="og:description" content="{{ page_description }}">
+    <meta property="og:image" content="http:{{ 'share-facebook-seasons.jpg' | asset_url }}" />
+    <meta property="og:image:secure_url" content="https:{{ 'share-facebook-seasons.jpg' | asset_url }}" />
+{% elsif template contains 'ingredients' %}
+    <meta property="og:title" content="{{ page_title }}">
+    <meta property="og:description" content="{{ page_description }}">
+    {% if page.handle contains 'winter' %}
+        <meta property="og:image" content="http:{{ 'share-facebook-seasons-winter.jpg' | asset_url }}" />
+        <meta property="og:image:secure_url" content="https:{{ 'share-facebook-seasons-winter.jpg' | asset_url }}" />
+    {% elsif page.handle contains 'summer' %}
+        <meta property="og:image" content="http:{{ 'share-facebook-seasons-summer.jpg' | asset_url }}" />
+        <meta property="og:image:secure_url" content="https:{{ 'share-facebook-seasons-summer.jpg' | asset_url }}" />
+    {% elsif page.handle contains 'spring' %}
+        <meta property="og:image" content="http:{{ 'share-facebook-seasons-spring.jpg' | asset_url }}" />
+        <meta property="og:image:secure_url" content="https:{{ 'share-facebook-seasons-spring.jpg' | asset_url }}" />
+    {% else %}
+        <meta property="og:image" content="http:{{ 'share-facebook-seasons-autumn.jpg' | asset_url }}" />
+        <meta property="og:image:secure_url" content="https:{{ 'share-facebook-seasons-autumn.jpg' | asset_url }}" />
+    {% endif %}
+{% elsif template contains 'article' %}
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{ article.title | strip_html | escape }}">
+    {% if article.image %}
+        <meta property="og:image" content="http:{{ article | img_url: '1024x1024' }}">
+        <meta property="og:image:secure_url" content="https:{{ article | img_url: '1024x1024' }}">
+    {% endif %}
+    <meta property="og:description" content="{{ article.excerpt_or_content | strip_html | escape }}">
+{% else %}
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ page_title | escape }}">
+    {% if template contains 'list-collections' %}
+            <meta name="og:description" content="{{ 'collections.meta.description' | t }}">
+    {% else %}
+            <meta name="og:description" content="{{ page_description | escape }}">
+    {% endif %}
+    <meta property="og:image" content="http:{{ 'share-facebook.jpg' | asset_url }}" />
+    <meta property="og:image:secure_url" content="https:{{ 'share-facebook.jpg' | asset_url }}" />
+{% endif %}
+<meta property="og:url" content="{{ canonical_url }}">
+<meta property="og:site_name" content="{{ shop.name }}">
+
+{% comment %}
+    Twitter card
+{% endcomment %}
+{% unless settings.social_twitter_link == blank %}
+    <meta name="twitter:site" content="@{{ settings.social_twitter_link | split: 'twitter.com/' | last }}">
+{% endunless %}
+{% if template contains 'article' and article.image %}
+    <meta name="twitter:card" content="summary_large_image">
+{% else %}
+    <meta name="twitter:card" content="summary">
+{% endif %}
+{% if template == 'index' %}
+    <meta name="twitter:title" content="{{ page_title }}">
+    <meta name="twitter:description" content="{{ page_description | escape }}">
+{% elsif template contains 'product' %}
+    <meta name="twitter:title" content="{{ product.title | strip_html | escape }}">
+    <meta name="twitter:description" content="{{ product.description | strip_html | truncate: 200, '' | escape }}">
+    <meta name="twitter:image" content="https:{{ product | img_url: 'grande' }}">
+    <meta name="twitter:image:width" content="600">
+    <meta name="twitter:image:height" content="600">
+{% elsif template contains 'article' %}
+    <meta name="twitter:title" content="{{ article.title | strip_html | escape }}">
+    <meta name="twitter:description" content="{{ article.excerpt_or_content | strip_html | truncate: 200, '' | escape }}">
+    {% if article.image %}
+        <meta property="twitter:image" content="https:{{ article | img_url: '1024x1024' }}">
+    {% endif %}
+{% endif %}

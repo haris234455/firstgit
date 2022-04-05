@@ -1,0 +1,13 @@
+<!-- /templates/list-collections.liquid -->
+
+<div class="collection-list page">
+    <div class="collection-list__container container-m">
+        <header class="page-title" data-view="fadein-down">
+            <h1 class="page-title__head">{{ 'collections.meta.title' | t }}</h1>
+        </header>
+        <section class="page-content" data-module="page-content">
+            {% include 'collection-grid' %}
+        </section>
+    </div>
+    {% include 'browse-all' with 'collection' %}
+</div>

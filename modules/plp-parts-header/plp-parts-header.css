@@ -1,0 +1,24 @@
+.plp-parts-header {
+  margin-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 472px;
+  text-align: center;
+
+  @media (--l) {
+    margin-bottom: 20px;
+    max-width: 730px;
+  }
+}
+
+.plp-parts-header__title {
+  margin-bottom: 12px;
+  max-width: 509px;
+  margin-left: auto;
+  margin-right: auto;
+  text-transform: capitalize;
+
+  @media (--xl) {
+    font-size: 40px;
+  }
+}

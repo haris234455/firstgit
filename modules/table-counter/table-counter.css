@@ -1,0 +1,37 @@
+.table-counter {
+	white-space: nowrap;
+	width: 96px;
+}
+.table-counter__action {
+	transition: color var(--speed) var(--ease);
+	@extend %ff-azo;
+	background: none no-repeat scroll 0 0 var(--white);
+	border: 1px solid var(--grey);
+	color: var(--green);
+	cursor: pointer;
+	display: block;
+	float: left;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	width: 32px;
+}
+.no-touch .table-counter__action {
+	&:hover {
+		color: var(--dark-green);
+	}
+}
+.table-counter__action-down {
+	border-right: none;
+}
+.table-counter__action-up {
+	border-left: none;
+}
+.table-counter__field {
+	@extend %field;
+  float: left;
+	height: 32px;
+	padding: 0;
+	text-align: center;
+	width: 32px;
+}
