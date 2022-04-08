@@ -1,0 +1,29 @@
+<!-- /templates/product.liquid -->
+
+{% comment %} Settings {% endcomment %}
+{% assign module = product.metafields.accentuate %}
+{% assign preorder = module.product_pre_order_enable %}
+{% assign preorder_limit = module.product_pre_order_limit | plus: 0 %}
+{% assign product_notification = module.product_notification %}
+
+{% assign current_variant = product.selected_or_first_available_variant %}
+
+<div class="product page" itemscope itemtype="http://schema.org/Product">
+    {% render 'product-nav' %}
+
+    {% include 'product-purchase' %}
+
+    {% include 'product-description' %}
+
+    {% unless product.type contains 'Accessory' %}
+        {% include 'product-media' %}
+    {% endunless %}
+
+    {% include 'product-reviews-new' %}
+
+    {% unless product.type contains 'Accessory' %}
+        {% include 'product-featured', class: 'section-bottom' %}
+    {% endunless %}
+</div>
+
+{% render 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: true, auto_install: true, product: product %}
